@@ -3,5 +3,17 @@
   "useWorkspaces": true,
   "npmClient": "yarn",
   "packages": ["packages/*"],
+  "cache": true,
+  "command": {
+    "build": {
+      "concurrency": 4,
+      "runInParallel": true,
+      "lifecycle": {
+        "prebuild": "echo 'Running prebuild script'",
+        "build": "yarn build",
+        "postbuild": "echo 'Running postbuild script'"
+      }
+    }
+  },
   "version": "0.0.0"
 }
