@@ -1,0 +1,21 @@
+{
+  "name": "@utils-fns/root",
+  "private": "true",
+  "version": "1.0.0",
+  "author": "Caio Queiroz",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "fix-lint": "eslint src --ext .ts ./src/**/*.ts --fix",
+    "create-workspace-vscode": "node ./node_modules/@caiocezarqueiroz/eslint-config/settingsGenerator/vscode/index.js",
+    "create-editor-config": "node ./node_modules/@caiocezarqueiroz/eslint-config/settingsGenerator/editorconfig/index.js",
+    "create-prettier-config": "node ./node_modules/@caiocezarqueiroz/eslint-config/settingsGenerator/prettier/index.js"
+  },
+  "devDependencies": {
+    "@caiocezarqueiroz/eslint-config": "^1.0.20",
+    "eslint": "^8.41.0",
+    "jest": "^29.5.0"
+  }
+}
