@@ -15,13 +15,17 @@
     "build": "lerna run build",
     "test": "jest --passWithNoTests --updateSnapshot --coverage",
     "test:watch": "jest --watch",
-    "coverage": "jest --coverage --verbose"
+    "coverage": "jest --coverage --verbose",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "lerna run build && changeset publish"
   },
   "devDependencies": {
     "@babel/cli": "^7.21.5",
     "@babel/core": "^7.22.1",
     "@babel/preset-env": "^7.22.2",
     "@caiocezarqueiroz/eslint-config": "^1.0.20",
+    "@changesets/cli": "^2.26.1",
     "@rollup/plugin-commonjs": "^25.0.0",
     "@rollup/plugin-json": "^6.0.0",
     "@rollup/plugin-node-resolve": "^15.0.2",
