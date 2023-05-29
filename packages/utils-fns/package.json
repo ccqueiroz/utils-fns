@@ -6,6 +6,10 @@
   "types": "dist/index.d.ts",
   "author": "Caio Queiroz",
   "license": "MIT",
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
   "scripts": {
     "fix-lint": "eslint src --ext .ts ./src/**/*.ts --fix",
     "create-workspace-vscode": "node ../../node_modules/@caiocezarqueiroz/eslint-config/settingsGenerator/vscode/index.js",
@@ -30,5 +34,9 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ccqueiroz/utils-fns"
   }
 }
