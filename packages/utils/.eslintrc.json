@@ -1,0 +1,3 @@
+{
+  "extends": "@caiocezarqueiroz/eslint-config/settingsGenerator/eslint/node.js"
+}
