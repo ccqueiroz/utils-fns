@@ -1,9 +1,9 @@
 # @utils-fns/validators
 
-![npm](https://img.shields.io/npm/v/utils-fns)
+![npm](https://img.shields.io/npm/v/@utils-fns/validators)
 [![License](https://img.shields.io/github/license/ccqueiroz/utils-fns)](LICENSE)
 [![Repository](https://img.shields.io/badge/repository-GitHub-blue.svg)](https://github.com/ccqueiroz/utils-fn)
-![npm downloads](https://img.shields.io/npm/dm/utils-fns)
+<!-- ![npm downloads](https://img.shields.io/npm/dm/@utils-fns/validators) -->
 
 <p align="justify">
     The utils-fns library is being developed with the aim of providing unified tools that facilitate the daily tasks of programmers. Our motivation is to simplify common tasks such as validations, value masking, sorting, searching, and conversion methods, by offering a comprehensive and efficient solution.
