@@ -1,7 +1,7 @@
 # utils-fns
 
 ![npm](https://img.shields.io/npm/v/utils-fns)
-[![License](https://img.shields.io/github/license/ccqueiroz/utils-fn)](LICENSE)
+[![License](https://img.shields.io/github/license/ccqueiroz/utils-fns)](LICENSE)
 [![Repository](https://img.shields.io/badge/repository-GitHub-blue.svg)](https://github.com/ccqueiroz/utils-fn)
 ![npm downloads](https://img.shields.io/npm/dm/utils-fns)
 
