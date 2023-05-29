@@ -15,7 +15,7 @@
     "build": "lerna run build",
     "test": "jest --passWithNoTests --updateSnapshot --coverage",
     "test:watch": "jest --watch",
-    "coverage": "jest --coverage --verbose",
+    "coverage": "jest --watchAll --coverage --verbose",
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "lerna run build && changeset publish"
