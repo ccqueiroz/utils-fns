@@ -12,7 +12,10 @@
     "create-workspace-vscode": "node ./node_modules/@caiocezarqueiroz/eslint-config/settingsGenerator/vscode/index.js",
     "create-editor-config": "node ./node_modules/@caiocezarqueiroz/eslint-config/settingsGenerator/editorconfig/index.js",
     "create-prettier-config": "node ./node_modules/@caiocezarqueiroz/eslint-config/settingsGenerator/prettier/index.js",
-    "build": "lerna exec --concurrency 1 -- rollup -c --bundleConfigAsCjs"
+    "build": "lerna exec --concurrency 1 -- rollup -c --bundleConfigAsCjs",
+    "test": "jest --passWithNoTests --updateSnapshot --coverage",
+    "test:watch": "jest --watch",
+    "coverage": "jest --coverage --verbose"
   },
   "devDependencies": {
     "@babel/cli": "^7.21.5",

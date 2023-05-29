@@ -11,9 +11,6 @@
     "create-workspace-vscode": "node ../../node_modules/@caiocezarqueiroz/eslint-config/settingsGenerator/vscode/index.js",
     "create-editor-config": "node ../../node_modules/@caiocezarqueiroz/eslint-config/settingsGenerator/editorconfig/index.js",
     "create-prettier-config": "node ../../node_modules/@caiocezarqueiroz/eslint-config/settingsGenerator/prettier/index.js",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "coverage": "jest --coverage --verbose",
     "build": "export NODE_ENV=production && rm -rf dist && rollup -c --bundleConfigAsCjs"
   },
   "devDependencies": {
@@ -35,5 +32,6 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "jest": "../../jest.config.ts"
 }
