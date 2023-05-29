@@ -19,6 +19,10 @@ const config: Config.InitialOptions = {
   preset: 'ts-jest',
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
   testPathIgnorePatterns: ['/node_modules/', '/dist/', '/utils-fns/'],
+  watchPlugins: [
+    'jest-watch-typeahead/filename',
+    'jest-watch-typeahead/testname',
+  ],
   projects: [
     {
       displayName: "Packages",
