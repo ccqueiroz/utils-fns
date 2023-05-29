@@ -1,4 +1,4 @@
-import { normalizeToValidation } from '@utils-fns/validators/helpers/normalizeToValidation';
+import { normalizeToValidation } from '../../helpers/normalizeToValidation/index';
 
 export const cnpjValidator = (cnpj?: string): boolean => {
   const VALID_LENGTH = 14;

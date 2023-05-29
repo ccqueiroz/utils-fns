@@ -1,4 +1,4 @@
-import { normalizeToValidation } from '@utils-fns/validators/helpers/normalizeToValidation';
+import { normalizeToValidation } from '../../helpers/normalizeToValidation/index';
 
 export const cpfValidator = (cpf?: string): boolean => {
   const VALID_LENGTH = 11;
