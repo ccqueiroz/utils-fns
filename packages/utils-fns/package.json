@@ -1,5 +1,5 @@
 {
-  "name": "utils-fns",
+  "name": "@utils-fns/utils-fns",
   "version": "1.0.0",
   "main": "dist/cjs/index.ts",
   "module": "dist/esm/index.ts",
