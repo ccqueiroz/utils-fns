@@ -11,11 +11,29 @@
     "fix-lint": "eslint src --ext .ts ./src/**/*.ts --fix",
     "create-workspace-vscode": "node ./node_modules/@caiocezarqueiroz/eslint-config/settingsGenerator/vscode/index.js",
     "create-editor-config": "node ./node_modules/@caiocezarqueiroz/eslint-config/settingsGenerator/editorconfig/index.js",
-    "create-prettier-config": "node ./node_modules/@caiocezarqueiroz/eslint-config/settingsGenerator/prettier/index.js"
+    "create-prettier-config": "node ./node_modules/@caiocezarqueiroz/eslint-config/settingsGenerator/prettier/index.js",
+    "build": "lerna exec --concurrency 1 -- rollup -c --bundleConfigAsCjs"
   },
   "devDependencies": {
+    "@babel/cli": "^7.21.5",
+    "@babel/core": "^7.22.1",
+    "@babel/preset-env": "^7.22.2",
     "@caiocezarqueiroz/eslint-config": "^1.0.20",
+    "@rollup/plugin-commonjs": "^25.0.0",
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.2",
+    "@rollup/plugin-terser": "^0.4.3",
+    "@rollup/plugin-typescript": "^11.1.1",
+    "@types/jest": "^29.5.1",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "^29.5.0",
+    "babel-loader": "^9.1.2",
     "eslint": "^8.41.0",
-    "jest": "^29.5.0"
+    "jest": "^29.5.0",
+    "jest-resolve": "^29.5.0",
+    "lerna": "^6.6.2",
+    "rollup": "^3.23.0",
+    "rollup-plugin-dts": "^5.3.0",
+    "webpack": "^5.84.1"
   }
 }
