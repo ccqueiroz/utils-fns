@@ -1,5 +1,5 @@
 {
-  "name": "@utils-fns/validators",
+  "name": "utils-fns",
   "version": "1.0.0",
   "main": "dist/cjs/index.ts",
   "module": "dist/esm/index.ts",
@@ -17,20 +17,15 @@
     "build": "export NODE_ENV=production && rm -rf dist && rollup -c --bundleConfigAsCjs"
   },
   "devDependencies": {
-    "@caiocezarqueiroz/eslint-config": "^1.0.20",
     "@rollup/plugin-commonjs": "^25.0.0",
     "@rollup/plugin-json": "^6.0.0",
     "@rollup/plugin-node-resolve": "^15.0.2",
     "@rollup/plugin-terser": "^0.4.3",
     "@rollup/plugin-typescript": "^11.1.1",
-    "@types/jest": "^29.5.1",
-    "eslint": "^8.41.0",
-    "jest": "^29.5.0",
+    "@utils-fns/utils": "*",
+    "@utils-fns/validators": "*",
     "rollup": "^3.23.0",
     "rollup-plugin-dts": "^5.3.0",
-    "ts-jest": "^29.1.0",
-    "ts-node": "^10.9.1",
-    "tslib": "^2.5.2",
     "typescript": "^5.0.4"
   },
   "publishConfig": {

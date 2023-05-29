@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /opt/homebrew/Cellar/yarn/1.22.19/libexec/bin/yarn.js create-editor-config
+  /usr/local/bin/node /opt/homebrew/Cellar/yarn/1.22.19/libexec/bin/yarn.js add rollup @rollup/plugin-commonjs @rollup/plugin-json @rollup/plugin-node-resolve @rollup/plugin-terser @rollup/plugin-typescript @rollup-plugin-dts -D -W
 
 PATH: 
   /usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/opt/homebrew/bin:/opt/homebrew/sbin
@@ -14,19 +14,23 @@ Platform:
   darwin arm64
 
 Trace: 
-  SyntaxError: /Users/caiocezarqueiroz/Documents/Sistemas/@utils-fns/package.json: Unexpected token } in JSON at position 626
-      at JSON.parse (<anonymous>)
-      at /opt/homebrew/Cellar/yarn/1.22.19/libexec/lib/cli.js:1629:59
-      at Generator.next (<anonymous>)
-      at step (/opt/homebrew/Cellar/yarn/1.22.19/libexec/lib/cli.js:310:30)
-      at /opt/homebrew/Cellar/yarn/1.22.19/libexec/lib/cli.js:321:13
+  Error: https://registry.yarnpkg.com/@rollup-plugin-dts: Request "https://registry.yarnpkg.com/@rollup-plugin-dts" returned a 405
+      at params.callback [as _callback] (/opt/homebrew/Cellar/yarn/1.22.19/libexec/lib/cli.js:66154:18)
+      at self.callback (/opt/homebrew/Cellar/yarn/1.22.19/libexec/lib/cli.js:140890:22)
+      at Request.emit (node:events:513:28)
+      at Request.<anonymous> (/opt/homebrew/Cellar/yarn/1.22.19/libexec/lib/cli.js:141862:10)
+      at Request.emit (node:events:513:28)
+      at IncomingMessage.<anonymous> (/opt/homebrew/Cellar/yarn/1.22.19/libexec/lib/cli.js:141784:12)
+      at Object.onceWrapper (node:events:627:28)
+      at IncomingMessage.emit (node:events:525:35)
+      at endReadableNT (node:internal/streams/readable:1359:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
 
 npm manifest: 
   {
     "name": "@utils-fns/root",
     "private": "true",
     "version": "1.0.0",
-    "main": "index.js",
     "author": "Caio Queiroz",
     "license": "MIT",
     "workspaces": [
@@ -36,8 +40,7 @@ npm manifest:
       "fix-lint": "eslint src --ext .ts ./src/**/*.ts --fix",
       "create-workspace-vscode": "node ./node_modules/@caiocezarqueiroz/eslint-config/settingsGenerator/vscode/index.js",
       "create-editor-config": "node ./node_modules/@caiocezarqueiroz/eslint-config/settingsGenerator/editorconfig/index.js",
-      "create-prettier-config": "node ./node_modules/@caiocezarqueiroz/eslint-config/settingsGenerator/prettier/index.js",
-  
+      "create-prettier-config": "node ./node_modules/@caiocezarqueiroz/eslint-config/settingsGenerator/prettier/index.js"
     },
     "devDependencies": {
       "@caiocezarqueiroz/eslint-config": "^1.0.20",
