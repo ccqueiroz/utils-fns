@@ -8,12 +8,17 @@ const config: Config.InitialOptions = {
   },
   clearMocks: true,
   coverageDirectory: 'coverage',
-  collectCoverageFrom: ['<rootDir>/packages/**/src/**/*.ts', '!<rootDir>/packages/**/contracts/*.ts'],
+  collectCoverageFrom: [
+    '<rootDir>/packages/**/src/**/*.ts',
+    '!<rootDir>/packages/**/contracts/*.ts',
+    '!<rootDir>/packages/**/src/dist/**',
+    '!<rootDir>/packages/utils-fns/src/index.ts',
+  ],
   moduleFileExtensions: ['js', 'json', 'jsx', 'ts', 'tsx', 'node'],
   testEnvironment: 'node',
   preset: 'ts-jest',
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
-  testPathIgnorePatterns: ['/lib/', '/node_modules/'],
+  testPathIgnorePatterns: ['/node_modules/', '/dist/', '/utils-fns/'],
   projects: [
     {
       displayName: "Packages",
@@ -21,7 +26,7 @@ const config: Config.InitialOptions = {
         '^.+\\.tsx?$': 'ts-jest',
       },
       testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
-      testPathIgnorePatterns: ['/lib/', '/node_modules/'],
+      testPathIgnorePatterns: ['/node_modules/', '/dist/'],
       testEnvironment: 'node',
     }
   ]
