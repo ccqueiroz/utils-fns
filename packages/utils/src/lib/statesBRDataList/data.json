@@ -1,0 +1,164 @@
+[
+  {
+    "stateName": "Acre",
+    "abbreviation": "AC",
+    "areaCodeList": ["68"],
+    "capital": "Rio Branco"
+  },
+  {
+    "stateName": "Alagoas",
+    "abbreviation": "AL",
+    "areaCodeList": ["82"],
+    "capital": "Maceió"
+  },
+  {
+    "stateName": "Amapá",
+    "abbreviation": "AP",
+    "areaCodeList": ["96"],
+    "capital": "Macapá"
+  },
+  {
+    "stateName": "Amazonas",
+    "abbreviation": "AM",
+    "areaCodeList": ["92", "97"],
+    "capital": "Manaus"
+  },
+  {
+    "stateName": "Bahia",
+    "abbreviation": "BA",
+    "areaCodeList": ["71", "73", "74", "75", "77"],
+    "capital": "Salvador"
+  },
+  {
+    "stateName": "Ceará",
+    "abbreviation": "CE",
+    "areaCodeList": ["85", "88"],
+    "capital": "Fortaleza"
+  },
+  {
+    "stateName": "Distrito Federal",
+    "abbreviation": "DF",
+    "areaCodeList": ["61"],
+    "capital": "Brasília"
+  },
+  {
+    "stateName": "Espírito Santo",
+    "abbreviation": "ES",
+    "areaCodeList": ["27", "28"],
+    "capital": "Vitória"
+  },
+  {
+    "stateName": "Goiás",
+    "abbreviation": "GO",
+    "areaCodeList": ["62", "62"],
+    "capital": "Goiânia"
+  },
+  {
+    "stateName": "Maranhão",
+    "abbreviation": "MA",
+    "areaCodeList": ["98", "99"],
+    "capital": "São Luís"
+  },
+  {
+    "stateName": "Mato Grosso",
+    "abbreviation": "MT",
+    "areaCodeList": ["65", "66"],
+    "capital": "Cuiabá"
+  },
+  {
+    "stateName": "Mato Grosso do Sul",
+    "abbreviation": "MS",
+    "areaCodeList": ["67"],
+    "capital": "Campo Grande"
+  },
+  {
+    "stateName": "Minas Gerais",
+    "abbreviation": "MG",
+    "areaCodeList": ["31", "32", "33", "34", "35", "37", "38"],
+    "capital": "Belo Horizonte"
+  },
+  {
+    "stateName": "Pará",
+    "abbreviation": "PA",
+    "areaCodeList": ["91", "93", "94"],
+    "capital": "Belém"
+  },
+  {
+    "stateName": "Paraíba",
+    "abbreviation": "PB",
+    "areaCodeList": ["83"],
+    "capital": "João Pessoa"
+  },
+  {
+    "stateName": "Paraná",
+    "abbreviation": "PR",
+    "areaCodeList": ["41", "42", "43", "44", "45", "46"],
+    "capital": "Curitiba"
+  },
+  {
+    "stateName": "Pernambuco",
+    "abbreviation": "PE",
+    "areaCodeList": ["81", "87"],
+    "capital": "Recife"
+  },
+  {
+    "stateName": "Piauí",
+    "abbreviation": "PI",
+    "areaCodeList": ["86", "89"],
+    "capital": "Teresina"
+  },
+  {
+    "stateName": "Rio de Janeiro",
+    "abbreviation": "RJ",
+    "areaCodeList": ["21", "22", "24"],
+    "capital": "Rio de Janeiro"
+  },
+  {
+    "stateName": "Rio Grande do Norte",
+    "abbreviation": "RN",
+    "areaCodeList": ["84"],
+    "capital": "Natal"
+  },
+  {
+    "stateName": "Rio Grande do Sul",
+    "abbreviation": "RS",
+    "areaCodeList": ["51", "53", "54", "55"],
+    "capital": "Porto Alegre"
+  },
+  {
+    "stateName": "Rondônia",
+    "abbreviation": "RO",
+    "areaCodeList": ["69"],
+    "capital": "Porto Velho"
+  },
+  {
+    "stateName": "Roraima",
+    "abbreviation": "RR",
+    "areaCodeList": ["95"],
+    "capital": "Boa vista"
+  },
+  {
+    "stateName": "Santa Catarina",
+    "abbreviation": "SC",
+    "areaCodeList": ["47", "48", "49"],
+    "capital": "Florianópolis"
+  },
+  {
+    "stateName": "São Paulo",
+    "abbreviation": "SP",
+    "areaCodeList": ["11", "12", "13", "14", "15", "16", "17", "18", "19"],
+    "capital": "São Paulo"
+  },
+  {
+    "stateName": "Sergipe",
+    "abbreviation": "SE",
+    "areaCodeList": ["79"],
+    "capital": "Aracajú"
+  },
+  {
+    "stateName": "Tocantins",
+    "abbreviation": "TO",
+    "areaCodeList": ["63"],
+    "capital": "Palmas"
+  }
+]
