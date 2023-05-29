@@ -1,1 +1,1 @@
-console.log('utils');
+export { default as utils } from './lib/index';
