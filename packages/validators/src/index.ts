@@ -1,1 +1,1 @@
-console.log('olá');
+export { default as validators } from './lib/index';
