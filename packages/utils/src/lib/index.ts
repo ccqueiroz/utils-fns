@@ -4,6 +4,7 @@ import {
   searchCitiesByTerm,
   getCitiesListByState,
 } from './citiesBRDataList';
+
 import {
   countriesDataList,
   searchByAbbreviationAlpha3,
