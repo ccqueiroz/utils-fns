@@ -1,4 +1,4 @@
-# utils-fns
+# @utils-fns/utils
 
 ![npm](https://img.shields.io/npm/v/utils-fns)
 [![License](https://img.shields.io/github/license/ccqueiroz/utils-fns)](LICENSE)
