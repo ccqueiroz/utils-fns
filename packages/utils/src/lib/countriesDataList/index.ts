@@ -1,5 +1,5 @@
 /**
- * - Reference:
+ * - References:
  * https://countrycode.org/
  * https://www.itmnetworks.com.br/ddi-dos-paises-codigos-internacionais-de-telefone
  * https://www.dadosmundiais.com/

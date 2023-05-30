@@ -1,5 +1,5 @@
 /**
- * - Reference:
+ * - References:
  * https://www.cidade-brasil.com.br/
  * https://cidades.ibge.gov.br/
  * https://pt.wikipedia.org/wiki/Discagem_direta_%C3%A0_dist%C3%A2ncia
