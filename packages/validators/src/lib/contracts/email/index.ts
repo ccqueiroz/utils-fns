@@ -6,7 +6,7 @@ export type MinMaxParamsEmail = {
 export type ParamsValidatorEmail = {
   minMaxUserNameEmail?: MinMaxParamsEmail;
   minMaxEmailDomain?: MinMaxParamsEmail;
-  emailDomainName?: string;
+  emailDomainName?: RegExp;
 };
 
 export type EmailValidator = {
