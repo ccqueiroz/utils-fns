@@ -16,7 +16,7 @@
 - [x] **emailValidator**
 - [x] **cnpjValidator**
 - [x] **phoneValidator**
-- [ ] **creditcardValidator (luhn algorithm)**
+- [ ] **paymentCardValidator (luhn algorithm)**
 - [ ] **paymentSlipValidator (ITF-14)**
 - [ ] **stateRegistrationValidator (inscrição estadual - BR)**
 - [ ] **voterRegistrationValidation (título de eleitor - BR)**
