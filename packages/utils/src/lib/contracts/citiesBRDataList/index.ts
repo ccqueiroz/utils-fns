@@ -6,9 +6,7 @@ export type CitiesBRDataList = {
   state: string;
 };
 
-export type MapCitiesByState = {
-  [key in
-  | 'AC'
+export type CitiesByState = 'AC'
   | 'AL'
   | 'AP'
   | 'AM'
@@ -34,5 +32,8 @@ export type MapCitiesByState = {
   | 'SC'
   | 'SP'
   | 'SE'
-  | 'TO']: Array<CitiesBRDataList>;
+  | 'TO'
+
+export type MapCitiesByState = {
+  [key in CitiesByState]: Array<CitiesBRDataList>;
 };
