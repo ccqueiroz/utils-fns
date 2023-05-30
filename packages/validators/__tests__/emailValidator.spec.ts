@@ -58,7 +58,7 @@ describe('[VALIDATOR: EMAIL]', () => {
   });
   it('Should be return false value when email argument does not satisfy the rules paramsValidatorEmail with param emailDomainName a simple string', () => {
     const rules: ParamsValidatorEmail = {
-      emailDomainName: 'teste',
+      emailDomainName: RegExp(/teste/),
     };
     expect(
       validators.email({
@@ -69,7 +69,7 @@ describe('[VALIDATOR: EMAIL]', () => {
   });
   it('Should be return false value when email argument does not satisfy the rules paramsValidatorEmail with param emailDomainName a pattern regex string', () => {
     const rules: ParamsValidatorEmail = {
-      emailDomainName: '(gmail.com|hotmail.com)',
+      emailDomainName: RegExp(/(gmail.com|hotmail.com)/),
     };
     expect(
       validators.email({
@@ -80,7 +80,7 @@ describe('[VALIDATOR: EMAIL]', () => {
   });
   it('Shoulde be return true value when email argument satisfy all rules', () => {
     const rules: ParamsValidatorEmail = {
-      emailDomainName: '(gmail.com|hotmail.com)',
+      emailDomainName: RegExp(/(gmail.com|hotmail.com)/),
       minMaxEmailDomain: { min: 5, max: 10 },
       minMaxUserNameEmail: { min: 5, max: 26 },
     };

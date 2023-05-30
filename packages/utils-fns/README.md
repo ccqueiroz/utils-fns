@@ -15,7 +15,7 @@
 - [x] **nisValidator**
 - [x] **emailValidator**
 - [x] **cnpjValidator**
-- [ ] **phoneValidator**
+- [x] **phoneValidator**
 - [ ] **creditcardValidator (luhn algorithm)**
 - [ ] **paymentSlipValidator (ITF-14)**
 - [ ] **stateRegistrationValidator (inscrição estadual - BR)**
