@@ -14,11 +14,11 @@
         https://registro.br/dominio/regras/). If there is a need for minimum and/or maximum values for the domain, you should use the
         @param{paramsEmailValidator.minMaxEmailDomain}.
       * It may contain characters of type . - _, but there can't be sequences of these characters.
-      * If there is a need to validate a specific domain or with specific regex rules, you can use the @param{paramsEmailValidator.emailDomainName}.
+      * If there is a need to validate a specific domain or with specific regex rules, you can use the @param{paramsEmailValidator.emailDomainName} typeof RegExp.
 
     Example:
       const emailIsValid = emailValidator({ email: 'jon.doe@hotmail.com', paramsEmailValidator: {
-        emailDomainName: 'hotmail',
+        emailDomainName: RegExp(/hotmail/)',
         minMaxUserNameEmail: {max: 15}
       }});
       console.log('is it a valid email?: ', emailIsValid) // true
@@ -37,7 +37,7 @@ export const emailValidator = ({
 }: EmailValidator): boolean => {
   if (!email) return false;
   const patternValidator = `^(([a-zA-Z0-9][\-_.]{0,1})){${paramsEmailValidator?.minMaxUserNameEmail?.min ?? 1
-    },${paramsEmailValidator?.minMaxUserNameEmail?.max ?? ''}}([a-zA-Z0-9]@)${paramsEmailValidator?.emailDomainName ?? `(([a-zA-Z0-9][-.]{0,1}){${paramsEmailValidator?.minMaxEmailDomain?.min ?? 2
+    },${paramsEmailValidator?.minMaxUserNameEmail?.max ?? ''}}([a-zA-Z0-9]@)${paramsEmailValidator?.emailDomainName?.source ?? `(([a-zA-Z0-9][-.]{0,1}){${paramsEmailValidator?.minMaxEmailDomain?.min ?? 2
     },${paramsEmailValidator?.minMaxEmailDomain?.max ?? 26
     }})([a-zA-Z0-9][.]{1}[a-zA-Z0-9]+)$`}`;
 
