@@ -23,6 +23,8 @@ export type {
   MapCitiesByState,
 } from './contracts/index';
 
+import { luhnAlgorithm } from './lunhAlgorithm';
+
 const utils = {
   mapCitiesByState,
   searchCitiesByIBGECode,
@@ -33,6 +35,7 @@ const utils = {
   mapState,
   searchCountriesByAbbreviation,
   searchCountryByName,
+  luhnAlgorithm,
 };
 
 export default utils;
