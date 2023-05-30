@@ -21,9 +21,15 @@ export type {
   CountriesBRDataList,
   CountryData,
   MapCitiesByState,
+  BrandCardType,
+  CitiesByState,
+  NameBrandCard,
+  PaymentCardDataList,
 } from './contracts/index';
 
 import { luhnAlgorithm } from './lunhAlgorithm';
+
+import { mapPaymentCardList } from './paymentCardDataList';
 
 const utils = {
   mapCitiesByState,
@@ -36,6 +42,7 @@ const utils = {
   searchCountriesByAbbreviation,
   searchCountryByName,
   luhnAlgorithm,
+  mapPaymentCardList,
 };
 
 export default utils;
