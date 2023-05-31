@@ -6,6 +6,10 @@ const config: Config.InitialOptions = {
   transform: {
     '^.+\\.tsx?$': 'ts-jest',
   },
+  transformIgnorePatterns: [
+    '/node_modules/',
+    '/dist/cjs/'
+  ],
   clearMocks: true,
   coverageDirectory: 'coverage',
   collectCoverageFrom: [
@@ -29,6 +33,10 @@ const config: Config.InitialOptions = {
       transform: {
         '^.+\\.tsx?$': 'ts-jest',
       },
+      transformIgnorePatterns: [
+        '/node_modules/',
+        '/dist/cjs/'
+      ],
       testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
       testPathIgnorePatterns: ['/node_modules/', '/dist/'],
       testEnvironment: 'node',

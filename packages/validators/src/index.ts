@@ -1,1 +1,1 @@
-export { default as validators } from './lib/index';
+export { default as validators, TypesValidators } from './lib/index';

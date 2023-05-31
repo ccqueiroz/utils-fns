@@ -1,0 +1,146 @@
+{
+  "american-express": {
+    "innPattern": [34, 37],
+    "lengthsNumber": [15],
+    "brandCardType": "american-express",
+    "nameBrandCard": "American Express"
+  },
+  "diners-club": {
+    "innPattern": [30, 36, 38, 39],
+    "lengthsNumber": [14, 16, 19],
+    "brandCardType": "diners-club",
+    "nameBrandCard": "Diners Club"
+  },
+  "discover": {
+    "innPattern": [65, 6011, 644, 645, 646, 647, 648, 649],
+    "lengthsNumber": [16, 19],
+    "brandCardType": "discover",
+    "nameBrandCard": "Discover"
+  },
+  "elo": {
+    "innPattern": [
+      401178,
+      401179,
+      438935,
+      457631,
+      457632,
+      431274,
+      451416,
+      457393,
+      504175,
+      506699,
+      [506700, 506778],
+      [509000, 509999],
+      627780,
+      636297,
+      636368,
+      [650031, 650033],
+      [650035, 650051],
+      [650405, 650439],
+      [650485, 650538],
+      [650541, 650598],
+      [650700, 650718],
+      [650720, 650727],
+      [650901, 650978],
+      [651652, 651679],
+      [655000, 655019],
+      [655021, 655058]
+    ],
+    "lengthsNumber": [16],
+    "brandCardType": "elo",
+    "nameBrandCard": "Elo"
+  },
+  "hiper": {
+    "innPattern": [37095, 63737423, 63743358, 637568, 637599, 637609, 637612],
+    "lengthsNumber": [16],
+    "brandCardType": "hiper",
+    "nameBrandCard": "Hiper"
+  },
+  "hipercard": {
+    "innPattern": [606282],
+    "lengthsNumber": [16],
+    "brandCardType": "hipercard",
+    "nameBrandCard": "Hipercard"
+  },
+  "jcb": {
+    "innPattern": [2131, 1800, [3528, 3589]],
+    "lengthsNumber": [16, 17, 18, 19],
+    "brandCardType": "jcb",
+    "nameBrandCard": "JCB"
+  },
+  "maestro": {
+    "innPattern": [
+      6,
+      [56, 59],
+      63,
+      67,
+      493698,
+      [500000, 504174],
+      [504176, 506698],
+      [506779, 508999]
+    ],
+    "lengthsNumber": [16, 17, 18, 19],
+    "brandCardType": "maestro",
+    "nameBrandCard": "Maestro"
+  },
+  "mastercard": {
+    "innPattern": [
+      [51, 55],
+      [23, 26],
+      [223, 229],
+      [270, 271],
+      [2221, 2229],
+      2720
+    ],
+    "lengthsNumber": [16],
+    "brandCardType": "mastercard",
+    "nameBrandCard": "Mastercard"
+  },
+  "mir": {
+    "innPattern": [[2200, 2204]],
+    "lengthsNumber": [16, 17, 18, 19],
+    "brandCardType": "mir",
+    "nameBrandCard": "Mir"
+  },
+  "unionpay": {
+    "innPattern": [
+      620,
+      810,
+      [623, 626],
+      6270,
+      6272,
+      6276,
+      [6282, 6289],
+      6291,
+      6292,
+      [8110, 8131],
+      [8132, 8151],
+      [8152, 8163],
+      [8164, 8171],
+      [62100, 62182],
+      [62184, 62187],
+      [62185, 62197],
+      [62200, 62205],
+      [62207, 62209],
+      [622010, 622999],
+      622018,
+      [627700, 627779],
+      [627781, 627799]
+    ],
+    "lengthsNumber": [14, 15, 16, 17, 18, 19],
+    "brandCardType": "unionpay",
+    "nameBrandCard": "UnionPay"
+  },
+  "visa": {
+    "innPattern": [4],
+    "lengthsNumber": [13, 16, 19],
+    "brandCardType": "visa",
+    "nameBrandCard": "Visa"
+  },
+  "visa-electron": {
+    "innPattern": [4026, 4508, 4844, 4913, 4917, 417500],
+    "lengthsNumber": [16],
+    "brandCardType": "visa-electron",
+    "nameBrandCard": "Visa Electron"
+  }
+}

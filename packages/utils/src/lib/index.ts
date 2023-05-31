@@ -16,14 +16,33 @@ import {
   searchCountryByName,
 } from './statesBRDataList';
 
-export type {
+import type {
   CitiesBRDataList,
   CountriesBRDataList,
   CountryData,
   MapCitiesByState,
+  BrandCardType,
+  CitiesByState,
+  NameBrandCard,
+  PaymentCardDataList,
+  PaymentCardData,
 } from './contracts/index';
 
+export type TypesUtils = {
+  CitiesBRDataList: CitiesBRDataList;
+  CountriesBRDataList: CountriesBRDataList;
+  CountryData: CountryData;
+  MapCitiesByState: MapCitiesByState;
+  BrandCardType: BrandCardType;
+  CitiesByState: CitiesByState;
+  NameBrandCard: NameBrandCard;
+  PaymentCardDataList: PaymentCardDataList;
+  PaymentCardData: PaymentCardData;
+};
+
 import { luhnAlgorithm } from './lunhAlgorithm';
+
+import { mapPaymentCardList } from './paymentCardDataList';
 
 const utils = {
   mapCitiesByState,
@@ -36,6 +55,7 @@ const utils = {
   searchCountriesByAbbreviation,
   searchCountryByName,
   luhnAlgorithm,
+  mapPaymentCardList,
 };
 
 export default utils;

@@ -36,6 +36,6 @@ describe('[UTILS: LUNHALGORITHM]', () => {
     expect(utils.luhnAlgorithm([1, 3, 5, 7, 9, 0])).toBe(22);
   });
   it('Should be returning the result correctly when passed string array', () => {
-    expect(utils.luhnAlgorithm(['1', '3', '5', '7', '9', 0])).toBe(22);
+    expect(utils.luhnAlgorithm(['1', '3', '5', '7', '9'])).toBe(22);
   });
 });

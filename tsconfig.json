@@ -34,5 +34,7 @@
 
     /* Completeness */
     "skipLibCheck": true /* Skip type checking all .d.ts files. */
-  }
+  },
+  "include": ["src/**/*", "packages/*/src/**/*"],
+  "exclude": ["node_modules", "dist", "jest", "coverage"]
 }

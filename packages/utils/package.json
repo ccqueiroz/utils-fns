@@ -1,6 +1,6 @@
 {
   "name": "@utils-fns/utils",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "main": "dist/cjs/index.ts",
   "module": "dist/esm/index.ts",
   "types": "dist/index.d.ts",
@@ -40,5 +40,6 @@
   "dependencies": {},
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "jest": "../../jest.config.ts"
 }
