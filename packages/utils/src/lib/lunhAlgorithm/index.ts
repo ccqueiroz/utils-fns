@@ -5,8 +5,8 @@ export const luhnAlgorithm = (value: string | Array<string | number>) => {
 
   value = value
     .map((item) => item.toString().replace(/\D/g, ''))
-    .filter(Boolean)
-    .reverse();
+    .filter(Boolean);
+
   if (value.every((item) => !item)) return null;
   const result = value.reduce(callbackReducerLunhAlgorithm, 0);
   return +result;
@@ -17,13 +17,10 @@ const callbackReducerLunhAlgorithm = (
   currentValue: string | number,
   currentIndex: number,
 ) => {
-  if (currentIndex % 2 === 0) {
+  if (currentIndex % 2 !== 0) {
     return Number(accumulator) + Number(currentValue);
   }
   const multiplyBy2 = Number(currentValue) * 2;
-  const sum =
-    multiplyBy2 > 9
-      ? Number(multiplyBy2.toString()[0]) + Number(multiplyBy2.toString()[1])
-      : multiplyBy2;
+  const sum = multiplyBy2 > 9 ? (multiplyBy2 % 10) + 1 : multiplyBy2;
   return Number(accumulator) + sum;
 };
