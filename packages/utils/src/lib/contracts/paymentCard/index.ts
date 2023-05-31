@@ -28,11 +28,13 @@ export type NameBrandCard =
   | 'Visa'
   | 'Visa Electron';
 
+export type PaymentCardData = {
+  innPattern: Array<number | Array<number>>;
+  lengthsNumber: Array<number>;
+  brandCardType: BrandCardType;
+  nameBrandCard: NameBrandCard;
+};
+
 export type PaymentCardDataList = {
-  [key in BrandCardType]: {
-    innPattern: Array<number | Array<number>>;
-    lengthsNumber: Array<number>;
-    brandCardType: BrandCardType;
-    nameBrandCard: NameBrandCard;
-  };
+  [key in BrandCardType]: PaymentCardData;
 };
