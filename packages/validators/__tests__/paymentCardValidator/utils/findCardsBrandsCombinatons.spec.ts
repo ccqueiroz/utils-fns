@@ -10,7 +10,7 @@ describe('[VALIDATORS:FINDCARDSBRANDSCOMBINATONS]', () => {
       }).length,
     ).toBe(0);
   });
-  it('Should be return card brand data when cardNumer matches patternINN even without passing which card brand you want to analyze', () => {
+  it('Should be return card brand data when cardNumber matches patternINN even without passing which card brand you want to analyze', () => {
     const cardNumberVisa = '4539 0996 8888 0180';
     const cardNumberMaster = '5591 2058 3338 2988';
     const cardNumberHiper = '6062 8253 2645 5914';
