@@ -1,1 +1,1 @@
-export { default as utils } from './lib/index';
+export { default as utils, TypesUtils } from './lib/index';
