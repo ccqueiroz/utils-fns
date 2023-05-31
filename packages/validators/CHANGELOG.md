@@ -1,5 +1,11 @@
 # @utils-fns/validators
 
+## 2.2.0
+
+### Minor Changes
+
+- checked completion task paymentCardValidator
+
 ## 2.1.0
 
 ### Minor Changes
