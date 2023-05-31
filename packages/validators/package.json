@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "@caiocezarqueiroz/eslint-config": "^1.0.20",
+    "@utils-fns/utils": "*",
     "@rollup/plugin-commonjs": "^25.0.0",
     "@rollup/plugin-json": "^6.0.0",
     "@rollup/plugin-node-resolve": "^15.0.2",

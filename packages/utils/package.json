@@ -40,5 +40,6 @@
   "dependencies": {},
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "jest": "../../jest.config.ts"
 }
