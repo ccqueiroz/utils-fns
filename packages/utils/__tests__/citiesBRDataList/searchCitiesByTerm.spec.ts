@@ -1,7 +1,7 @@
 import { utils } from '../../src/index';
 import dataJsonCities from '../../src/lib/citiesBRDataList/data.json';
 
-describe('[UTILS: SearchCitiesByTerm]', () => {
+describe('[UTILS: SEARCH_CITIES_BY_TERM]', () => {
   it('Should be return array with all cities in the state when this function is called without term param.', () => {
     expect(utils.searchCitiesByTerm('CE').length).toEqual(
       dataJsonCities['CE'].length,

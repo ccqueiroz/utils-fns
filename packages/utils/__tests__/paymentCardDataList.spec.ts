@@ -1,6 +1,6 @@
 import { utils } from '../src';
 import dataJson from '../src/lib/paymentCardDataList/data.json';
-describe('[UTILS: PAYMENTCARDDATALIST]', () => {
+describe('[UTILS: PAYMENT_CARD_DATA_LIST]', () => {
   it('Should be return the listing with the registered data payment cards', () => {
     Object.keys(dataJson).forEach((key) => {
       expect(

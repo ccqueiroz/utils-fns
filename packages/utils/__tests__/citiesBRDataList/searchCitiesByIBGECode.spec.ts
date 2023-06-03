@@ -1,7 +1,7 @@
 import { utils } from '../../src/index';
 import dataJsonCities from '../../src/lib/citiesBRDataList/data.json';
 
-describe('[UTILS: SearchCitiesByIBGECode]', () => {
+describe('[UTILS: SEARCH_CITIES_BY_IBGE_CODE]', () => {
   it('Should be return array with all cities in the state when this function is called without ibgeCode param.', () => {
     expect(utils.searchCitiesByIBGECode('CE').length).toEqual(
       dataJsonCities['CE'].length,
