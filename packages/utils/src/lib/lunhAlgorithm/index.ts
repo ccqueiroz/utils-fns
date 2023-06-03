@@ -1,3 +1,20 @@
+/**
+ *
+ * @param value
+ * @returns number | null
+ *
+ * @summary
+ * is a simple checksum formula used to validate a variety of identification numbers
+ * The check digit is calculated as follows:
+
+ * If the number already contains the check digit, drop that digit to form the "payload". The check digit is usually the last digit.
+ * With the payload, start with the rightmost digit. Moving left, double the value of every second digit (including the rightmost digit).
+ * Add the resulting digit values together.
+ *
+ * References:
+ * @link https://en.wikipedia.org/wiki/Luhn_algorithm
+ *
+ */
 export const luhnAlgorithm = (value: string | Array<string | number>) => {
   if (!value.length || (Array.isArray(value) && value.every((item) => !item)))
     return null;
@@ -5,7 +22,8 @@ export const luhnAlgorithm = (value: string | Array<string | number>) => {
 
   value = value
     .map((item) => item.toString().replace(/\D/g, ''))
-    .filter(Boolean);
+    .filter(Boolean)
+    .reverse();
 
   if (value.every((item) => !item)) return null;
   const result = value.reduce(callbackReducerLunhAlgorithm, 0);

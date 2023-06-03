@@ -1,6 +1,6 @@
 import { utils } from '../src';
 
-describe('[UTILS: LUNHALGORITHM]', () => {
+describe('[UTILS: LUNH_ALGORITHM]', () => {
   it('Should be return null when not passed value in argument', () => {
     expect(utils.luhnAlgorithm('')).toBe(null);
     expect(utils.luhnAlgorithm([])).toBe(null);
@@ -10,11 +10,11 @@ describe('[UTILS: LUNHALGORITHM]', () => {
     expect(utils.luhnAlgorithm('foo-bar')).toBe(null);
   });
   it('Should be return result algorithm when passed value valid', () => {
-    expect(utils.luhnAlgorithm('135790')).toBe(22);
+    expect(utils.luhnAlgorithm('135790')).toBe(26);
     expect(typeof utils.luhnAlgorithm('135790')).toBe('number');
   });
   it('Should be returning the result from calculations where the array or char items are numeric formatted.', () => {
-    expect(utils.luhnAlgorithm('abc135790def-')).toBe(22);
+    expect(utils.luhnAlgorithm('abc135790def-')).toBe(26);
     expect(
       utils.luhnAlgorithm([
         'a',
@@ -30,10 +30,10 @@ describe('[UTILS: LUNHALGORITHM]', () => {
         'ef',
         '-',
       ]),
-    ).toBe(22);
+    ).toBe(26);
   });
   it('Should be returning the result correctly when passed number array', () => {
-    expect(utils.luhnAlgorithm([1, 3, 5, 7, 9, 0])).toBe(22);
+    expect(utils.luhnAlgorithm([1, 3, 5, 7, 9, 0])).toBe(26);
   });
   it('Should be returning the result correctly when passed string array', () => {
     expect(utils.luhnAlgorithm(['1', '3', '5', '7', '9'])).toBe(22);
