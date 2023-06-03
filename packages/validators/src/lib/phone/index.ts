@@ -1,7 +1,14 @@
+import { normalizeToValidation } from '../../helpers/normalizeToValidation';
+import { PhoneValidator } from '../contracts/phone';
 /**
+ @param {Object} PhoneValidator
+ @returns boolean
+
+ @summary
   Motivation:
     - Phone number test with validations of mobile phone numbers (BR), public utility numbers (BR),
       numbers without area code (BR), international numbers and custom validations with regex patterns.
+
   Details:
     - Numbering structure of a telephone number:
         CC = Coutry Code;
@@ -11,14 +18,14 @@
         reference: https://www.itu.int/rec/T-REC-E.164-201011-I/en
 
     - Validation priority order:
-      * If there is @param{paramsPhoneValidator}, the following order is parsed:
-        1º: If there is @param{param Phone Validator.custom Pattern Phone};
+      * If there is paramsPhoneValidator, the following order is parsed:
+        1º: If there is param Phone Validator.custom Pattern Phone;
         2º: Whether validation should occur with international phone numbers, based on E.164;
         3º: Whether validation should only occur with mobile phone numbers (BR);
-            - If @param{paramsPhoneValidator.onlyMobilePhoneBR} is true, there is a condition that
-              validation occurs with or without the DDD digits, with @param{paramsPhoneValidator.numberWithoutCodeAreas}.
+            - If paramsPhoneValidator.onlyMobilePhoneBR is true, there is a condition that
+              validation occurs with or without the DDD digits, with paramsPhoneValidator.numberWithoutCodeAreas.
         4º: Whether validation should occur only for public utility numbers;
-      * If there is no @param{paramsPhoneValidator} or if you have @param{paramsPhoneValidator.numberWithoutCodeAreas},
+      * If there is no paramsPhoneValidator or if you have paramsPhoneValidator.numberWithoutCodeAreas},
             validation will occur with standard Brazilian numbers.
 
     - Rules for telephone numbering in Brazil:
@@ -33,9 +40,6 @@
         - Composed of 3 to 4 numbers, starting with the digit 1.
       reference: https://www.teleco.com.br/num.asp
  */
-import { normalizeToValidation } from '../../helpers/normalizeToValidation';
-import { PhoneValidator } from '../contracts/phone';
-
 export const phoneValidator = ({
   phone,
   paramsPhoneValidator,
