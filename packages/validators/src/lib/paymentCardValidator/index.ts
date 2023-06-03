@@ -1,5 +1,4 @@
 import { normalizeToValidation } from '../../helpers/normalizeToValidation';
-import { lunhMod10Algorithm } from './utils/lunhMod10Algorithm';
 import { PaymentCardValidator } from './../contracts/index';
 import { utils } from '@utils-fns/utils';
 import { findCardsBrandsCombinations } from './utils/findCardsBrandsCombinations';
@@ -9,8 +8,8 @@ export const paymentCardValidator = ({
   paramsPaymentCardValidator,
 }: PaymentCardValidator) => {
   cardNumber = normalizeToValidation({ value: cardNumber });
-
   if (!cardNumber) return false;
+
   if (paramsPaymentCardValidator) {
     const { customPatternPaymentCard, specificBrandCard } =
       paramsPaymentCardValidator;
@@ -18,7 +17,13 @@ export const paymentCardValidator = ({
     if (customPatternPaymentCard)
       return customPatternPaymentCard.test(cardNumber);
 
-    if (!lunhMod10Algorithm(cardNumber)) return false;
+    if (
+      !utils.lunhMod10Algorithm({
+        digits: cardNumber,
+        reverseNumbers: true,
+      })
+    )
+      return false;
 
     if (specificBrandCard) {
       const brandCard = utils.mapPaymentCardList[specificBrandCard];
@@ -31,7 +36,13 @@ export const paymentCardValidator = ({
     }
   }
 
-  if (!lunhMod10Algorithm(cardNumber)) return false;
+  if (
+    !utils.lunhMod10Algorithm({
+      digits: cardNumber,
+      reverseNumbers: true,
+    })
+  )
+    return false;
   return (
     findCardsBrandsCombinations({
       cardNumber: cardNumber,
