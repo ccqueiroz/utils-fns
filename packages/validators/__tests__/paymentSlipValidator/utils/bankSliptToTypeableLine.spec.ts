@@ -10,7 +10,7 @@ describe('[VALIDATOR: BANK_PAYMENTS_TYPEABLE_LINE]', () => {
     ).toBeTruthy();
     expect(
       bankSlipTypeableLine({
-        digits: '6559000002004425000059405905000819429000000605012214', //valid code
+        digits: '6559000002004425000059405905000819429000000605012214', //invalid code
       }),
     ).toBeFalsy();
     expect(
@@ -161,4 +161,3 @@ describe('[VALIDATOR: BANK_PAYMENTS_TYPEABLE_LINE]', () => {
     ).toBeFalsy();
   });
 });
-//65590.00002 00442.500005 94059.050008 1 94290000006050
