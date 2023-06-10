@@ -16,6 +16,8 @@
 - [x] **Data List States (BR)**
 - [x] **Data List Countries**
 - [x] **Lunh Algorithm**
+- [x] **Lunh Algorithm Mod10**
+- [x] **Lunh Algorithm Mod11**
 - [x] **Payment Card Data List**
 - [ ] **Sorting Algorithms**
   - [ ] **Bubble Sort**

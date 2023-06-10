@@ -4,6 +4,7 @@ import { nisValidator as nis } from './nis/index';
 import { cpfValidator as cpf } from './cpf/index';
 import { phoneValidator as phone } from './phone';
 import { paymentCardValidator } from './paymentCardValidator/index';
+import { paymentSlipValidator } from './paymentSlipValidator/index';
 
 import type {
   EmailValidator,
@@ -16,6 +17,10 @@ import type {
   ParamsPaymentCardValidator,
   PaymentCardValidator,
   TypeCard,
+  paymentSlipSegmentType,
+  paymentSlipSegmentIdentification,
+  PaymentSlipValidator,
+  ParamsPaymentSlipValidator,
 } from './contracts/index';
 
 export type TypesValidators = {
@@ -29,6 +34,10 @@ export type TypesValidators = {
   ParamsPaymentCardValidator: ParamsPaymentCardValidator;
   PaymentCardValidator: PaymentCardValidator;
   TypeCard: TypeCard;
+  PaymentSlipSegmentIdentification: typeof paymentSlipSegmentIdentification;
+  PaymentSlipSegmentType: typeof paymentSlipSegmentType;
+  PaymentSlipValidator: PaymentSlipValidator;
+  ParamsPaymentSlipValidator: ParamsPaymentSlipValidator;
 };
 
 const validators = {
@@ -38,6 +47,7 @@ const validators = {
   nis,
   phone,
   paymentCardValidator,
+  paymentSlipValidator,
 };
 
 export default validators;

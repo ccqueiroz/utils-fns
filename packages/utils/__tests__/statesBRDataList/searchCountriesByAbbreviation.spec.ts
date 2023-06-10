@@ -1,7 +1,7 @@
 import { utils } from '../../src/index';
 import dataJsonStates from '../../src/lib/statesBRDataList/data.json';
 
-describe('[UTILS: SearchCitiesByTerm]', () => {
+describe('[UTILS: SEARCH_STATES_BY_TERM]', () => {
   it('Should be return array with all states when this function is called without term param.', () => {
     expect(utils.searchCountriesByAbbreviation().length).toEqual(
       dataJsonStates.length,

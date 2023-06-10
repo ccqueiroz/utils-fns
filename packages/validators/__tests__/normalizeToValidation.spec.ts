@@ -1,6 +1,6 @@
 import { normalizeToValidation } from '../src/helpers/normalizeToValidation/index';
 
-describe('[HELPERS: NormalizeToValidation]', () => {
+describe('[HELPERS: NORMALIZE_TO_VALIDATION]', () => {
   it('Should be return false value when no arguments are passed', () => {
     expect(normalizeToValidation({})).toBeFalsy();
   });

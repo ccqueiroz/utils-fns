@@ -1,6 +1,6 @@
 import validators from '@utils-fns/validators/src/lib/index';
 
-describe('[VALIDATORS: PAYMENTCARDVALIDATOR]', () => {
+describe('[VALIDATORS: PAYMENT_CARD_VALIDATOR]', () => {
   it('Should be return false when cardNumber is not passed', () => {
     expect(validators.paymentCardValidator({ cardNumber: '' })).toBeFalsy();
   });
@@ -62,7 +62,16 @@ describe('[VALIDATORS: PAYMENTCARDVALIDATOR]', () => {
   it('Should be return true when specificBrandCard is passed and the cardNumber matches the check', () => {
     const cardVisa = '4532 7051 3670 1706';
     const cardMastercard = '5474 7438 8427 0241';
+    const cardDinnersClub = '3014 842898 5841';
     const cardNotValid = '5474 7438 8427 0241';
+    expect(
+      validators.paymentCardValidator({
+        cardNumber: cardDinnersClub,
+        paramsPaymentCardValidator: {
+          specificBrandCard: 'diners-club',
+        },
+      }),
+    ).toBeTruthy();
     expect(
       validators.paymentCardValidator({
         cardNumber: cardVisa,

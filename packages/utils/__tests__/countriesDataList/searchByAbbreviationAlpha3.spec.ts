@@ -1,7 +1,7 @@
 import { utils } from '../../src/index';
 import dataJsonCountries from '../../src/lib/countriesDataList/data.json';
 
-describe('[UTILS: SearchByAbbreviationAlpha3]', () => {
+describe('[UTILS: SEARCH_ABREVVIATION_ALPHA3]', () => {
   it('Should be return array with all countries when this function is called without term param.', () => {
     expect(utils.searchByAbbreviationAlpha3().length).toEqual(
       dataJsonCountries.length,

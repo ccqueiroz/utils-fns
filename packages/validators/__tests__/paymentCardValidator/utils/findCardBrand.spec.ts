@@ -33,7 +33,7 @@ describe('[VALIDATORS:FINDCARDBRAND]', () => {
       )?.value,
     ).toBe('visa');
   });
-  it('Should be return card brand data with card number dont correctly to card brand type', () => {
+  it('Should not be return card brand data with card number correct, but the card brand incorrect', () => {
     const cardBrandDataList = utils.mapPaymentCardList;
     const arrayBrandsCombinatons: Array<TypesUtils['PaymentCardData']> = [];
     findCardBrand({
