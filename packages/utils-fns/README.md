@@ -17,7 +17,7 @@
 - [x] **cnpjValidator**
 - [x] **phoneValidator**
 - [x] **paymentCardValidator (luhn algorithm)**
-- [ ] **paymentSlipValidator (ITF-14)**
+- [x] **paymentSlipValidator (ITF-14)**
 - [ ] **stateRegistrationValidator (inscrição estadual - BR)**
 - [ ] **voterRegistrationValidation (título de eleitor - BR)**
 - [ ] **cnhValidator**
@@ -51,6 +51,8 @@
 - [x] **Data List States (BR)**
 - [x] **Data List Countries**
 - [x] **Lunh Algorithm**
+- [x] **Lunh Algorithm Mod10**
+- [x] **Lunh Algorithm Mod11**
 - [x] **Payment Card Data List**
 - [ ] **Sorting Algorithms**
   - [ ] **Bubble Sort**
