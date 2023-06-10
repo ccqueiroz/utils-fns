@@ -17,7 +17,7 @@ export const lunhMod10Algorithm = ({
   digits,
   onlyValidCheckDigit = false,
   reverseNumbers = false,
-}: LunhMod10Algorithm) => {
+}: LunhMod10Algorithm): boolean => {
   const originalValue = digits;
   const checkDigit = digits.charAt(digits.length - 1);
   digits = digits.substring(0, digits.length - 1);
@@ -37,5 +37,5 @@ export const lunhMod10Algorithm = ({
     reverseNumbers ? originalValue.split('').reverse().join('') : originalValue,
   );
 
-  return validateMod10 && validateMod10 % 10 === 0;
+  return Boolean(validateMod10 && validateMod10 % 10 === 0);
 };
