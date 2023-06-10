@@ -1,5 +1,17 @@
 # @utils-fns/utils-fns
 
+## 3.0.1
+
+### Patch Changes
+
+- add new feature paymentslip validator
+
+## 3.0.0
+
+### Major Changes
+
+- add payment slip validator with new feature
+
 ## 2.2.0
 
 ### Minor Changes
