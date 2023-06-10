@@ -1,9 +1,9 @@
 /* eslint-disable prettier/prettier */
 import { PaymentSlipValidator } from '../../../../contracts/paymentSlipValidator';
 import { utils, TypesUtils } from '@utils-fns/utils';
-import { convertDatePaymentoSlipToDate } from '../../convertDate';
+import { convertDatePaymentoSlipToDate } from '../convertDate';
 import { validAmount } from '../../validAmount';
-import { mod11AlgorithmAdapter } from '../mod11AlgorithAdapter';
+import { mod11AlgorithmAdapter } from '../../mod11AlgorithAdapter';
 interface BankSlipTypeableLine extends PaymentSlipValidator {
   digits: string;
 }

@@ -33,5 +33,5 @@ export const validAmount = (
     }).format(Number(amountReference))
     : null;
 
-    return Boolean(normalizeAmount && normalizeAmountReference && normalizeAmount === normalizeAmountReference);
+  return Boolean(normalizeAmount && normalizeAmountReference && normalizeAmount === normalizeAmountReference);
 };

@@ -1,13 +1,13 @@
 /* eslint-disable prettier/prettier */
 import { PaymentSlipValidator } from '../../../contracts/paymentSlipValidator';
-import { bankSlipBarCode } from './bankSlipBarCode';
-import { bankSlipTypeableLine } from './bankSlipTypeableLine';
+import { taxCollectionBarCode } from './taxCollectionBarCode';
+import { taxCollectionTypeableLine } from './taxCollectionTypeableLine/index';
 
-interface BankSlip extends PaymentSlipValidator {
+interface TaxCollectionSlip extends PaymentSlipValidator {
   digits: string;
 }
 
-export const bankSlip = ({ digits, paramsPaymentSlipValidator }: BankSlip) => {
+export const taxColletionSlip = ({ digits, paramsPaymentSlipValidator }: TaxCollectionSlip) => {
   const barCodeOrTypeableLine = {
     barcode: { type: 'Cód. Barras', key: 'barcode' },
     typeable_line: { type: 'Linha Digitável', key: 'typeable_line' },
@@ -16,7 +16,7 @@ export const bankSlip = ({ digits, paramsPaymentSlipValidator }: BankSlip) => {
   const isBarCodeOrTypeableLine =
     digits.length === 44
       ? barCodeOrTypeableLine.barcode.key
-      : digits.length === 47
+      : digits.length === 48
         ? barCodeOrTypeableLine.typeable_line.key
         : undefined;
 
@@ -30,12 +30,12 @@ export const bankSlip = ({ digits, paramsPaymentSlipValidator }: BankSlip) => {
   }
 
   if (isBarCodeOrTypeableLine === barCodeOrTypeableLine.barcode.key) {
-    return bankSlipBarCode({ digits, paramsPaymentSlipValidator });
+    return taxCollectionBarCode({ digits, paramsPaymentSlipValidator });
   }
   else if (
     isBarCodeOrTypeableLine === barCodeOrTypeableLine.typeable_line.key
   ) {
-    return bankSlipTypeableLine({ digits, paramsPaymentSlipValidator });
+    return taxCollectionTypeableLine({ digits, paramsPaymentSlipValidator });
   } else {
     return false;
   }
