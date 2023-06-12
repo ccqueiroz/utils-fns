@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { PaymentSlipValidator } from '../../../../contracts/paymentSlipValidator';
 import { utils, TypesUtils } from '@utils-fns/utils';
 import { validAmount } from '../../validAmount';
@@ -24,39 +23,38 @@ export const bankSlipBarCode = ({
     digits.slice(19, digits.length), //otherInfos
   ];
 
-  const [
-    bankCode,
-    ,
-    verifyingDigit,
-    expiration,
-    amount,
-    ,
-  ] = digitBlocks;
+  const [bankCode, , verifyingDigit, expiration, amount, ,] = digitBlocks;
 
   const digitsToMod11 = digitBlocks
     .filter((_, currentIndex) => currentIndex !== 2)
     .join('');
-  ;
-
-  const checkDigitWithMod11 = mod11AlgorithmAdapter(digitsToMod11, verifyingDigit);
+  const checkDigitWithMod11 = mod11AlgorithmAdapter(
+    digitsToMod11,
+    verifyingDigit,
+  );
   if (!checkDigitWithMod11) return false;
   if (paramsPaymentSlipValidator) {
     const { validByBank, validByDate, validByPrice } =
       paramsPaymentSlipValidator;
     if (validByBank) {
-      const validBank = validByBank.length === 3 ?
-        bankCode === validByBank.toString() :
-        utils.filterBankByCode(bankCode as TypesUtils['BankCode']) === validByBank;
+      const validBank =
+        validByBank.length === 3
+          ? bankCode === validByBank.toString()
+          : utils.filterBankByCode(bankCode as TypesUtils['BankCode']) ===
+            validByBank;
       if (!validBank) return false;
     }
     if (validByPrice) {
       const price = validAmount(amount, validByPrice);
       if (!price) return false;
-    };
+    }
     if (validByDate) {
-      const date = convertDatePaymentoSlipToDate(expiration, new Date(validByDate));
+      const date = convertDatePaymentoSlipToDate(
+        expiration,
+        new Date(validByDate),
+      );
       if (!date) return false;
-    };
+    }
   }
   return checkDigitWithMod11;
 };

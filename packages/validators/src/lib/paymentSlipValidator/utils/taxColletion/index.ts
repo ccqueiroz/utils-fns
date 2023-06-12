@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { PaymentSlipValidator } from '../../../contracts/paymentSlipValidator';
 import { taxCollectionBarCode } from './taxCollectionBarCode';
 import { taxCollectionTypeableLine } from './taxCollectionTypeableLine/index';
@@ -7,7 +6,10 @@ interface TaxCollectionSlip extends PaymentSlipValidator {
   digits: string;
 }
 
-export const taxColletionSlip = ({ digits, paramsPaymentSlipValidator }: TaxCollectionSlip) => {
+export const taxColletionSlip = ({
+  digits,
+  paramsPaymentSlipValidator,
+}: TaxCollectionSlip) => {
   const barCodeOrTypeableLine = {
     barcode: { type: 'Cód. Barras', key: 'barcode' },
     typeable_line: { type: 'Linha Digitável', key: 'typeable_line' },
@@ -17,13 +19,18 @@ export const taxColletionSlip = ({ digits, paramsPaymentSlipValidator }: TaxColl
     digits.length === 44
       ? barCodeOrTypeableLine.barcode.key
       : digits.length === 48
-        ? barCodeOrTypeableLine.typeable_line.key
-        : undefined;
+      ? barCodeOrTypeableLine.typeable_line.key
+      : undefined;
 
-  const validByIfIsBarCodeOrTypeableLine = paramsPaymentSlipValidator?.validByIfIsBarCodeOrTypeableLine;
+  const validByIfIsBarCodeOrTypeableLine =
+    paramsPaymentSlipValidator?.validByIfIsBarCodeOrTypeableLine;
 
-  const isTypeMismatch = validByIfIsBarCodeOrTypeableLine &&
-    validByIfIsBarCodeOrTypeableLine !== barCodeOrTypeableLine[isBarCodeOrTypeableLine as keyof typeof barCodeOrTypeableLine]?.type;
+  const isTypeMismatch =
+    validByIfIsBarCodeOrTypeableLine &&
+    validByIfIsBarCodeOrTypeableLine !==
+      barCodeOrTypeableLine[
+        isBarCodeOrTypeableLine as keyof typeof barCodeOrTypeableLine
+      ]?.type;
 
   if (isTypeMismatch) {
     return false;
@@ -31,8 +38,7 @@ export const taxColletionSlip = ({ digits, paramsPaymentSlipValidator }: TaxColl
 
   if (isBarCodeOrTypeableLine === barCodeOrTypeableLine.barcode.key) {
     return taxCollectionBarCode({ digits, paramsPaymentSlipValidator });
-  }
-  else if (
+  } else if (
     isBarCodeOrTypeableLine === barCodeOrTypeableLine.typeable_line.key
   ) {
     return taxCollectionTypeableLine({ digits, paramsPaymentSlipValidator });

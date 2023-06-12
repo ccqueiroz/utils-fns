@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 /**
  * @param {string | number | Array<string | number>} amount - amount extracted from the payment slip
  * @param {string | number | Array<string | number> | undefined} amountReference - value entered as an argument for validation
@@ -21,17 +20,21 @@ export const validAmount = (
 
   const normalizeAmount = amount
     ? new Intl.NumberFormat('pt-BR', {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    }).format(Number(amount))
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      }).format(Number(amount))
     : null;
 
   const normalizeAmountReference = amountReference
     ? new Intl.NumberFormat('pt-BR', {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    }).format(Number(amountReference))
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      }).format(Number(amountReference))
     : null;
 
-  return Boolean(normalizeAmount && normalizeAmountReference && normalizeAmount === normalizeAmountReference);
+  return Boolean(
+    normalizeAmount &&
+      normalizeAmountReference &&
+      normalizeAmount === normalizeAmountReference,
+  );
 };

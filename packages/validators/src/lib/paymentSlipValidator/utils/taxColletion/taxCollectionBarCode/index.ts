@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import {
   PaymentSlipValidator,
   paymentSlipSegmentIdentification,
@@ -62,7 +61,7 @@ export const taxCollectionBarCode = ({
     if (validSegmentType) {
       const getValidSegmentType =
         paymentSlipSegmentIdentification[
-        segmentType as keyof typeof paymentSlipSegmentIdentification
+          segmentType as keyof typeof paymentSlipSegmentIdentification
         ];
       if (paymentSlipSegmentType[getValidSegmentType] !== validSegmentType)
         return false;
@@ -75,7 +74,10 @@ export const taxCollectionBarCode = ({
 
     if (validByDate) {
       const expiration = blockFreeField.slice(0, 8);
-      const validDate = convertDatePaymentSlipTaxCollection(expiration, validByDate);
+      const validDate = convertDatePaymentSlipTaxCollection(
+        expiration,
+        validByDate,
+      );
       if (!validDate) return false;
     }
   }
