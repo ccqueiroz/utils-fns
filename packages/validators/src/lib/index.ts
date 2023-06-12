@@ -3,7 +3,7 @@ import { cnpjValidator as cnpj } from './cnpj/index';
 import { nisValidator as nis } from './nis/index';
 import { cpfValidator as cpf } from './cpf/index';
 import { phoneValidator as phone } from './phone';
-import { paymentCardValidator } from './paymentCardValidator/index';
+import { PaymentCardValidator as ClassPaymentCardValidator } from './paymentCardValidator/index';
 import { paymentSlipValidator } from './paymentSlipValidator/index';
 
 import type {
@@ -46,7 +46,7 @@ const validators = {
   email,
   nis,
   phone,
-  paymentCardValidator,
+  paymentCardValidator: ClassPaymentCardValidator.init,
   paymentSlipValidator,
 };
 
