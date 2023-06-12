@@ -25,7 +25,7 @@
     "@babel/core": "^7.22.1",
     "@babel/preset-env": "^7.22.4",
     "@babel/preset-typescript": "^7.21.5",
-    "@caiocezarqueiroz/eslint-config": "^1.0.21",
+    "@caiocezarqueiroz/eslint-config": "^1.0.22",
     "@changesets/cli": "^2.26.1",
     "@rollup/plugin-commonjs": "^25.0.0",
     "@rollup/plugin-json": "^6.0.0",
