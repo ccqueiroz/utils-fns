@@ -1,5 +1,11 @@
 # @utils-fns/utils-fns
 
+## 3.0.2
+
+### Patch Changes
+
+- adjust config eslint + prettier
+
 ## 3.0.1
 
 ### Patch Changes
