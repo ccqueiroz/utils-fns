@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import {
   PaymentSlipValidator,
   paymentSlipSegmentIdentification,
@@ -25,11 +24,11 @@ export const taxCollectionTypeableLine = ({
     blockFreeField1,
     blockFreeField2,
   ] = [
-      digits.slice(0, 12), // blockMainInfosValidation
-      digits.slice(12, 24), // blockWithAmount
-      digits.slice(24, 36), // blockFreeField1
-      digits.slice(36, digits.length), // blockFreeField2
-    ];
+    digits.slice(0, 12), // blockMainInfosValidation
+    digits.slice(12, 24), // blockWithAmount
+    digits.slice(24, 36), // blockFreeField1
+    digits.slice(36, digits.length), // blockFreeField2
+  ];
 
   const serviceType = blockMainInfosValidation.slice(0, 1);
   const segmentType = blockMainInfosValidation.slice(1, 2);
@@ -42,22 +41,22 @@ export const taxCollectionTypeableLine = ({
       blockMainInfosValidation.charAt(blockMainInfosValidation.length - 1),
       blockMainInfosValidation.slice(0, blockMainInfosValidation.length - 1),
       referenceValue,
-    )
-    && (moduleToBeUsedForValidation(
+    ) &&
+    moduleToBeUsedForValidation(
       blockWithAmount.charAt(blockWithAmount.length - 1),
       blockWithAmount.slice(0, blockMainInfosValidation.length - 1),
       referenceValue,
-    ))
-    && (moduleToBeUsedForValidation(
+    ) &&
+    moduleToBeUsedForValidation(
       blockFreeField1.charAt(blockFreeField1.length - 1),
       blockFreeField1.slice(0, blockFreeField1.length - 1),
       referenceValue,
-    ))
-    && (moduleToBeUsedForValidation(
+    ) &&
+    moduleToBeUsedForValidation(
       blockFreeField2.charAt(blockFreeField2.length - 1),
       blockFreeField2.slice(0, blockFreeField2.length - 1),
       referenceValue,
-    ));
+    );
 
   if (!checkDigitsWithinModuleValidation) return false;
 
@@ -70,14 +69,15 @@ export const taxCollectionTypeableLine = ({
     if (validSegmentType) {
       const getValidSegmentType =
         paymentSlipSegmentIdentification[
-        segmentType as keyof typeof paymentSlipSegmentIdentification
+          segmentType as keyof typeof paymentSlipSegmentIdentification
         ];
       if (paymentSlipSegmentType[getValidSegmentType] !== validSegmentType)
         return false;
     }
 
     if (validByPrice) {
-      const amount = blockMainInfosValidation.slice(4, 11) + blockWithAmount.slice(0, 4);
+      const amount =
+        blockMainInfosValidation.slice(4, 11) + blockWithAmount.slice(0, 4);
       const price = validAmount(amount, validByPrice);
       if (!price) return false;
     }
