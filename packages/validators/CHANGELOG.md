@@ -1,5 +1,11 @@
 # @utils-fns/validators
 
+## 3.0.3
+
+### Patch Changes
+
+- refactor paymentValidator to class
+
 ## 3.0.2
 
 ### Patch Changes
