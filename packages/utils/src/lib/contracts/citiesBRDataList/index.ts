@@ -1,12 +1,11 @@
-/* eslint-disable prettier/prettier */
-
 export type CitiesBRDataList = {
   ibgeCode: string;
   cityName: string;
   state: string;
 };
 
-export type CitiesByState = 'AC'
+export type CitiesByState =
+  | 'AC'
   | 'AL'
   | 'AP'
   | 'AM'
@@ -32,7 +31,7 @@ export type CitiesByState = 'AC'
   | 'SC'
   | 'SP'
   | 'SE'
-  | 'TO'
+  | 'TO';
 
 export type MapCitiesByState = {
   [key in CitiesByState]: Array<CitiesBRDataList>;

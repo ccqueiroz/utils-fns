@@ -1,6 +1,6 @@
 {
   "name": "@utils-fns/validators",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "main": "dist/cjs/index.ts",
   "module": "dist/esm/index.ts",
   "types": "dist/index.d.ts",
@@ -18,7 +18,7 @@
     "build": "export NODE_ENV=production && rm -rf dist && rollup -c --bundleConfigAsCjs"
   },
   "devDependencies": {
-    "@caiocezarqueiroz/eslint-config": "^1.0.20",
+    "@caiocezarqueiroz/eslint-config": "^1.0.22",
     "@utils-fns/utils": "*",
     "@rollup/plugin-commonjs": "^25.0.0",
     "@rollup/plugin-json": "^6.0.0",

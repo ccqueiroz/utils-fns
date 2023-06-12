@@ -4,5 +4,6 @@ module.exports = {
   "singleQuote": true,
   "trailingComma": "all",
   "arrowParens": "always",
-  "semi": true
+  "semi": true,
+  "endOfLine": "auto"
 }

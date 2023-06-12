@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { TypesUtils } from '@utils-fns/utils';
 
 export const paymentSlipSegmentIdentification = {
@@ -13,19 +12,19 @@ export const paymentSlipSegmentIdentification = {
 } as const;
 
 export const paymentSlipSegmentType = {
-  'municipal': 'Taxas Municipais',
-  'sanitation': 'Taxas de Saneamento',
-  'gas_energy': 'Taxas de Energia Elétrica e Gás',
-  'telecom': 'Taxas de Telecomunicações',
-  'government_agencies': 'Taxas de Órgãos Governamentais',
-  'transit': 'Taxas de Trânsito',
-  'only_banks': 'Uso Exclusivo dos bancos',
-  'others': 'Outros',
+  municipal: 'Taxas Municipais',
+  sanitation: 'Taxas de Saneamento',
+  gas_energy: 'Taxas de Energia Elétrica e Gás',
+  telecom: 'Taxas de Telecomunicações',
+  government_agencies: 'Taxas de Órgãos Governamentais',
+  transit: 'Taxas de Trânsito',
+  only_banks: 'Uso Exclusivo dos bancos',
+  others: 'Outros',
 } as const;
 
 export type ParamsPaymentSlipValidator = {
   validByBank?: TypesUtils['BankNames'] | TypesUtils['BankCode'];
-  validSegmentType?: typeof paymentSlipSegmentType[keyof typeof paymentSlipSegmentType];
+  validSegmentType?: (typeof paymentSlipSegmentType)[keyof typeof paymentSlipSegmentType];
   validByPrice?: string | number;
   validByDate?: string | Date;
   validByTypeOfPaymentSlip?: 'Boleto Bancário' | 'Boleto de Arrecadação';

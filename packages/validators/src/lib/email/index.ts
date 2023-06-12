@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-useless-escape */
 
-import { EmailValidator } from "../contracts/index";
+import { EmailValidator } from '../contracts/index';
 /**
  *
   @param {Object} EmailValidator
@@ -39,9 +39,11 @@ export const emailValidator = ({
 }: EmailValidator): boolean => {
   if (!email) return false;
   const patternValidator = `^(([a-zA-Z0-9][\-_.]{0,1})){${paramsEmailValidator?.minMaxUserNameEmail?.min ?? 1
-    },${paramsEmailValidator?.minMaxUserNameEmail?.max ?? ''}}([a-zA-Z0-9]@)${paramsEmailValidator?.emailDomainName?.source ?? `(([a-zA-Z0-9][-.]{0,1}){${paramsEmailValidator?.minMaxEmailDomain?.min ?? 2
+    },${paramsEmailValidator?.minMaxUserNameEmail?.max ?? ''}}([a-zA-Z0-9]@)${paramsEmailValidator?.emailDomainName?.source ??
+    `(([a-zA-Z0-9][-.]{0,1}){${paramsEmailValidator?.minMaxEmailDomain?.min ?? 2
     },${paramsEmailValidator?.minMaxEmailDomain?.max ?? 26
-    }})([a-zA-Z0-9][.]{1}[a-zA-Z0-9]+)$`}`;
+    }})([a-zA-Z0-9][.]{1}[a-zA-Z0-9]+)$`
+    }`;
 
   const regexValidator = new RegExp(patternValidator);
   return regexValidator.test(email);
