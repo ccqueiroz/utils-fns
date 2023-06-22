@@ -1,161 +1,34 @@
 import { taxCollectionTypeableLine } from './../../../src/lib/paymentSlipValidator/utils/taxColletion/taxCollectionTypeableLine/index';
 describe('[VALIDATORS: TAX_COLLECTION_TYPEABLE_LINE]', () => {
-  it('Should be return true, when passed digits typeable line format correctly', () => {
-    expect(
-      taxCollectionTypeableLine({
-        digits: '846100000005319901090112004961794445808053219016', //valid code mod10
-      }),
-    ).toBeTruthy();
-    expect(
-      taxCollectionTypeableLine({
-        digits: '838900000072120900313006278178958076000093245181', //valid code mod11
-      }),
-    ).toBeTruthy();
-    expect(
-      taxCollectionTypeableLine({
-        digits: 'absjhkjsa/klslajsjaks', //invalid code
-      }),
-    ).toBeFalsy();
-    expect(
-      taxCollectionTypeableLine({
-        digits: '8382000000026260011007034465600102', //invalid code
-      }),
-    ).toBeFalsy();
-    expect(
-      taxCollectionTypeableLine({
-        digits: '238900000072120900313006278178958076000093245181', //invalid code
-      }),
-    ).toBeFalsy();
-    expect(
-      taxCollectionTypeableLine({
-        digits: '833900000072120900313006278178958076000093245181', //invalid code
-      }),
-    ).toBeFalsy();
-  });
-  it('Should be return false when passed digits correctly to tax collection slip in type typeable line and is passed bank validation by name or code', () => {
-    expect(
-      taxCollectionTypeableLine({
-        digits: '846100000005319901090112004961794445808053219016',
-        paramsPaymentSlipValidator: {
-          validByBank: '001',
-        },
-      }),
-    ).toBeFalsy();
-    expect(
-      taxCollectionTypeableLine({
-        digits: '846100000005319901090112004961794445808053219016',
-        paramsPaymentSlipValidator: {
-          validByBank: 'Banco A. J. Renner S.A.',
-        },
-      }),
-    ).toBeFalsy();
-  });
-  it('Should be return true when passed digits correctly to tax collection slip in type typeable line and is passed bank validation by segment type', () => {
-    expect(
-      taxCollectionTypeableLine({
-        digits: '846100000005319901090112004961794445808053219016',
-        paramsPaymentSlipValidator: {
-          validSegmentType: 'Taxas de Telecomunicações',
-        },
-      }),
-    ).toBeTruthy();
-    expect(
-      taxCollectionTypeableLine({
-        digits: '838900000072120900313006278178958076000093245181',
-        paramsPaymentSlipValidator: {
-          validSegmentType: 'Taxas de Energia Elétrica e Gás',
-        },
-      }),
-    ).toBeTruthy();
-    expect(
-      taxCollectionTypeableLine({
-        digits: '838900000072120900313006278178958076000093245181',
-        paramsPaymentSlipValidator: {
-          validSegmentType: 'Taxas Municipais',
-        },
-      }),
-    ).toBeFalsy();
-  });
-  it('Should be return true when passed digits correctly to tax collection slip in type typeable line and is passed price/amount validation', () => {
-    expect(
-      taxCollectionTypeableLine({
-        digits: '838900000072120900313006278178958076000093245181',
-        paramsPaymentSlipValidator: {
-          validByPrice: 712.09,
-        },
-      }),
-    ).toBeTruthy();
-    expect(
-      taxCollectionTypeableLine({
-        digits: '838900000072120900313006278178958076000093245181',
-        paramsPaymentSlipValidator: {
-          validByPrice: '712,09',
-        },
-      }),
-    ).toBeTruthy();
-    expect(
-      taxCollectionTypeableLine({
-        digits: '838900000072120900313006278178958076000093245181',
-        paramsPaymentSlipValidator: {
-          validByPrice: '712.09',
-        },
-      }),
-    ).toBeTruthy();
-    expect(
-      taxCollectionTypeableLine({
-        digits: '838900000072120900313006278178958076000093245181',
-        paramsPaymentSlipValidator: {
-          validByPrice: 'abjhsjahsjahsj712.09',
-        },
-      }),
-    ).toBeTruthy();
-    expect(
-      taxCollectionTypeableLine({
-        digits: '838900000072120900313006278178958076000093245181',
-        paramsPaymentSlipValidator: {
-          validByPrice: '31.99',
-        },
-      }),
-    ).toBeFalsy();
-  });
-  it('Should be return true when passed digits correctly to tax collection slip in type typeable line and is passed valid date expiration validation', () => {
-    expect(
-      taxCollectionTypeableLine({
-        digits: '838900000072120900313006278178958076000093245181',
-        paramsPaymentSlipValidator: {
-          validByDate: '2023-07-10',
-        },
-      }),
-    ).toBeFalsy();
-  });
-  it('Should be return true when passed all arguments correctly to tax collection slip in type typeable line and return false if any argument to be incorrectly', () => {
-    expect(
-      taxCollectionTypeableLine({
-        digits: '838900000072120900313006278178958076000093245181',
-        paramsPaymentSlipValidator: {
-          validByPrice: '712.09',
-          validSegmentType: 'Taxas de Energia Elétrica e Gás',
-        },
-      }),
-    ).toBeTruthy();
-    expect(
-      taxCollectionTypeableLine({
-        digits: '846100000005319901090112004961794445808053219016',
-        paramsPaymentSlipValidator: {
-          validByPrice: 31.99,
-          validSegmentType: 'Taxas de Telecomunicações',
-        },
-      }),
-    ).toBeTruthy();
-    expect(
-      taxCollectionTypeableLine({
-        digits: '838900000072120900313006278178958076000093245181',
-        paramsPaymentSlipValidator: {
-          validByDate: '2023-07-10',
-          validByPrice: '712.09',
-          validSegmentType: 'Taxas de Energia Elétrica e Gás',
-        },
-      }),
-    ).toBeFalsy();
+  it('Should be return true to taxCollectionBarCode function call when passed digits correctly to bank slip in type typeable line and the data includes into map instance passed within argument', () => {
+    const mapTaxCollectionTypeableLineTest = new Map();
+    const taxCollectionTypeableLineMod10Test = taxCollectionTypeableLine({
+      digits: '846100000005319901090112004961794445808053219016', //valid code mod10
+      mapPaymentSlipData: mapTaxCollectionTypeableLineTest,
+    });
+    expect(taxCollectionTypeableLineMod10Test).toBeTruthy();
+    expect(Object.fromEntries(mapTaxCollectionTypeableLineTest)).toEqual({
+      expirationDate: null,
+      price: '31.99',
+      segmentPaymentSplip: 'Taxas de Telecomunicações',
+    });
+    mapTaxCollectionTypeableLineTest.clear();
+    const taxCollectionTypeableLineMod11Test = taxCollectionTypeableLine({
+      digits: '838900000072120900313006278178958076000093245181', //valid code mod11
+      mapPaymentSlipData: mapTaxCollectionTypeableLineTest,
+    });
+    expect(taxCollectionTypeableLineMod11Test).toBeTruthy();
+    expect(Object.fromEntries(mapTaxCollectionTypeableLineTest)).toEqual({
+      expirationDate: null,
+      price: '712.09',
+      segmentPaymentSplip: 'Taxas de Energia Elétrica e Gás',
+    });
+    mapTaxCollectionTypeableLineTest.clear();
+    const taxCollectionTypeableLineInvalidCode = taxCollectionTypeableLine({
+      digits: '8382000000026260011007034465600102', //invalid code
+      mapPaymentSlipData: mapTaxCollectionTypeableLineTest,
+    });
+    expect(taxCollectionTypeableLineInvalidCode).toBeFalsy();
+    expect(Object.fromEntries(mapTaxCollectionTypeableLineTest)).toEqual({});
   });
 });

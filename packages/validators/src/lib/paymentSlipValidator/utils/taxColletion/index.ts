@@ -1,20 +1,20 @@
-import { PaymentSlipValidator } from '../../../contracts/paymentSlipValidator';
+import {
+  PaymentSlipValidator,
+  barCodeOrTypeableLine,
+} from '../../../contracts/paymentSlipValidator';
 import { taxCollectionBarCode } from './taxCollectionBarCode';
 import { taxCollectionTypeableLine } from './taxCollectionTypeableLine/index';
 
-interface TaxCollectionSlip extends PaymentSlipValidator {
+export interface TaxCollectionSlip
+  extends Omit<PaymentSlipValidator, 'paramsPaymentSlipValidator'> {
   digits: string;
+  mapPaymentSlipData: Map<unknown, unknown>;
 }
 
 export const taxColletionSlip = ({
   digits,
-  paramsPaymentSlipValidator,
+  mapPaymentSlipData,
 }: TaxCollectionSlip) => {
-  const barCodeOrTypeableLine = {
-    barcode: { type: 'Cód. Barras', key: 'barcode' },
-    typeable_line: { type: 'Linha Digitável', key: 'typeable_line' },
-  };
-
   const isBarCodeOrTypeableLine =
     digits.length === 44
       ? barCodeOrTypeableLine.barcode.key
@@ -22,26 +22,26 @@ export const taxColletionSlip = ({
       ? barCodeOrTypeableLine.typeable_line.key
       : undefined;
 
-  const validByIfIsBarCodeOrTypeableLine =
-    paramsPaymentSlipValidator?.validByIfIsBarCodeOrTypeableLine;
-
-  const isTypeMismatch =
-    validByIfIsBarCodeOrTypeableLine &&
-    validByIfIsBarCodeOrTypeableLine !==
-      barCodeOrTypeableLine[
-        isBarCodeOrTypeableLine as keyof typeof barCodeOrTypeableLine
-      ]?.type;
-
-  if (isTypeMismatch) {
+  if (!isBarCodeOrTypeableLine) {
     return false;
   }
 
+  mapPaymentSlipData.set('bankCode', null);
+  mapPaymentSlipData.set('bankName', null);
+
+  mapPaymentSlipData.set(
+    'barCodeOrTypeableLine',
+    barCodeOrTypeableLine[
+      isBarCodeOrTypeableLine as keyof typeof barCodeOrTypeableLine
+    ]?.type,
+  );
+
   if (isBarCodeOrTypeableLine === barCodeOrTypeableLine.barcode.key) {
-    return taxCollectionBarCode({ digits, paramsPaymentSlipValidator });
+    return taxCollectionBarCode({ digits, mapPaymentSlipData });
   } else if (
     isBarCodeOrTypeableLine === barCodeOrTypeableLine.typeable_line.key
   ) {
-    return taxCollectionTypeableLine({ digits, paramsPaymentSlipValidator });
+    return taxCollectionTypeableLine({ digits, mapPaymentSlipData });
   } else {
     return false;
   }

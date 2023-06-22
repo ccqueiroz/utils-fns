@@ -12,7 +12,7 @@
  * Add the resulting digit values together.
  *
  * References:
- * @link https://en.wikipedia.org/wiki/Luhn_algorithm
+ * @see https://en.wikipedia.org/wiki/Luhn_algorithm
  *
  */
 export const luhnAlgorithm = (value: string | Array<string | number>) => {

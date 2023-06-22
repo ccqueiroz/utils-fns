@@ -1,17 +1,10 @@
-import { PaymentSlipValidator } from '../../../../contracts/paymentSlipValidator';
 import { utils, TypesUtils } from '@utils-fns/utils';
-import { validAmount } from '../../validAmount';
-import { convertDatePaymentoSlipToDate } from '../convertDate';
 import { mod11AlgorithmAdapter } from '../../mod11AlgorithAdapter';
+import { BankSlip } from '..';
+import { convertAmount } from '../../convertAmount';
+import { convertDatePaymentoSlip } from '../convertDate';
 
-interface BankSlipBarCode extends PaymentSlipValidator {
-  digits: string;
-}
-
-export const bankSlipBarCode = ({
-  digits,
-  paramsPaymentSlipValidator,
-}: BankSlipBarCode) => {
+export const bankSlipBarCode = ({ digits, mapPaymentSlipData }: BankSlip) => {
   const regexBarCode = new RegExp(/^[0-9]{44}$/);
   if (!regexBarCode.test(digits)) return false;
   const digitBlocks = [
@@ -32,29 +25,19 @@ export const bankSlipBarCode = ({
     digitsToMod11,
     verifyingDigit,
   );
+
   if (!checkDigitWithMod11) return false;
-  if (paramsPaymentSlipValidator) {
-    const { validByBank, validByDate, validByPrice } =
-      paramsPaymentSlipValidator;
-    if (validByBank) {
-      const validBank =
-        validByBank.length === 3
-          ? bankCode === validByBank.toString()
-          : utils.filterBankByCode(bankCode as TypesUtils['BankCode']) ===
-            validByBank;
-      if (!validBank) return false;
-    }
-    if (validByPrice) {
-      const price = validAmount(amount, validByPrice);
-      if (!price) return false;
-    }
-    if (validByDate) {
-      const date = convertDatePaymentoSlipToDate(
-        expiration,
-        new Date(validByDate),
-      );
-      if (!date) return false;
-    }
-  }
+
+  mapPaymentSlipData.set('bankCode', bankCode);
+
+  mapPaymentSlipData.set(
+    'bankName',
+    utils.filterBankByCode(bankCode as TypesUtils['BankCode']),
+  );
+
+  mapPaymentSlipData.set('price', convertAmount(amount));
+
+  mapPaymentSlipData.set('expirationDate', convertDatePaymentoSlip(expiration));
+
   return checkDigitWithMod11;
 };

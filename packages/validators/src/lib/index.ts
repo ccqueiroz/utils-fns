@@ -4,7 +4,7 @@ import { nisValidator as nis } from './nis/index';
 import { cpfValidator as cpf } from './cpf/index';
 import { phoneValidator as phone } from './phone';
 import { PaymentCardValidator as ClassPaymentCardValidator } from './paymentCardValidator/index';
-import { paymentSlipValidator } from './paymentSlipValidator/index';
+import { PaymentSlipValidator as ClassPaymentSlipValidator } from './paymentSlipValidator/index';
 
 import type {
   EmailValidator,
@@ -47,7 +47,7 @@ const validators = {
   nis,
   phone,
   paymentCardValidator: ClassPaymentCardValidator.init,
-  paymentSlipValidator,
+  paymentSlipValidator: ClassPaymentSlipValidator.init,
 };
 
 export default validators;

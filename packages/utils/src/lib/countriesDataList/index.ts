@@ -7,10 +7,10 @@ import dataJson from './data.json';
  * 164 countries are cataloged with their respective country codes and national destination code.
  * If you find inconsistency in any country code or national destination code list,
  * please contact caio.cezar.dequeiroz@gmail.com or submit a PR.
- * @link https://countrycode.org/
- * @link https://www.itmnetworks.com.br/ddi-dos-paises-codigos-internacionais-de-telefone
- * @link https://www.dadosmundiais.com/
- * @link https://www.itu.int/rec/T-REC-E.164-201011-I/
+ * @see https://countrycode.org/
+ * @see https://www.itmnetworks.com.br/ddi-dos-paises-codigos-internacionais-de-telefone
+ * @see https://www.dadosmundiais.com/
+ * @see https://www.itu.int/rec/T-REC-E.164-201011-I/
  */
 export type CountriesDataList = Array<CountryData>;
 

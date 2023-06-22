@@ -1,16 +1,13 @@
-import { PaymentSlipValidator } from '../../../../contracts/paymentSlipValidator';
 import { utils, TypesUtils } from '@utils-fns/utils';
-import { convertDatePaymentoSlipToDate } from '../convertDate';
-import { validAmount } from '../../validAmount';
 import { mod11AlgorithmAdapter } from '../../mod11AlgorithAdapter';
-interface BankSlipTypeableLine extends PaymentSlipValidator {
-  digits: string;
-}
+import { BankSlip } from '..';
+import { convertAmount } from '../../convertAmount';
+import { convertDatePaymentoSlip } from '../convertDate';
 
 export const bankSlipTypeableLine = ({
   digits,
-  paramsPaymentSlipValidator,
-}: BankSlipTypeableLine) => {
+  mapPaymentSlipData,
+}: BankSlip) => {
   const regexBarCode = new RegExp(/^[0-9]{47}$/);
   if (!regexBarCode.test(digits)) return false;
 
@@ -54,35 +51,26 @@ export const bankSlipTypeableLine = ({
   );
 
   if (!checkBlockValidationsMod10 || !checkCodeMod11) return false;
-  if (paramsPaymentSlipValidator) {
-    const { validByBank, validByDate, validByPrice } =
-      paramsPaymentSlipValidator;
-    if (validByBank) {
-      const bankCode = blockBankAndCurrency.slice(0, 3);
-      const validBank =
-        validByBank.length === 3
-          ? bankCode === validByBank.toString()
-          : utils.filterBankByCode(bankCode as TypesUtils['BankCode']) ===
-            validByBank;
-      if (!validBank) return false;
-    }
 
-    if (validByPrice) {
-      const amount = blockExpirationFactorAndAmount.slice(
-        5,
-        blockExpirationFactorAndAmount.length,
-      );
-      const price = validAmount(amount, validByPrice);
-      if (!price) return false;
-    }
-    if (validByDate) {
-      const expiration = blockExpirationFactorAndAmount.slice(0, 4);
-      const date = convertDatePaymentoSlipToDate(
-        expiration,
-        new Date(validByDate),
-      );
-      if (!date) return false;
-    }
-  }
+  const bankCode = blockBankAndCurrency.slice(0, 3);
+
+  mapPaymentSlipData.set('bankCode', bankCode);
+
+  mapPaymentSlipData.set(
+    'bankName',
+    utils.filterBankByCode(bankCode as TypesUtils['BankCode']),
+  );
+
+  const amount = blockExpirationFactorAndAmount.slice(
+    5,
+    blockExpirationFactorAndAmount.length,
+  );
+
+  mapPaymentSlipData.set('price', convertAmount(amount));
+
+  const expiration = blockExpirationFactorAndAmount.slice(0, 4);
+
+  mapPaymentSlipData.set('expirationDate', convertDatePaymentoSlip(expiration));
+
   return checkCodeMod11;
 };
