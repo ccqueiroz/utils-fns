@@ -1,5 +1,11 @@
 # @utils-fns/validators
 
+## 3.1.0
+
+### Minor Changes
+
+- refactor paymentSlip module and include normalizeWord into utils
+
 ## 3.0.3
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @utils-fns/utils
 
+## 3.1.0
+
+### Minor Changes
+
+- refactor paymentSlip module and include normalizeWord into utils
+
 ## 3.0.2
 
 ### Patch Changes
