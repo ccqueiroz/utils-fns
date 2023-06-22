@@ -1,41 +1,47 @@
-/* eslint-disable prettier/prettier */
-import { PaymentSlipValidator } from '../../../contracts/paymentSlipValidator';
+import {
+  PaymentSlipValidator,
+  barCodeOrTypeableLine,
+  paymentSlipSegmentType,
+} from '../../../contracts/paymentSlipValidator';
 import { bankSlipBarCode } from './bankSlipBarCode';
 import { bankSlipTypeableLine } from './bankSlipTypeableLine';
 
-interface BankSlip extends PaymentSlipValidator {
+export interface BankSlip
+  extends Omit<PaymentSlipValidator, 'paramsPaymentSlipValidator'> {
   digits: string;
+  mapPaymentSlipData: Map<unknown, unknown>;
 }
 
-export const bankSlip = ({ digits, paramsPaymentSlipValidator }: BankSlip) => {
-  const barCodeOrTypeableLine = {
-    barcode: { type: 'Cód. Barras', key: 'barcode' },
-    typeable_line: { type: 'Linha Digitável', key: 'typeable_line' },
-  };
-
+export const bankSlip = ({ digits, mapPaymentSlipData }: BankSlip) => {
   const isBarCodeOrTypeableLine =
     digits.length === 44
       ? barCodeOrTypeableLine.barcode.key
       : digits.length === 47
-        ? barCodeOrTypeableLine.typeable_line.key
-        : undefined;
+      ? barCodeOrTypeableLine.typeable_line.key
+      : undefined;
 
-  const validByIfIsBarCodeOrTypeableLine = paramsPaymentSlipValidator?.validByIfIsBarCodeOrTypeableLine;
-
-  const isTypeMismatch = validByIfIsBarCodeOrTypeableLine &&
-    validByIfIsBarCodeOrTypeableLine !== barCodeOrTypeableLine[isBarCodeOrTypeableLine as keyof typeof barCodeOrTypeableLine]?.type;
-
-  if (isTypeMismatch) {
+  if (!isBarCodeOrTypeableLine) {
     return false;
   }
 
+  mapPaymentSlipData.set(
+    'barCodeOrTypeableLine',
+    barCodeOrTypeableLine[
+      isBarCodeOrTypeableLine as keyof typeof barCodeOrTypeableLine
+    ]?.type,
+  );
+
+  mapPaymentSlipData.set(
+    'segmentPaymentSplip',
+    paymentSlipSegmentType.payment_bank_slip,
+  );
+
   if (isBarCodeOrTypeableLine === barCodeOrTypeableLine.barcode.key) {
-    return bankSlipBarCode({ digits, paramsPaymentSlipValidator });
-  }
-  else if (
+    return bankSlipBarCode({ digits, mapPaymentSlipData });
+  } else if (
     isBarCodeOrTypeableLine === barCodeOrTypeableLine.typeable_line.key
   ) {
-    return bankSlipTypeableLine({ digits, paramsPaymentSlipValidator });
+    return bankSlipTypeableLine({ digits, mapPaymentSlipData });
   } else {
     return false;
   }

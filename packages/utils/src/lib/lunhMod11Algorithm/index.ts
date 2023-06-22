@@ -17,7 +17,7 @@ type LunhMod11Algorithm = {
     this remainder must be subtracted from 11, the product of the subtraction is the DAC.
 
     Reference:
-    @link https://cmsarquivos.febraban.org.br/Arquivos/documentos/PDF/Layout%20-%20C%C3%B3digo%20de%20Barras%20-%20Vers%C3%A3o%207%20-%2001_03_2023_mn.pdf
+    @see https://cmsarquivos.febraban.org.br/Arquivos/documentos/PDF/Layout%20-%20C%C3%B3digo%20de%20Barras%20-%20Vers%C3%A3o%207%20-%2001_03_2023_mn.pdf
  */
 export const lunhMod11Algorithm = ({
   digits,

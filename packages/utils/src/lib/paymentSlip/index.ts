@@ -5,8 +5,8 @@ import dataJson from './data.json';
  * @returns MapBankData - returns a mapped list with the code and name of the Banks operating in Brazil
  *
  * References:
-    @link https://blog.vhsys.com.br/numero-do-banco/
-    @link https://portal.febraban.org.br/
+    @see https://blog.vhsys.com.br/numero-do-banco/
+    @see https://portal.febraban.org.br/
  */
 export const mapBankData: MapBankData = dataJson as MapBankData;
 

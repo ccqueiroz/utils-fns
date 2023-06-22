@@ -18,8 +18,14 @@ export const paymentSlipSegmentType = {
   telecom: 'Taxas de Telecomunicações',
   government_agencies: 'Taxas de Órgãos Governamentais',
   transit: 'Taxas de Trânsito',
-  only_banks: 'Uso Exclusivo dos bancos',
+  only_banks: 'Uso Exclusivo dos Bancos',
+  payment_bank_slip: 'Pagamento de Boletos Bancários',
   others: 'Outros',
+} as const;
+
+export const barCodeOrTypeableLine = {
+  barcode: { type: 'Cód. Barras', key: 'barcode' },
+  typeable_line: { type: 'Linha Digitável', key: 'typeable_line' },
 } as const;
 
 export type ParamsPaymentSlipValidator = {
@@ -28,7 +34,7 @@ export type ParamsPaymentSlipValidator = {
   validByPrice?: string | number;
   validByDate?: string | Date;
   validByTypeOfPaymentSlip?: 'Boleto Bancário' | 'Boleto de Arrecadação';
-  validByIfIsBarCodeOrTypeableLine?: 'Cód. Barras' | 'Linha Digitável';
+  validByIfIsBarCodeOrTypeableLine?: (typeof barCodeOrTypeableLine)[keyof typeof barCodeOrTypeableLine]['type'];
 };
 
 export type PaymentSlipValidator = {

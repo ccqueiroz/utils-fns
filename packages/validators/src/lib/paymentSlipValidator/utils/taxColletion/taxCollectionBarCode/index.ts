@@ -1,20 +1,16 @@
+import { TaxCollectionSlip } from '..';
 import {
-  PaymentSlipValidator,
   paymentSlipSegmentIdentification,
   paymentSlipSegmentType,
 } from '../../../../contracts';
-import { validAmount } from '../../validAmount';
+import { convertAmount } from '../../convertAmount';
 import { convertDatePaymentSlipTaxCollection } from '../convertDate';
 import { moduleToBeUsedForValidation } from '../moduleToBeUsedForValidation';
 
-interface TaxCollectionBarCode extends PaymentSlipValidator {
-  digits: string;
-}
-
 export const taxCollectionBarCode = ({
   digits,
-  paramsPaymentSlipValidator,
-}: TaxCollectionBarCode) => {
+  mapPaymentSlipData,
+}: TaxCollectionSlip) => {
   const regexBarCode = /^[0-9]{44}$/;
   if (!regexBarCode.test(digits)) return false;
 
@@ -52,35 +48,26 @@ export const taxCollectionBarCode = ({
 
   if (!checkDigitsWithinModuleValidation) return false;
 
-  if (paramsPaymentSlipValidator) {
-    const { validByBank, validSegmentType, validByPrice, validByDate } =
-      paramsPaymentSlipValidator;
+  const segmentTypeKey =
+    paymentSlipSegmentIdentification[
+      segmentType as keyof typeof paymentSlipSegmentIdentification
+    ];
 
-    if (validByBank) return false;
+  mapPaymentSlipData.set(
+    'segmentPaymentSplip',
+    paymentSlipSegmentType[
+      segmentTypeKey as keyof typeof paymentSlipSegmentType
+    ],
+  );
 
-    if (validSegmentType) {
-      const getValidSegmentType =
-        paymentSlipSegmentIdentification[
-          segmentType as keyof typeof paymentSlipSegmentIdentification
-        ];
-      if (paymentSlipSegmentType[getValidSegmentType] !== validSegmentType)
-        return false;
-    }
+  mapPaymentSlipData.set('price', convertAmount(amount));
 
-    if (validByPrice) {
-      const price = validAmount(amount, validByPrice);
-      if (!price) return false;
-    }
+  const expiration = blockFreeField.slice(0, 8);
 
-    if (validByDate) {
-      const expiration = blockFreeField.slice(0, 8);
-      const validDate = convertDatePaymentSlipTaxCollection(
-        expiration,
-        validByDate,
-      );
-      if (!validDate) return false;
-    }
-  }
+  mapPaymentSlipData.set(
+    'expirationDate',
+    convertDatePaymentSlipTaxCollection(expiration),
+  );
 
   return checkDigitsWithinModuleValidation;
 };

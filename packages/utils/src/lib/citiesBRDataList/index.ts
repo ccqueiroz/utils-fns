@@ -5,13 +5,13 @@ import dataJson from './data.json';
  * @returns CountriesBRDataList[] - returns a mapped list with data from all cities separated by states in Brazil
  *
  * References:
- * @link https://www.cidade-brasil.com.br/
- * @link https://cidades.ibge.gov.br/
- * @link https://pt.wikipedia.org/wiki/Discagem_direta_%C3%A0_dist%C3%A2ncia
+ * @see https://www.cidade-brasil.com.br/
+ * @see https://cidades.ibge.gov.br/
+ * @see https://pt.wikipedia.org/wiki/Discagem_direta_%C3%A0_dist%C3%A2ncia
  *
  * 5570 cities are cataloged with their respective ibge codes according to IBGE
  * If you find inconsistency in any city, please contact caio.cezar.dequeiroz@gmail.com or submit a PR.
- * @link https://cidades.ibge.gov.br/.
+ * @see https://cidades.ibge.gov.br/.
  */
 export const mapCitiesByState: MapCitiesByState = dataJson;
 
