@@ -19,6 +19,7 @@
 - [x] **Lunh Algorithm Mod10**
 - [x] **Lunh Algorithm Mod11**
 - [x] **Payment Card Data List**
+- [x] **Normalize Words**
 - [ ] **Sorting Algorithms**
   - [ ] **Bubble Sort**
   - [ ] **Merge Sort**
