@@ -1,5 +1,11 @@
 # @utils-fns/utils-fns
 
+## 3.2.0
+
+### Minor Changes
+
+- include feature voter registration validation
+
 ## 3.1.1
 
 ### Patch Changes

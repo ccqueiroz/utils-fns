@@ -1,4 +1,4 @@
-import { stateRegistrationValidator } from './stateRegistrationValidator/index';
+import { stateRegistrationValidator as stateRegistration } from './stateRegistrationValidator/index';
 import { emailValidator as email } from './email/index';
 import { cnpjValidator as cnpj } from './cnpj/index';
 import { nisValidator as nis } from './nis/index';
@@ -6,7 +6,7 @@ import { cpfValidator as cpf } from './cpf/index';
 import { phoneValidator as phone } from './phone';
 import { PaymentCardValidator as ClassPaymentCardValidator } from './paymentCardValidator/index';
 import { PaymentSlipValidator as ClassPaymentSlipValidator } from './paymentSlipValidator/index';
-
+import { voterRegistrationValidation as voterRegistration } from './voterRegistrationValidation/index';
 import type {
   EmailValidator,
   MinMaxParamsEmail,
@@ -49,9 +49,10 @@ const validators = {
   email,
   nis,
   phone,
-  paymentCardValidator: ClassPaymentCardValidator.init,
-  paymentSlipValidator: ClassPaymentSlipValidator.init,
-  stateRegistrationValidator,
+  paymentCard: ClassPaymentCardValidator.init,
+  paymentSlip: ClassPaymentSlipValidator.init,
+  stateRegistration,
+  voterRegistration,
 };
 
 export default validators;
