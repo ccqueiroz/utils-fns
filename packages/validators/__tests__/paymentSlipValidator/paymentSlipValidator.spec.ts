@@ -1,7 +1,7 @@
 import { TypesUtils } from '@utils-fns/utils';
 import validators from '@utils-fns/validators/src/lib/index';
 
-describe('[VALIDATOR: PAYMENT_SLIP_VALIDATOR]', () => {
+describe('[VALIDATORS: PAYMENT_SLIP_VALIDATOR]', () => {
   it('Should be return The payment slip data when digits payment slip are passed correctly', () => {
     expect(
       validators
