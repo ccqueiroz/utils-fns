@@ -4,7 +4,7 @@ export type CitiesBRDataList = {
   state: string;
 };
 
-export type CitiesByState =
+export type StateAbbreviations =
   | 'AC'
   | 'AL'
   | 'AP'
@@ -34,5 +34,5 @@ export type CitiesByState =
   | 'TO';
 
 export type MapCitiesByState = {
-  [key in CitiesByState]: Array<CitiesBRDataList>;
+  [key in StateAbbreviations]: Array<CitiesBRDataList>;
 };

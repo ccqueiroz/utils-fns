@@ -1,3 +1,4 @@
+import { reducerCheckDigitControl } from './reducerCheckDigitControl/index';
 import {
   mapCitiesByState,
   searchCitiesByIBGECode,
@@ -7,22 +8,22 @@ import {
 
 import {
   countriesDataList,
-  searchByAbbreviationAlpha3,
+  searchCountryByAbbreviationAlpha3,
 } from './countriesDataList';
 
 import {
   mapState,
-  searchCountriesByAbbreviation,
-  searchCountryByName,
+  searchCitiesByStateAbbreviation,
+  searchStateByName,
 } from './statesBRDataList';
 
 import type {
   CitiesBRDataList,
-  CountriesBRDataList,
+  StatesBRDataList,
   CountryData,
   MapCitiesByState,
   BrandCardType,
-  CitiesByState,
+  StateAbbreviations,
   NameBrandCard,
   PaymentCardDataList,
   PaymentCardData,
@@ -33,11 +34,11 @@ import type {
 
 export type TypesUtils = {
   CitiesBRDataList: CitiesBRDataList;
-  CountriesBRDataList: CountriesBRDataList;
+  StatesBRDataList: StatesBRDataList;
   CountryData: CountryData;
   MapCitiesByState: MapCitiesByState;
   BrandCardType: BrandCardType;
-  CitiesByState: CitiesByState;
+  StateAbbreviations: StateAbbreviations;
   NameBrandCard: NameBrandCard;
   PaymentCardDataList: PaymentCardDataList;
   PaymentCardData: PaymentCardData;
@@ -62,10 +63,10 @@ const utils = {
   searchCitiesByTerm,
   getCitiesListByState,
   countriesDataList,
-  searchByAbbreviationAlpha3,
+  searchCountryByAbbreviationAlpha3,
   mapState,
-  searchCountriesByAbbreviation,
-  searchCountryByName,
+  searchCitiesByStateAbbreviation,
+  searchStateByName,
   luhnAlgorithm,
   lunhMod10Algorithm,
   lunhMod11Algorithm,
@@ -73,6 +74,7 @@ const utils = {
   mapBankData,
   filterBankByCode,
   filterBankByName,
+  reducerCheckDigitControl,
 };
 
 export default utils;

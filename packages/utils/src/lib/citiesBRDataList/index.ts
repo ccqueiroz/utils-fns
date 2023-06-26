@@ -2,7 +2,7 @@ import { MapCitiesByState } from '../contracts/index';
 import dataJson from './data.json';
 
 /**
- * @returns CountriesBRDataList[] - returns a mapped list with data from all cities separated by states in Brazil
+ * @returns StatesBRDataList[] - returns a mapped list with data from all cities separated by states in Brazil
  *
  * References:
  * @see https://www.cidade-brasil.com.br/
@@ -18,7 +18,7 @@ export const mapCitiesByState: MapCitiesByState = dataJson;
 /**
  *
  * @param {string | undefined} state - key that represents the abbreviated name of the states of Brazil
- * @returns CountriesBRDataList[] - returns a mapped list with data from all cities that are included within the searched state of Brazil
+ * @returns StatesBRDataList[] - returns a mapped list with data from all cities that are included within the searched state of Brazil
  */
 export const getCitiesListByState = (state: keyof MapCitiesByState) => {
   return mapCitiesByState[state];
@@ -27,7 +27,7 @@ export const getCitiesListByState = (state: keyof MapCitiesByState) => {
  *
  * @param {string | undefined} state - abbreviated name of the state
  * @param {string | undefined} term - full term or part of the city name
- * @returns CountriesBRDataList[] - returns a list with data from all cities that match the argument
+ * @returns StatesBRDataList[] - returns a list with data from all cities that match the argument
  */
 export const searchCitiesByTerm = (
   state: keyof MapCitiesByState,
@@ -41,7 +41,7 @@ export const searchCitiesByTerm = (
  *
  * @param {string | undefined} state - abbreviated name of the state
  * @param {string | undefined} ibgeCode - city ibge code
- * @returns CountriesBRDataList[] - returns a list with data from all cities that match the argument
+ * @returns StatesBRDataList[] - returns a list with data from all cities that match the argument
  */
 export const searchCitiesByIBGECode = (
   state: keyof MapCitiesByState,
