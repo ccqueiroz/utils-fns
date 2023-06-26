@@ -1,3 +1,4 @@
+import { stateRegistrationValidator } from './stateRegistrationValidator/index';
 import { emailValidator as email } from './email/index';
 import { cnpjValidator as cnpj } from './cnpj/index';
 import { nisValidator as nis } from './nis/index';
@@ -21,6 +22,7 @@ import type {
   paymentSlipSegmentIdentification,
   PaymentSlipValidator,
   ParamsPaymentSlipValidator,
+  ParamsStateRegistrationValidator,
 } from './contracts/index';
 
 export type TypesValidators = {
@@ -38,6 +40,7 @@ export type TypesValidators = {
   PaymentSlipSegmentType: typeof paymentSlipSegmentType;
   PaymentSlipValidator: PaymentSlipValidator;
   ParamsPaymentSlipValidator: ParamsPaymentSlipValidator;
+  ParamsStateRegistrationValidator: ParamsStateRegistrationValidator;
 };
 
 const validators = {
@@ -48,6 +51,7 @@ const validators = {
   phone,
   paymentCardValidator: ClassPaymentCardValidator.init,
   paymentSlipValidator: ClassPaymentSlipValidator.init,
+  stateRegistrationValidator,
 };
 
 export default validators;

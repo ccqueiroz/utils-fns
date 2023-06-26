@@ -1,3 +1,5 @@
+import { reducerCheckDigitControl } from '../reducerCheckDigitControl';
+
 type LunhMod11Algorithm = {
   digits: string | Array<string | number>;
   reverseNumbers?: boolean;
@@ -37,14 +39,7 @@ export const lunhMod11Algorithm = ({
   if (reverseNumbers) digits = digits.reverse();
   if (digits.every((item) => !item)) return null;
 
-  let multiplier = 2;
-  const result = digits.reduce(
-    (accumulator: string | number, currenValue: string | number) => {
-      const result = Number(currenValue) * multiplier;
-      multiplier = multiplier === 9 ? 2 : ++multiplier;
-      return Number(accumulator) + result;
-    },
-    0,
-  );
+  const result = reducerCheckDigitControl(digits.join(''));
+
   return 11 - (Number(result) % 11);
 };

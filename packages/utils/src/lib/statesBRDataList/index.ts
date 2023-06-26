@@ -1,17 +1,17 @@
-import { CountriesBRDataList } from '../contracts/index';
+import { StatesBRDataList } from '../contracts/index';
 import dataJson from './data.json';
 
 /**
- * @returns CountriesBRDataList[] - returns a list with data from all states in Brazil
+ * @returns StatesBRDataList[] - returns a list with data from all states in Brazil
  */
-export const mapState: Array<CountriesBRDataList> = dataJson;
+export const mapState: Array<StatesBRDataList> = dataJson;
 
 /**
  *
  * @param {string | undefined} term - full term or part of the abbreviations of the states of Brazil
- * @returns CountriesBRDataList[] - returns a list with data from all states that match the argument
+ * @returns StatesBRDataList[] - returns a list with data from all states that match the argument
  */
-export const searchCountriesByAbbreviation = (term?: string) =>
+export const searchCitiesByStateAbbreviation = (term?: string) =>
   mapState.filter((state) =>
     state.abbreviation
       .toLocaleLowerCase()
@@ -20,9 +20,9 @@ export const searchCountriesByAbbreviation = (term?: string) =>
 /**
  *
  * @param {string | undefined} term - full term or part of the state name
- * @returns CountriesBRDataList[] - returns a list with data from all states that match the argument
+ * @returns StatesBRDataList[] - returns a list with data from all states that match the argument
  */
-export const searchCountryByName = (term?: string) =>
+export const searchStateByName = (term?: string) =>
   mapState.filter((state) =>
     state.stateName
       .toLocaleLowerCase()

@@ -3,7 +3,6 @@
 ![npm](https://img.shields.io/npm/v/@utils-fns/utils-fns)
 [![License](https://img.shields.io/github/license/ccqueiroz/utils-fns)](LICENSE)
 [![Repository](https://img.shields.io/badge/repository-GitHub-blue.svg)](https://github.com/ccqueiroz/utils-fn)
-<!-- ![npm downloads](https://img.shields.io/npm/dm/@utils-fns/utils-fns) -->
 
 <p align="justify">
     The utils-fns library is being developed with the aim of providing unified tools that facilitate the daily tasks of programmers. Our motivation is to simplify common tasks such as validations, value masking, sorting, searching, and conversion methods, by offering a comprehensive and efficient solution.
@@ -18,7 +17,7 @@
 - [x] **phoneValidator**
 - [x] **paymentCardValidator (luhn algorithm)**
 - [x] **paymentSlipValidator (ITF-14)**
-- [ ] **stateRegistrationValidator (inscrição estadual - BR)**
+- [x] **stateRegistrationValidator (inscrição estadual - BR)**
 - [ ] **voterRegistrationValidation (título de eleitor - BR)**
 - [ ] **cnhValidator**
 - [ ] **renavamValidator**

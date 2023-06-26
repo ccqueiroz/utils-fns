@@ -1,5 +1,11 @@
 # @utils-fns/validators
 
+## 3.1.1
+
+### Patch Changes
+
+- include feature state registration validator
+
 ## 3.1.0
 
 ### Minor Changes

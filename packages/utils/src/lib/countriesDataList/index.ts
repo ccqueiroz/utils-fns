@@ -22,9 +22,9 @@ export const countriesDataList: CountriesDataList = dataJson;
 /**
  *
  * @param {string | undefined} term - full term or part of the abbreviations by alpha3 format
- * @returns CountriesBRDataList[] - returns a list with data from all countries that match the argument
+ * @returns StatesBRDataList[] - returns a list with data from all countries that match the argument
  */
-export const searchByAbbreviationAlpha3 = (term?: string) =>
+export const searchCountryByAbbreviationAlpha3 = (term?: string) =>
   countriesDataList.filter((country) =>
     country.abbreviationAlpha3
       .toLocaleLowerCase()
