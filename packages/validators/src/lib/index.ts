@@ -21,6 +21,7 @@ import type {
   paymentSlipSegmentIdentification,
   PaymentSlipValidator,
   ParamsPaymentSlipValidator,
+  ParamsStateRegistrationValidator,
 } from './contracts/index';
 
 export type TypesValidators = {
@@ -38,6 +39,7 @@ export type TypesValidators = {
   PaymentSlipSegmentType: typeof paymentSlipSegmentType;
   PaymentSlipValidator: PaymentSlipValidator;
   ParamsPaymentSlipValidator: ParamsPaymentSlipValidator;
+  ParamsStateRegistrationValidator: ParamsStateRegistrationValidator;
 };
 
 const validators = {
