@@ -18,7 +18,7 @@
 - [x] **phoneValidator**
 - [x] **paymentCardValidator (luhn algorithm)**
 - [x] **paymentSlipValidator (ITF-14)**
-- [ ] **stateRegistrationValidator (inscrição estadual - BR)**
+- [x] **stateRegistrationValidator (inscrição estadual - BR)**
 - [ ] **voterRegistrationValidation (título de eleitor - BR)**
 - [ ] **cnhValidator**
 - [ ] **renavamValidator**
