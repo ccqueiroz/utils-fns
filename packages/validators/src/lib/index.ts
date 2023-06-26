@@ -1,3 +1,4 @@
+import { stateRegistrationValidator } from './stateRegistrationValidator/index';
 import { emailValidator as email } from './email/index';
 import { cnpjValidator as cnpj } from './cnpj/index';
 import { nisValidator as nis } from './nis/index';
@@ -50,6 +51,7 @@ const validators = {
   phone,
   paymentCardValidator: ClassPaymentCardValidator.init,
   paymentSlipValidator: ClassPaymentSlipValidator.init,
+  stateRegistrationValidator,
 };
 
 export default validators;
