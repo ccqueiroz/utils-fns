@@ -2,12 +2,8 @@ import validators from '@utils-fns/validators/src/lib/index';
 
 describe('[VALIDATORS: PAYMENT_CARD_VALIDATOR]', () => {
   it('Should be return false for isValid method and null data for getData method when the cardNumber argument is not passed.', () => {
-    expect(
-      validators.paymentCardValidator({ cardNumber: '' }).isValid(),
-    ).toBeFalsy();
-    expect(
-      validators.paymentCardValidator({ cardNumber: '' }).getData(),
-    ).toEqual({
+    expect(validators.paymentCard({ cardNumber: '' }).isValid()).toBeFalsy();
+    expect(validators.paymentCard({ cardNumber: '' }).getData()).toEqual({
       bankDigits: null,
       bankName: null,
       cardNumber: null,
@@ -16,10 +12,10 @@ describe('[VALIDATORS: PAYMENT_CARD_VALIDATOR]', () => {
   });
   it('Should be return false for isValid method and null data for getData method when the cardNumber does not match the numerical formatting of a credit card.', () => {
     expect(
-      validators.paymentCardValidator({ cardNumber: '@uiouiqw9182' }).isValid(),
+      validators.paymentCard({ cardNumber: '@uiouiqw9182' }).isValid(),
     ).toBeFalsy();
     expect(
-      validators.paymentCardValidator({ cardNumber: '@uiouiqw9182' }).getData(),
+      validators.paymentCard({ cardNumber: '@uiouiqw9182' }).getData(),
     ).toEqual({
       bankDigits: null,
       bankName: null,
@@ -27,21 +23,19 @@ describe('[VALIDATORS: PAYMENT_CARD_VALIDATOR]', () => {
       isValid: false,
     });
     expect(
-      validators.paymentCardValidator({ cardNumber: '375374' }).isValid(),
+      validators.paymentCard({ cardNumber: '375374' }).isValid(),
     ).toBeFalsy();
-    expect(
-      validators.paymentCardValidator({ cardNumber: '375374' }).getData(),
-    ).toEqual({
+    expect(validators.paymentCard({ cardNumber: '375374' }).getData()).toEqual({
       bankDigits: null,
       bankName: null,
       cardNumber: '375374',
       isValid: false,
     });
     expect(
-      validators.paymentCardValidator({ cardNumber: '375374-1' }).isValid(),
+      validators.paymentCard({ cardNumber: '375374-1' }).isValid(),
     ).toBeFalsy();
     expect(
-      validators.paymentCardValidator({ cardNumber: '375374-1' }).getData(),
+      validators.paymentCard({ cardNumber: '375374-1' }).getData(),
     ).toEqual({
       bankDigits: null,
       bankName: null,
@@ -49,14 +43,10 @@ describe('[VALIDATORS: PAYMENT_CARD_VALIDATOR]', () => {
       isValid: false,
     });
     expect(
-      validators
-        .paymentCardValidator({ cardNumber: '3753120982738278' })
-        .isValid(),
+      validators.paymentCard({ cardNumber: '3753120982738278' }).isValid(),
     ).toBeFalsy();
     expect(
-      validators
-        .paymentCardValidator({ cardNumber: '3753120982738278' })
-        .getData(),
+      validators.paymentCard({ cardNumber: '3753120982738278' }).getData(),
     ).toEqual({
       bankDigits: null,
       bankName: null,
@@ -64,14 +54,10 @@ describe('[VALIDATORS: PAYMENT_CARD_VALIDATOR]', () => {
       isValid: false,
     });
     expect(
-      validators
-        .paymentCardValidator({ cardNumber: '4024 0071 6435 7038' })
-        .isValid(),
+      validators.paymentCard({ cardNumber: '4024 0071 6435 7038' }).isValid(),
     ).toBeFalsy();
     expect(
-      validators
-        .paymentCardValidator({ cardNumber: '4024 0071 6435 7038' })
-        .getData(),
+      validators.paymentCard({ cardNumber: '4024 0071 6435 7038' }).getData(),
     ).toEqual({
       bankDigits: null,
       bankName: null,
@@ -79,14 +65,10 @@ describe('[VALIDATORS: PAYMENT_CARD_VALIDATOR]', () => {
       isValid: false,
     });
     expect(
-      validators
-        .paymentCardValidator({ cardNumber: '4024 0071 6435 7039' })
-        .isValid(),
+      validators.paymentCard({ cardNumber: '4024 0071 6435 7039' }).isValid(),
     ).toBeTruthy();
     expect(
-      validators
-        .paymentCardValidator({ cardNumber: '4024 0071 6435 7039' })
-        .getData(),
+      validators.paymentCard({ cardNumber: '4024 0071 6435 7039' }).getData(),
     ).toEqual({
       bankDigits: '4',
       bankName: 'Visa',
@@ -98,7 +80,7 @@ describe('[VALIDATORS: PAYMENT_CARD_VALIDATOR]', () => {
     const regexCard = RegExp(/^4[0-2](\d{14})$/);
     expect(
       validators
-        .paymentCardValidator({
+        .paymentCard({
           cardNumber: '4124007164357039',
         })
         .isValid({
@@ -107,7 +89,7 @@ describe('[VALIDATORS: PAYMENT_CARD_VALIDATOR]', () => {
     ).toBeTruthy();
     expect(
       validators
-        .paymentCardValidator({
+        .paymentCard({
           cardNumber: '4324007164357039',
         })
         .isValid({
@@ -116,7 +98,7 @@ describe('[VALIDATORS: PAYMENT_CARD_VALIDATOR]', () => {
     ).toBeFalsy();
     expect(
       validators
-        .paymentCardValidator({
+        .paymentCard({
           cardNumber: '4324007',
         })
         .isValid({
@@ -125,7 +107,7 @@ describe('[VALIDATORS: PAYMENT_CARD_VALIDATOR]', () => {
     ).toBeFalsy();
     expect(
       validators
-        .paymentCardValidator({
+        .paymentCard({
           cardNumber: '4324007989182923232',
         })
         .isValid({
@@ -140,7 +122,7 @@ describe('[VALIDATORS: PAYMENT_CARD_VALIDATOR]', () => {
     const cardNotValid = '5474 7438 8423 0241';
     expect(
       validators
-        .paymentCardValidator({
+        .paymentCard({
           cardNumber: cardDinnersClub,
         })
         .isValid({
@@ -148,9 +130,7 @@ describe('[VALIDATORS: PAYMENT_CARD_VALIDATOR]', () => {
         }),
     ).toBeTruthy();
     expect(
-      validators
-        .paymentCardValidator({ cardNumber: cardDinnersClub })
-        .getData(),
+      validators.paymentCard({ cardNumber: cardDinnersClub }).getData(),
     ).toEqual({
       bankDigits: '30',
       bankName: 'Diners Club',
@@ -159,16 +139,14 @@ describe('[VALIDATORS: PAYMENT_CARD_VALIDATOR]', () => {
     });
     expect(
       validators
-        .paymentCardValidator({
+        .paymentCard({
           cardNumber: cardVisa,
         })
         .isValid({
           specificBrandCard: 'visa',
         }),
     ).toBeTruthy();
-    expect(
-      validators.paymentCardValidator({ cardNumber: cardVisa }).getData(),
-    ).toEqual({
+    expect(validators.paymentCard({ cardNumber: cardVisa }).getData()).toEqual({
       bankDigits: '4',
       bankName: 'Visa',
       cardNumber: '4532 7051 3670 1706',
@@ -176,7 +154,7 @@ describe('[VALIDATORS: PAYMENT_CARD_VALIDATOR]', () => {
     });
     expect(
       validators
-        .paymentCardValidator({
+        .paymentCard({
           cardNumber: cardMastercard,
         })
         .isValid({
@@ -184,7 +162,7 @@ describe('[VALIDATORS: PAYMENT_CARD_VALIDATOR]', () => {
         }),
     ).toBeFalsy();
     expect(
-      validators.paymentCardValidator({ cardNumber: cardMastercard }).getData(),
+      validators.paymentCard({ cardNumber: cardMastercard }).getData(),
     ).toEqual({
       bankDigits: '51,55',
       bankName: 'Mastercard',
@@ -193,7 +171,7 @@ describe('[VALIDATORS: PAYMENT_CARD_VALIDATOR]', () => {
     });
     expect(
       validators
-        .paymentCardValidator({
+        .paymentCard({
           cardNumber: cardNotValid,
         })
         .isValid({
@@ -201,7 +179,7 @@ describe('[VALIDATORS: PAYMENT_CARD_VALIDATOR]', () => {
         }),
     ).toBeFalsy();
     expect(
-      validators.paymentCardValidator({ cardNumber: cardNotValid }).getData(),
+      validators.paymentCard({ cardNumber: cardNotValid }).getData(),
     ).toEqual({
       bankDigits: null,
       bankName: null,

@@ -5,7 +5,7 @@ describe('[VALIDATORS: PAYMENT_SLIP_VALIDATOR]', () => {
   it('Should be return The payment slip data when digits payment slip are passed correctly', () => {
     expect(
       validators
-        .paymentSlipValidator({
+        .paymentSlip({
           digits: '65591942700000005000000000442500009390032700',
         })
         .getData(),
@@ -23,7 +23,7 @@ describe('[VALIDATORS: PAYMENT_SLIP_VALIDATOR]', () => {
 
     expect(
       validators
-        .paymentSlipValidator({
+        .paymentSlip({
           digits: '65590000020044250000594059050008194290000006050',
         })
         .getData(),
@@ -41,7 +41,7 @@ describe('[VALIDATORS: PAYMENT_SLIP_VALIDATOR]', () => {
 
     expect(
       validators
-        .paymentSlipValidator({
+        .paymentSlip({
           digits: '846100000005319901090112004961794445808053219016',
         })
         .getData(),
@@ -59,7 +59,7 @@ describe('[VALIDATORS: PAYMENT_SLIP_VALIDATOR]', () => {
 
     expect(
       validators
-        .paymentSlipValidator({
+        .paymentSlip({
           digits: '84610000000319901090110049617944480805321901',
         })
         .getData(),
@@ -76,7 +76,7 @@ describe('[VALIDATORS: PAYMENT_SLIP_VALIDATOR]', () => {
     });
     expect(
       validators
-        .paymentSlipValidator({
+        .paymentSlip({
           digits: '',
         })
         .getData(),
@@ -94,7 +94,7 @@ describe('[VALIDATORS: PAYMENT_SLIP_VALIDATOR]', () => {
 
     expect(
       validators
-        .paymentSlipValidator({
+        .paymentSlip({
           digits: '655919427000656156210578120000442500009390032700',
         })
         .getData(),
@@ -113,28 +113,28 @@ describe('[VALIDATORS: PAYMENT_SLIP_VALIDATOR]', () => {
   it('Should be return true when passed digits correctly to bank slip', () => {
     expect(
       validators
-        .paymentSlipValidator({
+        .paymentSlip({
           digits: '65590000020044250000594059050008194290000006050',
         })
         .isValid(),
     ).toBeTruthy();
     expect(
       validators
-        .paymentSlipValidator({
+        .paymentSlip({
           digits: '846100000005319901090112004961794445808053219016',
         })
         .isValid(),
     ).toBeTruthy();
     expect(
       validators
-        .paymentSlipValidator({
+        .paymentSlip({
           digits: '',
         })
         .isValid(),
     ).toBeFalsy();
     expect(
       validators
-        .paymentSlipValidator({
+        .paymentSlip({
           digits:
             '8461000000053199010901120049617944458080532190164425000059405905',
         })
@@ -142,7 +142,7 @@ describe('[VALIDATORS: PAYMENT_SLIP_VALIDATOR]', () => {
     ).toBeFalsy();
     expect(
       validators
-        .paymentSlipValidator({
+        .paymentSlip({
           digits: 'foobar',
         })
         .isValid(),
@@ -151,7 +151,7 @@ describe('[VALIDATORS: PAYMENT_SLIP_VALIDATOR]', () => {
   it('Should be return true when passed digits correctly and passed argument validByTypeOfPaymentSlip for check difference between bank slip or tax collection', () => {
     expect(
       validators
-        .paymentSlipValidator({
+        .paymentSlip({
           digits: '65590000020044250000594059050008194290000006050',
         })
         .isValid({
@@ -160,7 +160,7 @@ describe('[VALIDATORS: PAYMENT_SLIP_VALIDATOR]', () => {
     ).toBeTruthy();
     expect(
       validators
-        .paymentSlipValidator({
+        .paymentSlip({
           digits: '65590000020044250000594059050008194290000006050',
         })
         .isValid({
@@ -169,7 +169,7 @@ describe('[VALIDATORS: PAYMENT_SLIP_VALIDATOR]', () => {
     ).toBeFalsy();
     expect(
       validators
-        .paymentSlipValidator({
+        .paymentSlip({
           digits: '846100000005319901090112004961794445808053219016',
         })
         .isValid({
@@ -178,7 +178,7 @@ describe('[VALIDATORS: PAYMENT_SLIP_VALIDATOR]', () => {
     ).toBeTruthy();
     expect(
       validators
-        .paymentSlipValidator({
+        .paymentSlip({
           digits: '846100000005319901090112004961794445808053219016',
         })
         .isValid({
@@ -189,7 +189,7 @@ describe('[VALIDATORS: PAYMENT_SLIP_VALIDATOR]', () => {
   it('Should be return true when passed digits correctly and passed argument validByIfIsBarCodeOrTypeableLine for check difference between typeable line or bar code', () => {
     expect(
       validators
-        .paymentSlipValidator({
+        .paymentSlip({
           digits: '65590000020044250000594059050008194290000006050',
         })
         .isValid({
@@ -198,7 +198,7 @@ describe('[VALIDATORS: PAYMENT_SLIP_VALIDATOR]', () => {
     ).toBeTruthy();
     expect(
       validators
-        .paymentSlipValidator({
+        .paymentSlip({
           digits: '65590000020044250000594059050008194290000006050',
         })
         .isValid({
@@ -207,7 +207,7 @@ describe('[VALIDATORS: PAYMENT_SLIP_VALIDATOR]', () => {
     ).toBeFalsy();
     expect(
       validators
-        .paymentSlipValidator({
+        .paymentSlip({
           digits: '84610000000319901090110049617944480805321901',
         })
         .isValid({
@@ -216,7 +216,7 @@ describe('[VALIDATORS: PAYMENT_SLIP_VALIDATOR]', () => {
     ).toBeTruthy();
     expect(
       validators
-        .paymentSlipValidator({
+        .paymentSlip({
           digits: '84610000000319901090110049617944480805321901',
         })
         .isValid({
@@ -227,7 +227,7 @@ describe('[VALIDATORS: PAYMENT_SLIP_VALIDATOR]', () => {
   it('Should be return true when passed digits correctly and passed argument validByPrice for check the payment slip price', () => {
     expect(
       validators
-        .paymentSlipValidator({
+        .paymentSlip({
           digits: '65590000020044250000594059050008194290000006050',
         })
         .isValid({
@@ -236,7 +236,7 @@ describe('[VALIDATORS: PAYMENT_SLIP_VALIDATOR]', () => {
     ).toBeTruthy();
     expect(
       validators
-        .paymentSlipValidator({
+        .paymentSlip({
           digits: '65590000020044250000594059050008194290000006050',
         })
         .isValid({
@@ -245,7 +245,7 @@ describe('[VALIDATORS: PAYMENT_SLIP_VALIDATOR]', () => {
     ).toBeTruthy();
     expect(
       validators
-        .paymentSlipValidator({
+        .paymentSlip({
           digits: '65590000020044250000594059050008194290000006050',
         })
         .isValid({
@@ -254,7 +254,7 @@ describe('[VALIDATORS: PAYMENT_SLIP_VALIDATOR]', () => {
     ).toBeFalsy();
     expect(
       validators
-        .paymentSlipValidator({
+        .paymentSlip({
           digits: '846100000005319901090112004961794445808053219016',
         })
         .isValid({
@@ -265,7 +265,7 @@ describe('[VALIDATORS: PAYMENT_SLIP_VALIDATOR]', () => {
   it('Should be return true when passed digits correctly and passed argument validByDate for check the payment slip expiration date', () => {
     expect(
       validators
-        .paymentSlipValidator({
+        .paymentSlip({
           digits: '65590000020044250000594059050008194290000006050',
         })
         .isValid({
@@ -274,7 +274,7 @@ describe('[VALIDATORS: PAYMENT_SLIP_VALIDATOR]', () => {
     ).toBeTruthy();
     expect(
       validators
-        .paymentSlipValidator({
+        .paymentSlip({
           digits: '65590000020044250000594059050008194290000006050',
         })
         .isValid({
@@ -283,7 +283,7 @@ describe('[VALIDATORS: PAYMENT_SLIP_VALIDATOR]', () => {
     ).toBeFalsy();
     expect(
       validators
-        .paymentSlipValidator({
+        .paymentSlip({
           digits: '846100000005319901090112004961794445808053219016',
         })
         .isValid({
@@ -294,7 +294,7 @@ describe('[VALIDATORS: PAYMENT_SLIP_VALIDATOR]', () => {
   it('Should be return true when passed digits correctly and passed argument validSegmentType for check what segment type the payment slip its inserted', () => {
     expect(
       validators
-        .paymentSlipValidator({
+        .paymentSlip({
           digits: '65590000020044250000594059050008194290000006050',
         })
         .isValid({
@@ -303,7 +303,7 @@ describe('[VALIDATORS: PAYMENT_SLIP_VALIDATOR]', () => {
     ).toBeTruthy();
     expect(
       validators
-        .paymentSlipValidator({
+        .paymentSlip({
           digits: '65590000020044250000594059050008194290000006050',
         })
         .isValid({
@@ -312,7 +312,7 @@ describe('[VALIDATORS: PAYMENT_SLIP_VALIDATOR]', () => {
     ).toBeFalsy();
     expect(
       validators
-        .paymentSlipValidator({
+        .paymentSlip({
           digits: '846100000005319901090112004961794445808053219016',
         })
         .isValid({
@@ -323,7 +323,7 @@ describe('[VALIDATORS: PAYMENT_SLIP_VALIDATOR]', () => {
   it('Should be return true when passed digits correctly and passed argument validByBank for check the code or name emitting bank', () => {
     expect(
       validators
-        .paymentSlipValidator({
+        .paymentSlip({
           digits: '65590000020044250000594059050008194290000006050',
         })
         .isValid({
@@ -332,7 +332,7 @@ describe('[VALIDATORS: PAYMENT_SLIP_VALIDATOR]', () => {
     ).toBeTruthy();
     expect(
       validators
-        .paymentSlipValidator({
+        .paymentSlip({
           digits: '65590000020044250000594059050008194290000006050',
         })
         .isValid({
@@ -341,7 +341,7 @@ describe('[VALIDATORS: PAYMENT_SLIP_VALIDATOR]', () => {
     ).toBeTruthy();
     expect(
       validators
-        .paymentSlipValidator({
+        .paymentSlip({
           digits: '65590000020044250000594059050008194290000006050',
         })
         .isValid({
@@ -350,7 +350,7 @@ describe('[VALIDATORS: PAYMENT_SLIP_VALIDATOR]', () => {
     ).toBeFalsy();
     expect(
       validators
-        .paymentSlipValidator({
+        .paymentSlip({
           digits: '65590000020044250000594059050008194290000006050',
         })
         .isValid({
@@ -359,7 +359,7 @@ describe('[VALIDATORS: PAYMENT_SLIP_VALIDATOR]', () => {
     ).toBeFalsy();
     expect(
       validators
-        .paymentSlipValidator({
+        .paymentSlip({
           digits: '846100000005319901090112004961794445808053219016',
         })
         .isValid({
@@ -370,7 +370,7 @@ describe('[VALIDATORS: PAYMENT_SLIP_VALIDATOR]', () => {
   it('Should be return true when passed digits correctly and all argument of param ParamsPaymentSlipValidator are passed correctly for check', () => {
     expect(
       validators
-        .paymentSlipValidator({
+        .paymentSlip({
           digits: '65590000020044250000594059050008194290000006050',
         })
         .isValid({
@@ -384,7 +384,7 @@ describe('[VALIDATORS: PAYMENT_SLIP_VALIDATOR]', () => {
     ).toBeTruthy();
     expect(
       validators
-        .paymentSlipValidator({
+        .paymentSlip({
           digits: '65590000020044250000594059050008194290000006050',
         })
         .isValid({
@@ -398,7 +398,7 @@ describe('[VALIDATORS: PAYMENT_SLIP_VALIDATOR]', () => {
     ).toBeFalsy();
     expect(
       validators
-        .paymentSlipValidator({
+        .paymentSlip({
           digits: '84610000000319901090110049617944480805321901',
         })
         .isValid({
