@@ -12,6 +12,7 @@ export const voterRegistrationValidation = (digits?: string) => {
   let validationFirstCheckDigit = utils.lunhMod11Algorithm({
     digits: digits.slice(0, digits.length - 4),
   });
+
   if (validationFirstCheckDigit === null) return false;
 
   if (validationFirstCheckDigit === 10 || validationFirstCheckDigit === 11) {
@@ -26,6 +27,7 @@ export const voterRegistrationValidation = (digits?: string) => {
   let validationSecontCheckDigit = utils.lunhMod11Algorithm({
     digits: digits.slice(8, 11),
   });
+
   if (validationSecontCheckDigit === null) return false;
 
   if (validationSecontCheckDigit === 10 || validationSecontCheckDigit === 11) {

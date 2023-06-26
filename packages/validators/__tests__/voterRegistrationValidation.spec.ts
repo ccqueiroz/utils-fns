@@ -30,6 +30,7 @@ describe('[VALIDATOR: VOTER_REGISTRATION_VALIDATIONA]', () => {
   });
   it('Should be return true value when argument passed voter registration belonging to Minas Gerais', () => {
     expect(validators.voterRegistration('465723620248')).toBeTruthy();
+    expect(validators.voterRegistration('613752510213')).toBeTruthy();
   });
   it('Should be return true value when argument passed is more than 12 digits', () => {
     expect(validators.voterRegistration('703417160228787182')).toBeFalsy();
