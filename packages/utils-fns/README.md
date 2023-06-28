@@ -19,7 +19,7 @@
 - [x] **paymentSlipValidator (ITF-14)**
 - [x] **stateRegistrationValidator (inscrição estadual - BR)**
 - [x] **voterRegistrationValidation (título de eleitor - BR)**
-- [ ] **cnhValidator**
+- [x] **cnhValidator**
 - [ ] **renavamValidator**
 - [ ] **licensePlateValidator (placa de carros - BR)**
 - [ ] **cepValidator (cep - BR)**
