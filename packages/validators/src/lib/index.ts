@@ -1,3 +1,4 @@
+import { renavamValidator as renavam } from './renavamValidator/index';
 import { cnhValidator as cnh } from './cnhValidator/index';
 import { stateRegistrationValidator as stateRegistration } from './stateRegistrationValidator/index';
 import { emailValidator as email } from './email/index';
@@ -55,6 +56,7 @@ const validators = {
   stateRegistration,
   voterRegistration,
   cnh,
+  renavam,
 };
 
 export default validators;
