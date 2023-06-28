@@ -1,3 +1,4 @@
+import { cnhValidator as cnh } from './cnhValidator/index';
 import { stateRegistrationValidator as stateRegistration } from './stateRegistrationValidator/index';
 import { emailValidator as email } from './email/index';
 import { cnpjValidator as cnpj } from './cnpj/index';
@@ -53,6 +54,7 @@ const validators = {
   paymentSlip: ClassPaymentSlipValidator.init,
   stateRegistration,
   voterRegistration,
+  cnh,
 };
 
 export default validators;
