@@ -1,5 +1,11 @@
 # @utils-fns/utils-fns
 
+## 3.4.0
+
+### Minor Changes
+
+- include renavam validator module
+
 ## 3.3.0
 
 ### Minor Changes
