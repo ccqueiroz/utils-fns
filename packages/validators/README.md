@@ -21,7 +21,7 @@
 - [x] **stateRegistrationValidator (inscrição estadual - BR)**
 - [x] **voterRegistrationValidation (título de eleitor - BR)**
 - [x] **cnhValidator**
-- [ ] **renavamValidator**
+- [x] **renavamValidator**
 - [ ] **licensePlateValidator (placa de carros - BR)**
 - [ ] **cepValidator (cep - BR)**
 - [ ] **creaValidator(BR)**
