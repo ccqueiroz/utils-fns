@@ -1,5 +1,11 @@
 # @utils-fns/validators
 
+## 3.3.0
+
+### Minor Changes
+
+- include cnh validator
+
 ## 3.2.0
 
 ### Minor Changes
