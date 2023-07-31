@@ -22,10 +22,7 @@
 - [x] **voterRegistrationValidation (título de eleitor - BR)**
 - [x] **cnhValidator**
 - [x] **renavamValidator**
-- [ ] **licensePlateValidator (placa de carros - BR)**
-- [ ] **cepValidator (cep - BR)**
-- [ ] **creaValidator(BR)**
-- [ ] **crmValidator(BR)**
+- [x] **cepValidator (cep - BR)**
 - [ ] **generalRegexValidator**
 
 ## Under Construction
