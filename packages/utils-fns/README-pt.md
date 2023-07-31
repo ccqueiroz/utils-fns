@@ -3,6 +3,8 @@
 ![npm](https://img.shields.io/npm/v/@utils-fns/utils-fns)
 [![License](https://img.shields.io/github/license/ccqueiroz/utils-fns)](LICENSE)
 [![Repository](https://img.shields.io/badge/repository-GitHub-blue.svg)](https://github.com/ccqueiroz/utils-fn)
+## README versions
+[Portuguese 🇧🇷](./README-pt.md)  |  [English 🇺🇸](./README.md)
 
 <p align="justify">
   A biblioteca @utils-fns/utils-fns está sendo desenvolvolvida com o objetivo de fornecer ferramentas unificadas que facilitem as tarefas diárias dos programadores. Nossa motivação é simplificar tarefas comuns, como validadores, mascaramento de valores, classificação, pesquisa e métodos de conversão, oferecendo uma solução abrangente e eficiente e que seja possível o uso deste conjunto de bibliotecas em ambientes web - mobile - service.
