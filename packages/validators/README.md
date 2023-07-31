@@ -12,18 +12,18 @@
 
 ## Features
 ### Validators: The ```@utils-fns/validators``` library provides the following validators:
-- [x] **cpfValidator**
-- [x] **nisValidator**
-- [x] **emailValidator**
-- [x] **cnpjValidator**
-- [x] **phoneValidator**
-- [x] **paymentCardValidator (luhn algorithm)**
-- [x] **paymentSlipValidator (ITF-14)**
-- [x] **stateRegistrationValidator (inscrição estadual - BR)**
-- [x] **voterRegistrationValidation (título de eleitor - BR)**
-- [x] **cnhValidator**
-- [x] **renavamValidator**
-- [x] **cepValidator (cep - BR)**
+- [x] [**cpfValidator**](#cpf-validator)
+- [x] [**nisValidator**](#nis-validator)
+- [x] [**emailValidator**](#email-validator)
+- [x] [**cnpjValidator**](#cnpj-validator)
+- [x] [**phoneValidator**](#phone-validator)
+- [x] [**paymentCardValidator (luhn algorithm)**](#paymentcard-validator)
+- [x] [**paymentSlipValidator (ITF-14)**](#paymentslip-validator)
+- [x] [**stateRegistrationValidator (inscrição estadual - BR)**](#state-registration-validator)
+- [x] [**voterRegistrationValidator (título de eleitor - BR)**](#voter-registration-validator)
+- [x] [**cnhValidator**](#cnh-validator)
+- [x] [**renavamValidator**](#renavam-validator)
+- [x] [**cepValidator (cep - BR)**](#cep-validator)
 
 ## 🖥 Environment Support
 - Applications with javascript ES6 or higher
