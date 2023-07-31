@@ -5,7 +5,7 @@
 [![Repository](https://img.shields.io/badge/repository-GitHub-blue.svg)](https://github.com/ccqueiroz/utils-fn)
 
 ## Versões README
-[Português 🇧🇷](./README-pt.md)  |  [Inglês 🇺🇸](./README.md)
+[Português 🇧🇷](https://github.com/ccqueiroz/utils-fns/blob/main/packages/utils/README-pt.md)  |  [Inglês 🇺🇸](https://github.com/ccqueiroz/utils-fns/blob/main/packages/utils/README.md)
 
 <p align="justify">
   A biblioteca @utils-fns/utils está sendo desenvolvida para ser parte de uma biblioteca maior, @utils-fns, que está sendo desenvolvolvida com o objetivo de fornecer ferramentas unificadas que facilitem as tarefas diárias dos programadores. Nossa motivação é simplificar tarefas comuns, como validadores, mascaramento de valores, classificação, pesquisa e métodos de conversão, oferecendo uma solução abrangente e eficiente e que seja possível o uso deste conjunto de bibliotecas em ambientes web - mobile - service.

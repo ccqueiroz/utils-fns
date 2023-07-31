@@ -4,14 +4,14 @@
 [![License](https://img.shields.io/github/license/ccqueiroz/utils-fns)](LICENSE)
 [![Repository](https://img.shields.io/badge/repository-GitHub-blue.svg)](https://github.com/ccqueiroz/utils-fn)
 ## README versions
-[Portuguese 🇧🇷](./README-pt.md)  |  [English 🇺🇸](./README.md)
+[Portuguese 🇧🇷](https://github.com/ccqueiroz/utils-fns/blob/main/packages/utils-fns/README-pt.md)  |  [English 🇺🇸](https://github.com/ccqueiroz/utils-fns/blob/main/packages/utils-fns/README.md)
 
 <p align="justify">
   The @utils-fns/utils-fns library is being developed with the aim of providing unified tools that facilitate programmers' daily tasks. Our motivation is to simplify common tasks, such as validators, value masking, classification, search and conversion methods, offering a comprehensive and efficient solution and making it possible to use this set of libraries in web - mobile - service environments.
 </p>
 
 ## ✨ Features
-### Validations: The ```@utils-fns/validators``` library provides the following validators:
+### Validators: The ```@utils-fns/validators``` library provides the following validators:
 - [x] **cpfValidator**
 - [x] **nisValidator**
 - [x] **emailValidator**

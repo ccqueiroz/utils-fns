@@ -4,16 +4,16 @@
 [![License](https://img.shields.io/github/license/ccqueiroz/utils-fns)](LICENSE)
 [![Repository](https://img.shields.io/badge/repository-GitHub-blue.svg)](https://github.com/ccqueiroz/utils-fn)
 
-## Versões README
-[Português 🇧🇷](./README-pt.md)  |  [Inglês 🇺🇸](./README.md)
+## README versions
+[Portuguese 🇧🇷](https://github.com/ccqueiroz/utils-fns/blob/main/packages/utils/README-pt.md)  |  [English 🇺🇸](https://github.com/ccqueiroz/utils-fns/blob/main/packages/utils/README.md)
 
 <p align="justify">
-  A biblioteca @utils-fns/utils está sendo desenvolvida para ser parte de uma biblioteca maior, @utils-fns, que está sendo desenvolvolvida com o objetivo de fornecer ferramentas unificadas que facilitem as tarefas diárias dos programadores. Nossa motivação é simplificar tarefas comuns, como validadores, mascaramento de valores, classificação, pesquisa e métodos de conversão, oferecendo uma solução abrangente e eficiente e que seja possível o uso deste conjunto de bibliotecas em ambientes web - mobile - service.
+  The @utils-fns/utils library is being developed to be part of a larger library, @utils-fns, which is being developed with the aim of providing unified tools that facilitate programmers' daily tasks. Our motivation is to simplify common tasks, such as validators, value masking, classification, search and conversion methods, offering a comprehensive and efficient solution and making it possible to use this set of libraries in web - mobile - service environments.
 </p>
 
 ## ✨ Features
-### Utils: A biblioteca ```@utils-fns/utils``` fornece uma ampla gama de métodos para ajudar na programação do dia-a-dia:
-**Módulo em Construção**
+### Utils: The ```@utils-fns/utils``` library provides a wide range of methods to help with day-to-day programming:
+**Module under construction**
 - [x] **Data List Cities (BR)**
 - [x] **Data List States (BR)**
 - [x] **Data List Countries**
