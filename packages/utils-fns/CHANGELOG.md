@@ -1,5 +1,11 @@
 # @utils-fns/utils-fns
 
+## 6.0.0
+
+### Major Changes
+
+- document readme
+
 ## 5.0.0
 
 ### Major Changes

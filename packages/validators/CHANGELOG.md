@@ -1,5 +1,11 @@
 # @utils-fns/validators
 
+## 5.0.0
+
+### Major Changes
+
+- document readme
+
 ## 4.0.0
 
 ### Major Changes

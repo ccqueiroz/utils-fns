@@ -7,7 +7,7 @@
 [Português 🇧🇷](https://github.com/ccqueiroz/utils-fns/blob/main/packages/utils-fns/README-pt.md)  |  [Inglês 🇺🇸](https://github.com/ccqueiroz/utils-fns/blob/main/packages/utils-fns/README.md)
 
 <p align="justify">
-  The @utils-fns/utils-fns library is being developed with the aim of providing unified tools that facilitate programmers' daily tasks. Our motivation is to simplify common tasks, such as validators, value masking, classification, search and conversion methods, offering a comprehensive and efficient solution and making it possible to use this set of libraries in web - mobile - service environments.
+  A biblioteca @utils-fns/utils-fns está sendo desenvolvida com o objetivo de fornecer ferramentas unificadas que facilitem as tarefas diárias dos programadores. Nossa motivação é simplificar tarefas comuns, como validadores, mascaramento de valores, classificação, métodos de busca e conversão, oferecendo uma solução abrangente e eficiente e possibilitando a utilização desse conjunto de bibliotecas em ambientes web - mobile - serviços.
 </p>
 
 ## ✨ Features
