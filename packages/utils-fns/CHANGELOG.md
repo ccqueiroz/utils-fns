@@ -1,5 +1,17 @@
 # @utils-fns/utils-fns
 
+## 5.0.0
+
+### Major Changes
+
+- refactor file exported utils-fns
+
+## 4.0.0
+
+### Major Changes
+
+- fix rollup to build cjs and esm with js extension
+
 ## 3.4.0
 
 ### Minor Changes

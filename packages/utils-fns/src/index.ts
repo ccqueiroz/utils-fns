@@ -1,2 +1,5 @@
-export * from '@utils-fns/validators';
-export * from '@utils-fns/utils';
+import { validators, TypesValidators } from '@utils-fns/validators';
+import { utils, TypesUtils } from '@utils-fns/utils';
+
+export type { TypesValidators, TypesUtils };
+export { validators, utils };
