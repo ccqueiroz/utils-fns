@@ -9,6 +9,8 @@ import { phoneValidator as phone } from './phone';
 import { PaymentCardValidator as ClassPaymentCardValidator } from './paymentCardValidator/index';
 import { PaymentSlipValidator as ClassPaymentSlipValidator } from './paymentSlipValidator/index';
 import { voterRegistrationValidation as voterRegistration } from './voterRegistrationValidation/index';
+import { CepValidator } from './cep';
+
 import type {
   EmailValidator,
   MinMaxParamsEmail,
@@ -57,6 +59,7 @@ const validators = {
   voterRegistration,
   cnh,
   renavam,
+  cep: CepValidator.init,
 };
 
 export default validators;
