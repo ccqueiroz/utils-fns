@@ -123,7 +123,7 @@ So, just choose which validation tool will be used.
   //return true
 ```
 ### Typescript
-```@utils-fns/validators``` is written in TypeScript with complete definitions.
+```@utils-fns/utils-fns``` is written in TypeScript with complete definitions.
 ### Author
 
 <div style="margin-top: 15px; margin-bottom: 5px;">

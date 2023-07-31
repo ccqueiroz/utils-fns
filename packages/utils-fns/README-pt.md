@@ -122,7 +122,7 @@ Assim, basta escolher qual ferramenta de validação será utilizada.
   //return true
 ```
 ### Typescript
-```@utils-fns/validators``` é escrito em TypeScript com definições completas.
+```@utils-fns/utils-fns``` é escrito em TypeScript com definições completas.
 
 ### Autor
 
