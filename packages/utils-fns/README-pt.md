@@ -5,11 +5,11 @@
 [![Repository](https://img.shields.io/badge/repository-GitHub-blue.svg)](https://github.com/ccqueiroz/utils-fn)
 
 <p align="justify">
-  The @utils-fns/utils-fns library is being developed with the aim of providing unified tools that facilitate programmers' daily tasks. Our motivation is to simplify common tasks, such as validators, value masking, classification, search and conversion methods, offering a comprehensive and efficient solution and making it possible to use this set of libraries in web - mobile - service environments.
+  A biblioteca @utils-fns/utils-fns está sendo desenvolvolvida com o objetivo de fornecer ferramentas unificadas que facilitem as tarefas diárias dos programadores. Nossa motivação é simplificar tarefas comuns, como validadores, mascaramento de valores, classificação, pesquisa e métodos de conversão, oferecendo uma solução abrangente e eficiente e que seja possível o uso deste conjunto de bibliotecas em ambientes web - mobile - service.
 </p>
 
 ## ✨ Features
-### Validations: The ```@utils-fns/validators``` library provides the following validators:
+### Validations: A biblioteca ```@utils-fns/validators``` fornece os seguintes validadores:
 - [x] **cpfValidator**
 - [x] **nisValidator**
 - [x] **emailValidator**
@@ -23,10 +23,10 @@
 - [x] **renavamValidator**
 - [x] **cepValidator (cep - BR)**
 
-Link to module documentation ```@utils-fns/validators```: https://github.com/ccqueiroz/utils-fns/blob/main/packages/validators/README.md
+Link para documentação do módulo ```@utils-fns/validators```: https://github.com/ccqueiroz/utils-fns/blob/main/packages/validators/README-pt.md
 
-### Mask: The ```@utils-fns/mask``` library provides the following masks:
-**Module under construction**
+### Mask: A biblioteca ```@utils-fns/mask``` fornece as seguintes máscaras:
+**Módulo em construção**
 
 - [ ] **cpfMask**
 - [ ] **nisMask**
@@ -45,10 +45,10 @@ Link to module documentation ```@utils-fns/validators```: https://github.com/ccq
 - [ ] **crmMask(BR)**
 - [ ] **generalRegexMask**
 
-Link to module documentation ```@utils-fns/mask```: **Under Construction**
+Link para documentação do módulo ```@utils-fns/mask```: **Em construção**
 
-### Utils: The ```@utils-fns/utils``` library provides the following utilities:
-**Module under construction**
+### Utils: A biblioteca ```@utils-fns/utils``` fornece os seguintes utilitários:
+**Módulo em construção**
 
 - [x] **Data List Cities (BR)**
 - [x] **Data List States (BR)**
@@ -84,27 +84,26 @@ Link to module documentation ```@utils-fns/mask```: **Under Construction**
 - [ ] **Convert Hex To RGB**
 - [ ] **Add Opacity In Color Rgb**
 
-Link to module documentation ```@utils-fns/utils```: https://github.com/ccqueiroz/utils-fns/blob/main/packages/utils/README.md
+Link para documentação do módulo ```@utils-fns/utils```: https://github.com/ccqueiroz/utils-fns/blob/main/packages/utils/README-pt.md
 
-## 🖥 Supported Environments
-- Applications with javascript ES6 or higher
-  - Modern Browsers
+## 🖥 Ambientes Suportados
+- Aplicativos com javascript ES6 ou superior
+  - Browsers modernos
   - Server-side
   - Electron
   - Mobile
 
-## 📦 Install
-To install the @utils-fns/utils-fns library: use your preferred package manager
-
+## 📦 Instalação
+Para instalar a biblioteca @utils-fns/utils-fns: utilize o gerenciador de pacotes da sua preferência
 ```javascript
   yarn add @utils-fns/utils-fns
 
-  or
+  ou
 
   npm install @utils-fns/utils-fns
 ```
-## 🔨 How to use
-To access the features, just follow the example:
+## 🔨 Como utilizar
+Para acessar as features, basta seguir o exemplo:
 
 ```javascript
   //ES6
@@ -114,15 +113,16 @@ To access the features, just follow the example:
   //CommomJS
   const { validators, utils, mask } = require("@utils-fns/utils-fns");
 ```
-So, just choose which validation tool will be used.
+Assim, basta escolher qual ferramenta de validação será utilizada.
 
 ```javascript
   const cpfValidation = validators.cpf('64912007013')
   //return true
 ```
 ### Typescript
-```@utils-fns/validators``` is written in TypeScript with complete definitions.
-### Author
+```@utils-fns/validators``` é escrito em TypeScript com definições completas.
+
+### Autor
 
 <div style="margin-top: 15px; margin-bottom: 5px;">
     <img style="border-radius: 50%;" src="https://github.com/ccqueiroz.png" width="100px;" alt=""/>
@@ -138,4 +138,4 @@ So, just choose which validation tool will be used.
 
 ## Licença
 
-This API is licensed [MIT](./LICENSE).
+Esta Api esta sob a licença [MIT](./LICENSE).

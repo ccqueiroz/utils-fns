@@ -3,49 +3,48 @@
 ![npm](https://img.shields.io/npm/v/@utils-fns/validators)
 [![License](https://img.shields.io/github/license/ccqueiroz/utils-fns)](LICENSE)
 [![Repository](https://img.shields.io/badge/repository-GitHub-blue.svg)](https://github.com/ccqueiroz/utils-fn)
-## README versions
-[Portuguese 🇧🇷](./README-pt.md)  |  [English 🇺🇸](./README.md)
+## Versões README
+[Português 🇧🇷](./README-pt.md)  |  [Inglês 🇺🇸](./README.md)
 
 <p align="justify">
-  The @utils-fns/validators library was developed to be part of a larger library, @utils-fns, which is being developed with the aim of providing unified tools that facilitate the daily tasks of programmers. Our motivation is to simplify common tasks, such as <span style="font-weight: bold;">validators</span>, value masking, sorting, search and conversion methods, offering a comprehensive and efficient solution that makes possible the use of this set of libraries in web - mobile - service environments.
+  A biblioteca @utils-fns/validators foi desenvolvida para ser parte de uma biblioteca maior, @utils-fns, que está sendo desenvolvolvida com o objetivo de fornecer ferramentas unificadas que facilitem as tarefas diárias dos programadores. Nossa motivação é simplificar tarefas comuns, como <span style="font-weight: bold;">validadores</span>, mascaramento de valores, classificação, pesquisa e métodos de conversão, oferecendo uma solução abrangente e eficiente e que seja possível o uso deste conjunto de bibliotecas em ambientes web - mobile - service.
 </p>
 
-## Features
-### Validations: The ```@utils-fns/validators``` library provides the following validators:
-- [x] **cpfValidator**
-- [x] **nisValidator**
-- [x] **emailValidator**
-- [x] **cnpjValidator**
-- [x] **phoneValidator**
-- [x] **paymentCardValidator (luhn algorithm)**
-- [x] **paymentSlipValidator (ITF-14)**
-- [x] **stateRegistrationValidator (inscrição estadual - BR)**
-- [x] **voterRegistrationValidation (título de eleitor - BR)**
-- [x] **cnhValidator**
-- [x] **renavamValidator**
-- [x] **cepValidator (cep - BR)**
+## ✨ Features
+### Validations: A biblioteca ```@utils-fns/validators``` fornece os seguintes validadores:
+- [x] [**cpfValidator**](#cpf-validator)
+- [x] [**nisValidator**](#nis-validator)
+- [x] [**emailValidator**](#email-validator)
+- [x] [**cnpjValidator**](#cnpj-validator)
+- [x] [**phoneValidator**](#phone-validator)
+- [x] [**paymentCardValidator (luhn algorithm)**](#paymentcard-validator)
+- [x] [**paymentSlipValidator (ITF-14)**](#paymentslip-validator)
+- [x] [**stateRegistrationValidator (inscrição estadual - BR)**](#state-registration-validator)
+- [x] [**voterRegistrationValidator (título de eleitor - BR)**](#voter-registration-validator)
+- [x] [**cnhValidator**](#cnh-validator)
+- [x] [**renavamValidator**](#renavam-validator)
+- [x] [**cepValidator (cep - BR)**](#cep-validator)
 
-## 🖥 Environment Support
-- Applications with javascript ES6 or higher
-  - Modern browsers
+## 🖥 Ambientes Suportados
+- Aplicativos com javascript ES6 ou superior
+  - Browsers modernos
   - Server-side
   - Electron
   - Mobile
-## 📦 Install
-If you want to install the complete module, follow the documents in the [@utils-fns/utils-fns](https://github.com/ccqueiroz/utils-fns/blob/main/packages/utils-fns/README.md).
 
-To install the @utils-fns/validators library: use your preferred package manager
+## 📦 Instalação
+Caso queira instalar o módulo completo, seguir a documentação do [@utils-fns/utils-fns](https://github.com/ccqueiroz/utils-fns/blob/main/packages/utils-fns/README-pt.md).
+
+Para instalar a biblioteca @utils-fns/validators: utilize o gerenciador de pacotes da sua preferência
 ```javascript
   yarn add @utils-fns/validators
 
-  or
+  ou
 
   npm install @utils-fns/validators
 ```
-
-## 🔨 How to use
-
-To access the features, just follow the example:
+## 🔨 Como utilizar
+Para acessar as features, basta seguir o exemplo:
 
 ```javascript
   //ES6
@@ -55,17 +54,17 @@ To access the features, just follow the example:
   //CommomJS
   const { validators } = require("@utils-fns/validators");
 ```
-So, just choose which validation tool will be used.
+Assim, basta escolher qual ferramenta de validação será utilizada.
 
 ```javascript
   const cpfValidation = validators.cpf('64912007013')
   //return true
 ```
 ### Typescript
-```@utils-fns/validators``` is written in TypeScript with complete definitions.
+```@utils-fns/validators``` é escrito em TypeScript com definições completas.
 
 ## Cpf Validator
-| Method | Params | Type |
+| Método | Params | Tipo |
 |---|---|---|
 | `cpf` | `cpf` | string \| undefined |
 
@@ -82,7 +81,7 @@ So, just choose which validation tool will be used.
   //❌ return false
 ```
 ## Nis Validator
-| Method | Params | Type |
+| Método | Params | Tipo |
 |---|---|---|
 | `nis` | `nis` | string \| undefined |
 ```javascript
@@ -98,7 +97,7 @@ So, just choose which validation tool will be used.
   //❌ return false
 ```
 ## Email Validator
-| Method | Params | Type |
+| Método | Params | Tipo |
 |---|---|---|
 | `email` | `email` | string \| undefined |
 | `email` | `paramsEmailValidator.minMaxUserNameEmail.min` | number \| undefined |
@@ -131,7 +130,7 @@ So, just choose which validation tool will be used.
   //❌ return false
 ```
 ## Cnpj Validator
-| Method | Params | Type |
+| Método | Params | Tipo |
 |---|---|---|
 | `cnpj` | `cnpj` | string \| undefined |
 
@@ -148,7 +147,7 @@ So, just choose which validation tool will be used.
   //❌ return false
 ```
 ## Phone Validator
-| Method | Params | Type |
+| Método | Params | Tipo |
 |---|---|---|
 | `phone` | `phone` | string \| undefined |
 | `phone` | `paramsPhoneValidator.onlyMobilePhoneBR` | boolean \| undefined |
@@ -200,7 +199,8 @@ So, just choose which validation tool will be used.
 ```
 
 ## PaymentCard Validator
-| Method | Params | Type |
+### Validador de cartão de crédio/débito
+| Método | Params | Tipo |
 |---|---|---|
 | `paymentCard` | `cardNumber` | string \| undefined |
 | `paymentCard.isValid` | `paramsPaymentCardValidator.validationTypeCard` | credit \| debit \| credit-debit \| undefined |
@@ -238,7 +238,8 @@ So, just choose which validation tool will be used.
   //❌ return false
 ```
 ## PaymentSlip Validator
-| Method | Params | Type |
+### Validador de boletos de pagamento
+| Método | Params | Tipo |
 |---|---|---|
 | `paymentSlip` | `digits` | string \| undefined |
 | `paymentSlip.isValid` | `paramsPaymentSlipValidator.validByBank` | BankCode \| BankName \| undefined |
@@ -297,7 +298,8 @@ So, just choose which validation tool will be used.
   //✅ return true
 ```
 ## State Registration Validator
-| Method | Params | Type |
+### Validador de inscrição estadual
+| Método | Params | Tipo |
 |---|---|---|
 | `stateRegistrationValidator` | `digits` | string \| undefined |
 | `stateRegistrationValidator` | `uf` | AC \| AL \| AP \| AM \| BA \| CE \| DF \| ES \| GO \| MA \| MT \| MS \| MG \| PA \| PB \| PR \| PE \| PI \| RJ \| RN \| RS \| RO \| RR \| SC \| SP \| SE \| TO |
@@ -312,7 +314,8 @@ So, just choose which validation tool will be used.
   //❌ return false
 ```
 ## Voter Registration Validator
-| Method | Params | Type |
+### Validador de título de eleitor
+| Método | Params | Tipo |
 |---|---|---|
 | `voterRegistrationValidation` | `digits` | string \| undefined |
 
@@ -326,7 +329,7 @@ So, just choose which validation tool will be used.
   //❌ return false
 ```
 ## Cnh Validator
-| Method | Params | Type |
+| Método | Params | Tipo |
 |---|---|---|
 | `cnh` | `cnh` | string \| undefined |
 
@@ -340,7 +343,7 @@ So, just choose which validation tool will be used.
   //❌ return false
 ```
 ## Renavam Validator
-| Method | Params | Type |
+| Método | Params | Tipo |
 |---|---|---|
 | `renavamValidator` | `renavam` | string \| undefined |
 
@@ -355,7 +358,7 @@ So, just choose which validation tool will be used.
 ```
 
 ## Cep Validator
-| Method | Params | Type |
+| Método | Params | Tipo |
 |---|---|---|
 | `cep` | `cep` | string \| undefined |
 | `cep.isValid` | - | - |
@@ -380,7 +383,8 @@ So, just choose which validation tool will be used.
   //    isValid: true,
   //  }
 ```
-### Author
+
+### Autor
 
 <div style="margin-top: 15px; margin-bottom: 5px;">
     <img style="border-radius: 50%;" src="https://github.com/ccqueiroz.png" width="100px;" alt=""/>
@@ -394,6 +398,6 @@ So, just choose which validation tool will be used.
 [![Gmail Badge](https://img.shields.io/badge/-caio.cezar.dequeiroz@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:caio.cezar.dequeiroz@gmail.com)](mailto:caio.cezar.dequeiroz@gmail.com)
 
 
-## License
+## Licença
 
-This API is licensed [MIT](./LICENSE).
+Esta Api esta sob a licença [MIT](./LICENSE).
