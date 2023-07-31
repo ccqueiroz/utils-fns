@@ -4,15 +4,15 @@
 [![License](https://img.shields.io/github/license/ccqueiroz/utils-fns)](LICENSE)
 [![Repository](https://img.shields.io/badge/repository-GitHub-blue.svg)](https://github.com/ccqueiroz/utils-fn)
 <!-- ![npm downloads](https://img.shields.io/npm/dm/@utils-fns/validators) -->
-## README versions
-[Portuguese 🇧🇷](./README-pt.md)  |  [English 🇺🇸](./README.md)
+## Versões README
+[Português 🇧🇷](./README-pt.md)  |  [Inglês 🇺🇸](./README.md)
 
 <p align="justify">
-  The @utils-fns/validators library was developed to be part of a larger library, @utils-fns, which is being developed with the aim of providing unified tools that facilitate the daily tasks of programmers. Our motivation is to simplify common tasks, such as <span style="font-weight: bold;">validators</span>, value masking, sorting, search and conversion methods, offering a comprehensive and efficient solution that makes possible the use of this set of libraries in web - mobile - service environments.
+  A biblioteca @utils-fns/validators foi desenvolvida para ser parte de uma biblioteca maior, @utils-fns, que está sendo desenvolvolvida com o objetivo de fornecer ferramentas unificadas que facilitem as tarefas diárias dos programadores. Nossa motivação é simplificar tarefas comuns, como <span style="font-weight: bold;">validadores</span>, mascaramento de valores, classificação, pesquisa e métodos de conversão, oferecendo uma solução abrangente e eficiente e que seja possível o uso deste conjunto de bibliotecas em ambientes web - mobile - service.
 </p>
 
-## Tools
-### Validations:The @utils-fns/validators library provides the following validators:
+## Features
+### Validations: A biblioteca @utils-fns/validators fornece os seguintes validadores:
 - [x] **cpfValidator**
 - [x] **nisValidator**
 - [x] **emailValidator**
@@ -26,8 +26,7 @@
 - [x] **renavamValidator**
 - [x] **cepValidator (cep - BR)**
 
-
-### Author
+### Autor
 
 <div style="margin-top: 15px; margin-bottom: 5px;">
     <img style="border-radius: 50%;" src="https://github.com/ccqueiroz.png" width="100px;" alt=""/>
@@ -41,6 +40,6 @@
 [![Gmail Badge](https://img.shields.io/badge/-caio.cezar.dequeiroz@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:caio.cezar.dequeiroz@gmail.com)](mailto:caio.cezar.dequeiroz@gmail.com)
 
 
-## License
+## Licença
 
-This API is licensed [MIT](./LICENSE).
+Esta Api esta sob a licença [MIT](./LICENSE).
