@@ -1,5 +1,11 @@
 # @utils-fns/utils
 
+## 4.0.0
+
+### Major Changes
+
+- fix rollup to build cjs and esm with js extension
+
 ## 3.1.1
 
 ### Patch Changes

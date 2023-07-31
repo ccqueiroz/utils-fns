@@ -1,8 +1,8 @@
 {
   "name": "@utils-fns/validators",
-  "version": "3.4.0",
-  "main": "dist/cjs/index.ts",
-  "module": "dist/esm/index.ts",
+  "version": "4.0.0",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.mjs",
   "types": "dist/index.d.ts",
   "author": "Caio Queiroz",
   "license": "MIT",
