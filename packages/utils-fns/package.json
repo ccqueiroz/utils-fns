@@ -1,6 +1,6 @@
 {
   "name": "@utils-fns/utils-fns",
-  "version": "6.0.0",
+  "version": "7.0.0",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.mjs",
   "types": "dist/index.d.ts",

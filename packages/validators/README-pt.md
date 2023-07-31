@@ -125,7 +125,9 @@ Assim, basta escolher qual ferramenta de validação será utilizada.
 
   validators.email({
     email: 'foobar@validator.com',
-    paramsEmailValidator: rules,
+    paramsEmailValidator: {
+      emailDomainName: RegExp(/(gmail.com|hotmail.com)/)
+    },
   })
   //❌ return false
 ```
@@ -370,7 +372,7 @@ Assim, basta escolher qual ferramenta de validação será utilizada.
   validators.cep('01001000').isValid()
   //✅ return true
 
-  validators.cep('01001000').getData()
+  await validators.cep('01001000').getData()
   //✅ return {
   //    estado: 'São Paulo',
   //    uf: 'SP',

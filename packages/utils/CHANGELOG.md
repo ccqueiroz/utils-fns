@@ -1,5 +1,11 @@
 # @utils-fns/utils
 
+## 6.0.0
+
+### Major Changes
+
+- generate keywords
+
 ## 5.0.0
 
 ### Major Changes
