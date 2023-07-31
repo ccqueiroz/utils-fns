@@ -1,5 +1,11 @@
 # @utils-fns/validators
 
+## 7.0.0
+
+### Major Changes
+
+- fix readme
+
 ## 6.0.0
 
 ### Major Changes
