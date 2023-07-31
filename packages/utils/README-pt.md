@@ -48,27 +48,27 @@
 - [ ] **Convert Hex To RGB**
 - [ ] **Add Opacity In Color Rgb**
 
-## 🖥 Environment Support
-- Applications with javascript ES6 or higher
-  - Modern browsers
+## 🖥 Ambientes Suportados
+- Aplicativos com javascript ES6 ou superior
+  - Browsers modernos
   - Server-side
   - Electron
   - Mobile
-## 📦 Install
-If you want to install the complete module, follow the documentation of the [@utils-fns/utils-fns](https://github.com/ccqueiroz/utils-fns/blob/main/packages/utils-fns/README.md).
 
-To install the @utils-fns/utils library: use your preferred package manager
+## 📦 Instalação
+Caso queira instalar o módulo completo, seguir a documentação do [@utils-fns/utils-fns](https://github.com/ccqueiroz/utils-fns/blob/main/packages/utils-fns/README-pt.md).
 
+Para instalar a biblioteca @utils-fns/utils: utilize o gerenciador de pacotes da sua preferência
 ```javascript
   yarn add @utils-fns/utils
 
-  or
+  ou
 
   npm install @utils-fns/utils
 ```
 
-## 🔨 How to use
-To access the features, just follow the example:
+## 🔨 Como utilizar
+Para acessar as features, basta seguir o exemplo:
 
 ```javascript
   //ES6
@@ -79,9 +79,9 @@ To access the features, just follow the example:
   const { utils } = require("@utils-fns/utils");
 ```
 
-**Module under construction**
+**Módulo em construção**
 
-### Author
+### Autor
 
 <div style="margin-top: 15px; margin-bottom: 5px;">
     <img style="border-radius: 50%;" src="https://github.com/ccqueiroz.png" width="100px;" alt=""/>
@@ -95,6 +95,6 @@ To access the features, just follow the example:
 [![Gmail Badge](https://img.shields.io/badge/-caio.cezar.dequeiroz@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:caio.cezar.dequeiroz@gmail.com)](mailto:caio.cezar.dequeiroz@gmail.com)
 
 
-## License
+## Licença
 
-This API is licensed [MIT](./LICENSE).
+Esta Api esta sob a licença [MIT](./LICENSE).
