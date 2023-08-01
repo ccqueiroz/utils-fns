@@ -1,0 +1,43 @@
+{
+  "name": "@utils-fns/mask",
+  "version": "1.0.0",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.mjs",
+  "types": "dist/index.d.ts",
+  "author": "Caio Queiroz",
+  "license": "MIT",
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
+  "scripts": {
+    "fix-lint": "eslint src --ext .ts ./src/**/*.ts --fix",
+    "create-workspace-vscode": "node ../../node_modules/@caiocezarqueiroz/eslint-config/settingsGenerator/vscode/index.js",
+    "create-editor-config": "node ../../node_modules/@caiocezarqueiroz/eslint-config/settingsGenerator/editorconfig/index.js",
+    "create-prettier-config": "node ../../node_modules/@caiocezarqueiroz/eslint-config/settingsGenerator/prettier/index.js",
+    "build": "export NODE_ENV=production && rm -rf dist && rollup -c --bundleConfigAsCjs"
+  },
+  "devDependencies": {
+    "@caiocezarqueiroz/eslint-config": "^1.0.22",
+    "@utils-fns/utils": "*",
+    "@rollup/plugin-commonjs": "^25.0.0",
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.2",
+    "@rollup/plugin-terser": "^0.4.3",
+    "@rollup/plugin-typescript": "^11.1.1",
+    "@types/jest": "^29.5.1",
+    "eslint": "^8.41.0",
+    "jest": "^29.5.0",
+    "rollup": "^3.23.0",
+    "rollup-plugin-dts": "^5.3.0",
+    "ts-jest": "^29.1.0",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.5.2",
+    "typescript": "^5.0.4"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "jest": "../../jest.config.ts",
+  "keywords": []
+}
