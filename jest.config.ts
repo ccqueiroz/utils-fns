@@ -19,7 +19,7 @@ const config: Config.InitialOptions = {
     '!<rootDir>/packages/utils-fns/src/index.ts',
   ],
   moduleFileExtensions: ['js', 'json', 'jsx', 'ts', 'tsx', 'node'],
-  testEnvironment: 'node',
+  testEnvironment: 'jsdom',
   preset: 'ts-jest',
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
   testPathIgnorePatterns: ['/node_modules/', '/dist/', '/utils-fns/'],
