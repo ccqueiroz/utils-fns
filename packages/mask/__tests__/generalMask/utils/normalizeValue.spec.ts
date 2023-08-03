@@ -33,7 +33,7 @@ describe('[MASK: NORMALIZE_VALUE]', () => {
       allowEmpty: true,
       removedPattern,
     });
-    expect(normalizeInput).toEqual('OOA');
+    expect(normalizeInput).toEqual('ooa');
   });
   it('Should be passed a string without patterns and returned this string without pattern', () => {
     const maskDefinitions = defaultMasks;
@@ -66,7 +66,7 @@ describe('[MASK: NORMALIZE_VALUE]', () => {
       allowEmpty: true,
       removedPattern,
     });
-    expect(normalizeInput).toEqual('OOA');
+    expect(normalizeInput).toEqual('ooa');
 
     const patternError = '99999-999';
     const valueError = '';
