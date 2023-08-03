@@ -1,4 +1,8 @@
-import { GeneralMaskInterface, TargetType } from '../contracts';
+import {
+  GeneralMaskInterface,
+  ResponseGeneralMaskInterface,
+  TargetType,
+} from '../contracts';
 import {
   defaultMasks,
   formatValue,
@@ -15,7 +19,7 @@ export const generalMask = ({
   previousValue,
   allowEmpty,
   event,
-}: GeneralMaskInterface) => {
+}: GeneralMaskInterface): ResponseGeneralMaskInterface => {
   try {
     if (!pattern) {
       throw new Error(
@@ -27,15 +31,13 @@ export const generalMask = ({
     if (validPosition.length === 0) {
       throw new Error(`The pattern {${pattern}} passed for is not valid.`);
     }
-    const removedPattern = removePattern(pattern, pattern, maskDefinitions);
-
     const normalize = normalizeValue({
       value,
       previousValue,
       pattern,
       allowEmpty,
       maskDefinitions,
-      removedPattern,
+      removedPattern: removePattern(pattern, pattern, maskDefinitions),
     });
 
     const format = formatValue({
@@ -87,9 +89,17 @@ export const generalMask = ({
         }, 10);
       }
     }
-    return format;
+    const removedPattern = removePattern(format, pattern, maskDefinitions);
+
+    return {
+      value: format,
+      unmask: removedPattern,
+    };
   } catch (error) {
     console.log('[GENERALMASK-ERROR] - ', error);
-    return '';
+    return {
+      value: '',
+      unmask: '',
+    };
   }
 };

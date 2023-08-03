@@ -8,7 +8,6 @@ export const applyMask = ({
   maskDefinitions,
 }: ApplyMaskType) => {
   let valueWithMask = '';
-
   const valueToFormat = value ? value.toString() : '';
 
   if (valueToFormat.length === 0 && allowEmpty) return '';
@@ -22,8 +21,13 @@ export const applyMask = ({
 
     if (mask) {
       if (valueChar) {
-        if (mask.regExp.test(valueChar)) {
-          valueWithMask = valueWithMask.concat(valueChar);
+        const valueCharTest =
+          patternChar.toString()?.match(/W|b/) && mask.transform
+            ? mask?.transform(valueChar)
+            : valueChar;
+
+        if (mask.regExp.test(valueCharTest)) {
+          valueWithMask = valueWithMask.concat(valueCharTest);
           valueIndex++;
         } else {
           return valueWithMask;
@@ -37,5 +41,6 @@ export const applyMask = ({
       );
     }
   }
+
   return valueWithMask;
 };

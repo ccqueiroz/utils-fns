@@ -17,16 +17,19 @@ export const normalizeValue = ({
     allowEmpty,
     maskDefinitions,
   });
+
   const removePatternValue = removePattern(
     inputValue,
     pattern,
     maskDefinitions,
   );
+
   const transformValue = applyTransform({
     value: removePatternValue,
     previousValue,
     pattern: removedPattern,
     maskDefinitions,
   });
+
   return transformValue;
 };
