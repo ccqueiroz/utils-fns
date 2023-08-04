@@ -48,15 +48,21 @@ export const generalMask = ({
     });
 
     if (event) {
-      if (event.target && event.target instanceof HTMLInputElement) {
-        const previousSelection = event.target.selectionStart;
-        const previousValue = event.target.value;
+      if (
+        event.target &&
+        Object.prototype.hasOwnProperty.call(event.target, 'value') &&
+        Object.prototype.hasOwnProperty.call(event.target, 'selectionStart') &&
+        Object.prototype.hasOwnProperty.call(event.target, 'setSelectionRange')
+      ) {
+        const previousSelection = (event?.target as HTMLInputElement)
+          .selectionStart;
+        const previousTargetValue = (event?.target as HTMLInputElement).value;
         setTimeout(() => {
           switch (event.type) {
             case 'change':
               if (
                 (event?.target as HTMLInputElement).value.length ===
-                  previousValue.length + 1 &&
+                  previousTargetValue.length + 1 &&
                 previousSelection &&
                 (event?.target as HTMLInputElement).value.charAt(
                   previousSelection,
