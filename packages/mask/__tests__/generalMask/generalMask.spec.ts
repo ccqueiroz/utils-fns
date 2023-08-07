@@ -1,6 +1,6 @@
 import { MockHTMLInputElement } from './../../src/mocks/MockHTMLInputElement';
 import { ResponseGeneralMaskInterface } from '../../src/lib/contracts';
-import { mask } from './../../src/lib/index';
+import { generalMask } from '../../src/lib/generalMask';
 
 describe('[MASK: GENERAL_MASK]', () => {
   jest.useFakeTimers();
@@ -11,7 +11,7 @@ describe('[MASK: GENERAL_MASK]', () => {
       unmask: '12345678901',
     };
     expect(
-      mask.generalMask({
+      generalMask({
         pattern: patternCpf,
         value: '12345678901',
       }),
@@ -23,7 +23,7 @@ describe('[MASK: GENERAL_MASK]', () => {
       unmask: '02091991',
     };
     expect(
-      mask.generalMask({
+      generalMask({
         pattern: patternDate,
         value: '02091991',
       }),
@@ -34,7 +34,7 @@ describe('[MASK: GENERAL_MASK]', () => {
       unmask: '',
     };
     expect(
-      mask.generalMask({
+      generalMask({
         pattern: patternDate,
         value: 'abcdess',
       }),
@@ -46,7 +46,7 @@ describe('[MASK: GENERAL_MASK]', () => {
       unmask: 'CaioCar',
     };
     expect(
-      mask.generalMask({
+      generalMask({
         pattern: patternName,
         value: 'caio CezaR',
       }),
@@ -61,7 +61,7 @@ describe('[MASK: GENERAL_MASK]', () => {
       unmask: '',
     };
     expect(
-      mask.generalMask({
+      generalMask({
         pattern: patternNoMask,
         value: '12345678901',
       }),
@@ -74,7 +74,7 @@ describe('[MASK: GENERAL_MASK]', () => {
       unmask: '',
     };
     expect(
-      mask.generalMask({
+      generalMask({
         pattern: patternEmpty,
         value: '12345678901',
       }),
@@ -92,7 +92,7 @@ describe('[MASK: GENERAL_MASK]', () => {
     };
     const patternCpf = '999.999.999-99';
 
-    mask.generalMask({
+    generalMask({
       pattern: patternCpf,
       value: '1234567890',
       event: mockEvent as Event,
@@ -113,7 +113,7 @@ describe('[MASK: GENERAL_MASK]', () => {
     };
     const patternCpf = '999.999.999-99';
 
-    mask.generalMask({
+    generalMask({
       pattern: patternCpf,
       value: '1234567890',
       event: mockEvent as Event,
