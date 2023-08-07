@@ -32,16 +32,25 @@ export interface PaymentSlipMaskInterface extends ProviderMaskInterface {
 export type FormatMaskDateType =
   | 'DD/MM/YYYY'
   | 'DD-MM-YYYY'
-  | 'MM-DD-YYYY'
-  | 'MM/DD/YYYY'
-  | 'YYYY/MM/DD'
-  | 'YYYY-MM-DD'
   | 'DD/Mmm/YYYY'
   | 'DD-Mmm-YYYY'
   | 'DD/MMM/YYYY'
-  | 'DD-MMM-YYYY';
+  | 'DD-MMM-YYYY'
+  | 'MM-DD-YYYY'
+  | 'MM/DD/YYYY'
+  | 'MMM-DD-YYYY'
+  | 'MMM/DD/YYYY'
+  | 'Mmm/DD/YYYY'
+  | 'Mmm-DD-YYYY'
+  | 'YYYY/MM/DD'
+  | 'YYYY-MM-DD'
+  | 'YYYY/Mmm/DD'
+  | 'YYYY-Mmm-DD'
+  | 'YYYY/MMM/DD'
+  | 'YYYY-MMM-DD';
 
-export interface DateMaskInterface extends ProviderMaskInterface {
+export interface DateMaskInterface
+  extends Omit<ProviderMaskInterface, 'pattern'> {
   value: string | number | null;
   patternDate: {
     mask: FormatMaskDateType;
