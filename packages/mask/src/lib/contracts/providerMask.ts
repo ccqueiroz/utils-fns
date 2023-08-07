@@ -21,7 +21,8 @@ export interface MaskPhoneInterface extends ProviderMaskInterface {
   value: string | number | null;
 }
 
-export interface PaymentSlipMaskInterface extends ProviderMaskInterface {
+export interface PaymentSlipMaskInterface
+  extends Omit<ProviderMaskInterface, 'pattern'> {
   value: string | number | null;
   onlyType?: {
     typeDigits?: 'Cód. Barras' | 'Linha Digitável';
