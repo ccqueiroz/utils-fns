@@ -7,4 +7,5 @@ export * from './nis';
 export * from './paymentSlip';
 export * from './renavam';
 export * from './voteRegister';
+export * from './phone';
 export * from './generic';

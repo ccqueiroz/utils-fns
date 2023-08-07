@@ -9,6 +9,7 @@ import {
   providerPaymentSlip,
   providerRenavam,
   providerVoteRegister,
+  providerPhone,
 } from './providers';
 import type {
   DateMaskInterface,
@@ -42,6 +43,7 @@ export const mask = {
   paymentSlip: providerPaymentSlip,
   renavam: providerRenavam,
   voteRegister: providerVoteRegister,
+  phone: providerPhone,
   generic: providerGeneric,
 };
 

@@ -21,22 +21,16 @@ export const controllerProviderPhone = ({
         ? patternsToUseInProvider.phone.phoneWithDDI.b
         : patternsToUseInProvider.phone.phoneWithDDI.a;
   } else {
-    switch (value.length) {
-      case 3:
-        pattern = patternsToUseInProvider.phone.phonePublicServices.a;
-        break;
-      case 4:
-        pattern = patternsToUseInProvider.phone.phonePublicServices.b;
-        break;
-      case 10:
-        pattern = patternsToUseInProvider.phone.default.a;
-        break;
-      case 11:
-        pattern = patternsToUseInProvider.phone.default.b;
-        break;
-      default:
-        break;
+    if (value.length <= 3) {
+      pattern = patternsToUseInProvider.phone.phonePublicServices.a;
+    } else if (value.length > 3 && value.length <= 4) {
+      pattern = patternsToUseInProvider.phone.phonePublicServices.b;
+    } else if (value.length > 4 && value.length <= 10) {
+      pattern = patternsToUseInProvider.phone.default.a;
+    } else if (value.length > 10) {
+      pattern = patternsToUseInProvider.phone.default.b;
     }
   }
+
   return pattern;
 };
