@@ -1,9 +1,12 @@
-import { PaymentSlipMask, patternsToUseInProvider } from '../../../contracts';
+import {
+  PaymentSlipMaskInterface,
+  patternsToUseInProvider,
+} from '../../../contracts';
 
 export const controllerProviderPaymentSlip = ({
   onlyType,
   value,
-}: Pick<PaymentSlipMask, 'onlyType' | 'value'>) => {
+}: Pick<PaymentSlipMaskInterface, 'onlyType' | 'value'>) => {
   value = value ? value.toString() : '';
   value = value.replace(/\D/g, '');
   let pattern = '';

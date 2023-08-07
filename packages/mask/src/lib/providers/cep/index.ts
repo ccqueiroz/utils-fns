@@ -5,7 +5,7 @@ import {
 } from '../../contracts';
 import { generalMask } from '../../generalMask';
 
-export const providerCep = (params: ProviderMaskInterface) => {
+export const providerCep = (params: Omit<ProviderMaskInterface, 'pattern'>) => {
   const patternCep = patternsToUseInProvider.cep;
 
   const cepMask: ResponseGeneralMaskInterface = generalMask({
