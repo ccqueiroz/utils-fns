@@ -3,26 +3,35 @@ import {
   ResponseGeneralMaskInterface,
 } from '../../contracts';
 import { generalMask } from '../../generalMask';
+import { controllerPatternDate } from './controllerPatternDate';
+import { orderCharInDateUnMask } from './orderCharInDateUnmask';
 
 export const providerDate = ({
   patternDate,
   ...params
 }: DateMaskInterface): ResponseGeneralMaskInterface => {
-  const { mask: inputPattern, unmask: outPutPattern } = patternDate;
+  const { mask: inputPattern, unmask: outPutPattern } = controllerPatternDate({
+    patternDate,
+  });
 
   const dateMask: ResponseGeneralMaskInterface = generalMask({
     pattern: inputPattern,
     ...params,
   });
 
-  const unMaskDate: string = generalMask({
-    pattern: outPutPattern,
+  const unMaskFormated = orderCharInDateUnMask({
     value: dateMask.unmask,
+    patternDate,
+  });
+
+  const unMaskDate = generalMask({
+    pattern: outPutPattern,
+    value: unMaskFormated,
     allowEmpty: params.allowEmpty,
-  }).value;
+  });
 
   return {
     value: dateMask.value,
-    unmask: unMaskDate,
+    unmask: unMaskDate.value,
   };
 };
