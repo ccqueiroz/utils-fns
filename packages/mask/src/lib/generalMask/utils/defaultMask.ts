@@ -1,7 +1,7 @@
 import { MasksInterface } from '../../contracts';
 
 export const defaultMasks: MasksInterface = {
-  //A: Irrelevant. Accepts uppercase and lowercas
+  //A: Irrelevant. Accepts uppercase and lower case
   A: {
     regExp: /[A-Za-z]/,
   },
@@ -10,7 +10,7 @@ export const defaultMasks: MasksInterface = {
     regExp: /[a-z]/,
     transform: (char: string) => char.toLowerCase(),
   },
-  //b: The system will convert the letter to lowercase.
+  //b: The system will convert the letter to lower case.
   b: {
     regExp: /[a-z]/,
     transform: (char: string) => char.toLowerCase(),
@@ -20,7 +20,7 @@ export const defaultMasks: MasksInterface = {
     regExp: /[A-Z]/,
     transform: (char: string) => char.toUpperCase(),
   },
-  //W: The system will convert the letter to uppercase
+  //W: The system will convert the letter to upper case
   W: {
     regExp: /[A-Z]/,
     transform: (char: string) => char.toUpperCase(),
