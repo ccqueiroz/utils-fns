@@ -16,21 +16,26 @@ import type {
   EventHandleAdapter,
   FormatMaskDateType,
   GeneralMaskInterface,
+  LocalesType,
+  MaskNumbersInterface,
   MaskPhoneInterface,
   PaymentSlipMaskInterface,
-  ResponseGeneralMaskInterface,
+  ResponseMaskInterface,
   TargetType,
 } from './contracts';
+import { maskNumbers } from './maskNumbers';
 
 export type TypesMasks = {
   GeneralMaskInterface: GeneralMaskInterface;
-  ResponseGeneralMaskInterface: ResponseGeneralMaskInterface;
+  ResponseMaskInterface: ResponseMaskInterface;
   TargetType: TargetType;
   EventHandleAdapter: EventHandleAdapter;
   MaskPhoneInterface: MaskPhoneInterface;
   PaymentSlipMaskInterface: PaymentSlipMaskInterface;
   FormatMaskDateType: FormatMaskDateType;
   DateMaskInterface: DateMaskInterface;
+  LocalesType: LocalesType;
+  MaskNumbersInterface: MaskNumbersInterface;
 };
 
 export const mask = {
@@ -45,6 +50,7 @@ export const mask = {
   voteRegister: providerVoteRegister,
   phone: providerPhone,
   generic: providerGeneric,
+  maskNumber: maskNumbers,
 };
 
 export default mask;
