@@ -1,5 +1,11 @@
 # @utils-fns/mask
 
+## 5.1.0
+
+### Minor Changes
+
+- fix readme
+
 ## 5.0.0
 
 ### Major Changes

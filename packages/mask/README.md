@@ -89,7 +89,7 @@ So, just choose which validation tool will be used.
 | `Waa-Aaa` | fooBar | Foo-Bar |
 | `Waa-baa` | fooBar | Foo-bar |
 | `Waa-aaa` | fooBar | Foo- |
-| `baa-aaa` | FooBar | foo-Bar |
+| `baa-aaa` | FooBar | foo- |
 
 ## Cpf Mask
 | Method | Params | Type |
