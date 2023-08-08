@@ -1,6 +1,6 @@
 import {
   ProviderMaskInterface,
-  ResponseGeneralMaskInterface,
+  ResponseMaskInterface,
   patternsToUseInProvider,
 } from '../../contracts';
 import { generalMask } from '../../generalMask';
@@ -8,7 +8,7 @@ import { generalMask } from '../../generalMask';
 export const providerVoteRegister = (params: ProviderMaskInterface) => {
   const patternVoteRegister = patternsToUseInProvider['titulo-eleitor'];
 
-  const VoteRegisterMask: ResponseGeneralMaskInterface = generalMask({
+  const VoteRegisterMask: ResponseMaskInterface = generalMask({
     pattern: patternVoteRegister,
     ...params,
   });

@@ -8,11 +8,6 @@ export interface GeneralMaskInterface {
   event?: EventHandleAdapter;
 }
 
-export interface ResponseGeneralMaskInterface {
-  value: string;
-  unmask: string;
-}
-
 export interface MaskInterface {
   regExp: RegExp;
   transform?: (char: string) => string;

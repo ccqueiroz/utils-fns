@@ -1,6 +1,6 @@
 import {
   MaskPhoneInterface,
-  ResponseGeneralMaskInterface,
+  ResponseMaskInterface,
 } from '../../contracts';
 import { generalMask } from '../../generalMask';
 import { controllerProviderPhone } from './controllerPatternPhone';
@@ -17,7 +17,7 @@ export const providerPhone = ({
     value,
   });
 
-  const phoneMask: ResponseGeneralMaskInterface = generalMask({
+  const phoneMask: ResponseMaskInterface = generalMask({
     pattern: patternPhone,
     value,
     ...params,
