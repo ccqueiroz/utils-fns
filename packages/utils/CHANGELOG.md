@@ -1,5 +1,11 @@
 # @utils-fns/utils
 
+## 9.0.0
+
+### Major Changes
+
+- fix problem change mask when user digit number phone or paymentslip
+
 ## 8.0.0
 
 ### Major Changes
