@@ -11,7 +11,8 @@ export type ProviderInterface =
   | 'cnh'
   | 'titulo-eleitor';
 
-export interface ProviderMaskInterface extends Partial<GeneralMaskInterface> {
+export interface ProviderMaskInterface
+  extends Partial<Omit<GeneralMaskInterface, 'pattern'>> {
   value: string | number | null;
 }
 

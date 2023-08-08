@@ -96,14 +96,14 @@ export type LocalesType =
   | 'zh-TW';
 
 export interface MaskNumbersInterface {
+  value: string | number | null;
+  previousValue?: string | number | null;
   prefix?: string;
   suffix?: string;
   decimalPlaces?: number;
   allowNegative?: boolean;
-  value: string | number | null;
-  locale?: LocalesType;
   numberWithoutPonctuation?: boolean;
-  previousValue?: string | number | null;
+  locale?: LocalesType;
   event?: EventHandleAdapter;
 }
 

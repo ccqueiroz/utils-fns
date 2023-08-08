@@ -1,7 +1,4 @@
-import {
-  MaskPhoneInterface,
-  ResponseMaskInterface,
-} from '../../contracts';
+import { MaskPhoneInterface, ResponseMaskInterface } from '../../contracts';
 import { generalMask } from '../../generalMask';
 import { controllerProviderPhone } from './controllerPatternPhone';
 
