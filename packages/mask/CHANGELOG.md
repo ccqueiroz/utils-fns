@@ -1,5 +1,11 @@
 # @utils-fns/mask
 
+## 4.0.0
+
+### Major Changes
+
+- add module mask in readme utils-fns
+
 ## 3.0.0
 
 ### Major Changes

@@ -1,5 +1,11 @@
 # @utils-fns/utils-fns
 
+## 9.0.0
+
+### Major Changes
+
+- add module mask in readme utils-fns
+
 ## 8.0.0
 
 ### Major Changes
