@@ -15,6 +15,8 @@ export const providerPaymentSlip = ({
     onlyType,
   });
 
+  value = value?.toString().replace(/\D/g, '') || null;
+
   const paymentSlipMask: ResponseMaskInterface = generalMask({
     pattern: patternPaymentSlip,
     value,
