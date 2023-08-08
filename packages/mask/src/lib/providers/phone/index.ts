@@ -14,6 +14,8 @@ export const providerPhone = ({
     value,
   });
 
+  value = value?.toString().replace(/\D/g, '') || null;
+
   const phoneMask: ResponseMaskInterface = generalMask({
     pattern: patternPhone,
     value,
