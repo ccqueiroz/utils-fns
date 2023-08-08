@@ -1,6 +1,6 @@
 import {
   GeneralMaskInterface,
-  ResponseGeneralMaskInterface,
+  ResponseMaskInterface,
   TargetType,
 } from '../contracts';
 import {
@@ -19,7 +19,7 @@ export const generalMask = ({
   previousValue,
   allowEmpty,
   event,
-}: GeneralMaskInterface): ResponseGeneralMaskInterface => {
+}: GeneralMaskInterface): ResponseMaskInterface => {
   try {
     if (!pattern) {
       throw new Error(

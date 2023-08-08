@@ -1,12 +1,12 @@
 import { MockHTMLInputElement } from './../../src/mocks/MockHTMLInputElement';
-import { ResponseGeneralMaskInterface } from '../../src/lib/contracts';
+import { ResponseMaskInterface } from '../../src/lib/contracts';
 import { generalMask } from '../../src/lib/generalMask';
 
 describe('[MASK: GENERAL_MASK]', () => {
   jest.useFakeTimers();
   it('should are passed how arguments the pattern and value without mask/pattern and the return value must be with the format of the pattern/mask passed with argument and unmask value withou pattern/mask.', () => {
     const patternCpf = '999.999.999-99';
-    const expectResponseCpf: ResponseGeneralMaskInterface = {
+    const expectResponseCpf: ResponseMaskInterface = {
       value: '123.456.789-01',
       unmask: '12345678901',
     };
@@ -18,7 +18,7 @@ describe('[MASK: GENERAL_MASK]', () => {
     ).toEqual(expectResponseCpf);
 
     const patternDate = '99/99/9999';
-    const expectResponseDate: ResponseGeneralMaskInterface = {
+    const expectResponseDate: ResponseMaskInterface = {
       value: '02/09/1991',
       unmask: '02091991',
     };
@@ -29,7 +29,7 @@ describe('[MASK: GENERAL_MASK]', () => {
       }),
     ).toEqual(expectResponseDate);
 
-    const expectResponseError: ResponseGeneralMaskInterface = {
+    const expectResponseError: ResponseMaskInterface = {
       value: '',
       unmask: '',
     };
@@ -41,7 +41,7 @@ describe('[MASK: GENERAL_MASK]', () => {
     ).toEqual(expectResponseError);
 
     const patternName = 'Waaa Uezab';
-    const expectResponseName: ResponseGeneralMaskInterface = {
+    const expectResponseName: ResponseMaskInterface = {
       value: 'Caio Cezar',
       unmask: 'CaioCar',
     };
@@ -56,7 +56,7 @@ describe('[MASK: GENERAL_MASK]', () => {
     console.log = jest.fn();
     const consoleSpy = jest.spyOn(console, 'log');
     const patternNoMask = 'return-empty';
-    const expectResponseNoMask: ResponseGeneralMaskInterface = {
+    const expectResponseNoMask: ResponseMaskInterface = {
       value: '',
       unmask: '',
     };
@@ -69,7 +69,7 @@ describe('[MASK: GENERAL_MASK]', () => {
     expect(consoleSpy).toHaveBeenCalled();
 
     const patternEmpty = '';
-    const expectResponseEmpty: ResponseGeneralMaskInterface = {
+    const expectResponseEmpty: ResponseMaskInterface = {
       value: '',
       unmask: '',
     };

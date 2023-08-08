@@ -1,6 +1,6 @@
 import {
   PaymentSlipMaskInterface,
-  ResponseGeneralMaskInterface,
+  ResponseMaskInterface,
 } from '../../contracts';
 import { generalMask } from '../../generalMask';
 import { controllerProviderPaymentSlip } from './controllerPatternPaymentSlip';
@@ -15,7 +15,7 @@ export const providerPaymentSlip = ({
     onlyType,
   });
 
-  const paymentSlipMask: ResponseGeneralMaskInterface = generalMask({
+  const paymentSlipMask: ResponseMaskInterface = generalMask({
     pattern: patternPaymentSlip,
     value,
     ...params,

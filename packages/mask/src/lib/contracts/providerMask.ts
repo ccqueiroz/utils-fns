@@ -1,4 +1,4 @@
-import { GeneralMaskInterface } from './generalMask';
+import { GeneralMaskInterface } from './index';
 
 export type ProviderInterface =
   | 'cpf'

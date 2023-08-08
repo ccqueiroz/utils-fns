@@ -1,7 +1,4 @@
-import {
-  DateMaskInterface,
-  ResponseGeneralMaskInterface,
-} from '../../contracts';
+import { DateMaskInterface, ResponseMaskInterface } from '../../contracts';
 import { generalMask } from '../../generalMask';
 import { controllerPatternDate } from './controllerPatternDate';
 import { orderCharInDateUnMask } from './orderCharInDateUnmask';
@@ -9,12 +6,12 @@ import { orderCharInDateUnMask } from './orderCharInDateUnmask';
 export const providerDate = ({
   patternDate,
   ...params
-}: DateMaskInterface): ResponseGeneralMaskInterface => {
+}: DateMaskInterface): ResponseMaskInterface => {
   const { mask: inputPattern, unmask: outPutPattern } = controllerPatternDate({
     patternDate,
   });
 
-  const dateMask: ResponseGeneralMaskInterface = generalMask({
+  const dateMask: ResponseMaskInterface = generalMask({
     pattern: inputPattern,
     ...params,
   });

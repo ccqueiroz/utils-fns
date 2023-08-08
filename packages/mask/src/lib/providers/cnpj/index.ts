@@ -1,6 +1,6 @@
 import {
   ProviderMaskInterface,
-  ResponseGeneralMaskInterface,
+  ResponseMaskInterface,
   patternsToUseInProvider,
 } from '../../contracts';
 import { generalMask } from '../../generalMask';
@@ -8,7 +8,7 @@ import { generalMask } from '../../generalMask';
 export const providerCnpj = (params: ProviderMaskInterface) => {
   const patternCnpj = patternsToUseInProvider.cnpj;
 
-  const cnpjMask: ResponseGeneralMaskInterface = generalMask({
+  const cnpjMask: ResponseMaskInterface = generalMask({
     pattern: patternCnpj,
     ...params,
   });
