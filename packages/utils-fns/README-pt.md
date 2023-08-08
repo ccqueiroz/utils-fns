@@ -28,26 +28,20 @@
 Link para documentação do módulo ```@utils-fns/validators```: https://github.com/ccqueiroz/utils-fns/blob/main/packages/validators/README-pt.md
 
 ### Mask: A biblioteca ```@utils-fns/mask``` fornece as seguintes máscaras:
-**Módulo em construção**
+- [x] **cpf**
+- [x] **nis**
+- [x] **cnpj**
+- [x] **date**
+- [x] **paymentSlip**
+- [x] **phone**
+- [x] **renavam**
+- [x] **cnh**
+- [x] **voterRegister**
+- [x] **cep**
+- [x] **generic masks**
+- [x] **numbers**
 
-- [ ] **cpfMask**
-- [ ] **nisMask**
-- [ ] **emailMask**
-- [ ] **cnpjMask**
-- [ ] **phoneMask**
-- [ ] **creditcardMask (luhn algorithm)**
-- [ ] **paymentSlipMask (ITF-14)**
-- [ ] **stateRegistrationMask (inscrição estadual - BR)**
-- [ ] **voterRegistrationMask (título de eleitor - BR)**
-- [ ] **cnhMask**
-- [ ] **renavamMask**
-- [ ] **licensePlateMask (placa de carros - BR)**
-- [ ] **cepMask (cep - BR)**
-- [ ] **creaMask(BR)**
-- [ ] **crmMask(BR)**
-- [ ] **generalRegexMask**
-
-Link para documentação do módulo ```@utils-fns/mask```: **Em construção**
+Link to module documentation ```@utils-fns/mask```: https://github.com/ccqueiroz/utils-fns/blob/main/packages/mask/README-pt.md
 
 ### Utils: A biblioteca ```@utils-fns/utils``` fornece os seguintes utilitários:
 **Módulo em construção**

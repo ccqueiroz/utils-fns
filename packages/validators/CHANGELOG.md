@@ -1,5 +1,11 @@
 # @utils-fns/validators
 
+## 8.0.0
+
+### Major Changes
+
+- release utils-fns
+
 ## 7.0.0
 
 ### Major Changes

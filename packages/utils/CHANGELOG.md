@@ -1,5 +1,11 @@
 # @utils-fns/utils
 
+## 7.0.0
+
+### Major Changes
+
+- release utils-fns
+
 ## 6.0.0
 
 ### Major Changes

@@ -22,6 +22,19 @@
   - [x] **cnhValidator**
   - [x] **renavamValidator**
   - [x] **cepValidator (cep - BR)**
+- [@utils-fns/mask](https://github.com/ccqueiroz/utils-fns/blob/main/packages/mask/README.md): Module with formatting masks:
+  - [x] **cpf**
+  - [x] **nis**
+  - [x] **cnpj**
+  - [x] **date**
+  - [x] **paymentSlip**
+  - [x] **phone**
+  - [x] **renavam**
+  - [x] **cnh**
+  - [x] **voterRegister**
+  - [x] **cep**
+  - [x] **generic masks**
+  - [x] **numbers**
 - [@utils-fns/utils](https://github.com/ccqueiroz/utils-fns/blob/main/packages/utils/README.md): Module with utility functions (**Module under construction**):
   - [x] **Data List Cities (BR)**
   - [x] **Data List States (BR)**
